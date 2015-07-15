@@ -537,22 +537,308 @@ function kira($kiraan)
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-	
 	</section>
 </section>
 <!-- bab 6 - tamat -->
 <!-- bab 7 - mula -->
 <section>
 	<section><h2>Bab 7</h2></section>
-	<section><h2>Bab 7.1</h2></section>
-	<section><h2>Bab 7.2</h2></section>
+	<section>
+		<h2>Bab 7.1 : Tatasusunan</h2>
+		<ul>
+		<li>Pembolehubah hanya membawa satu nilai tertentu. </li>
+		<li>Berbanding dengan pembolehubah, tatasusunan (arrays) pula membawa nilai lebih daripada satu.</li>
+		<li>Penggunaan tatasusunan adalah dalam bentuk array().</li>
+		<li>Tatasusunan mengandungi sebaris elemen dimana setiap elemen mempunyai nilai tersendiri.</li>
+		<ul>
+	</section>
+	<section>
+		<h2>Bab 7.2 : Contoh tatasusunan</h2>
+		<table class="excel">
+		<tbody>
+		<tr><td>$negara[0]</td><td>$negara[1]</td><td>$negara[2]</td><td>$negara[3]</td><td>$negara[4]</td></tr>
+		<tr><td>"MY"</td><td>"ID"</td><td>"SG"</td><td>"TH"</td><td>"UK"</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		Latihan 16 : Penggunaan array<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$x[0] = 'nombor1';
+$x = array(1,2,3,4,5,6,7,8,9,10);
+foreach ($x as $kunci => $nilai) 
+{
+    echo "\$kunci = $kunci | \$nilai = $nilai <br>";
+} 
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
 </section>
 <!-- bab 7 - tamat -->
 <!-- bab 8 - mula -->
 <section>
 	<section><h2>Bab 8</h2></section>
-	<section><h2>Bab 8.1</h2></section>
-	<section><h2>Bab 8.2</h2></section>
+	<section><h2>Bab 8 : MANIPULASI FAIL</h2>
+		Selain daripada pengkalan data seperti mySQL, data juga boleh disimpan dalam
+		fail teks.
+	</section>
+	<section>
+		<h2>Bab 8.1 : Membuka Fail</h2>
+		<ul>
+		<li>Sebelum kita boleh melihat atau mengakses data dalam 
+			sesuatu fail, kita perlu	membuka fail tersebut. </li>
+		<li>Fungsi fopen() digunakan untuk membuka fail. </li>		
+		<li>Di dalam fungsi fopen() juga terdapat beberapa mod pilihan iaitu: </li>
+		</ul>
+	</section>
+	<section>
+		<table class="excel">
+		<tbody><tr><th>Mod</th><th>Keterangan</th></tr>
+		<tr><td>a</td><td>
+		Membuka fail untuk menambah data. Data akan ditambah
+		dibaris akhir dalam fail tersebut. Sekiranya fail berkenaan tiada,
+		maka PHP akan mencipta fail tersebut.</td></tr>
+		<tr><td>a+</td><td>
+		Membuka fail untuk menambah dan membaca data. Data akan
+		ditambah dibaris akhir dalam fail tersebut. Sekiranya fail
+		berkenaan tiada, maka PHP akan mencipta fail tersebut.</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<table class="excel">
+		<tbody><tr><th>Mod</th><th>Keterangan</th></tr>
+		<tr><td>r</td><td>Membuka fail untuk dibaca sahaja.</td></tr>
+		<tr><td>r+</td><td>
+		Membuka fail untuk membaca dan menulis data. Data akan
+		dimasukkan di baris pertama data fail berkenaan.</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<table class="excel">
+		<tbody><tr><th>Mod</th><th>Keterangan</th></tr>
+		<tr><td>w</td><td>
+		Membuka fail untuk menulis data sahaja. Data akan
+		dimasukkan ke dalam fail berkenaan. Data-data yang sedia ada
+		dalam fail berkenaan akan terhapus. Sekiranya fail berkenaan
+		tiada, maka PHP akan mencipta fail tersebut.</td></tr>
+		<tr><td>w+</td><td>
+		Membuka fail untuk menulis dan membaca data. Data akan
+		dimasukkan ke dalam fail berkenaan. Data-data yang sedia ada
+		dalam fail berkenaan akan terhapus. Sekiranya fail berkenaan
+		tiada, maka PHP akan mencipta fail tersebut.</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<table class="excel">
+		<tbody><tr><th>Mod</th><th>Keterangan</th></tr>
+		<tr><td>b(windows)</td><td>
+		Menterjemahkan fail tersebut sebagai fail binary selain
+		daripada fail teks. Contoh: imej.jpg
+		Fungsi passthru() pula akan memaparkan fail yang dibuka.</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		Latihan 17 : Membuka fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Latihan 18 : Memaparkan fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.2 : Menutup Fail</h2>
+		<ul>
+		<li>Setelah kita membuka fail, kita perlu menutup penggunaan fail tersebut. </li>
+		<li>Di sini	fungsi fclose() akan digunakan.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 19 : Menutup fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.2 : Membaca Fail</h2>
+		<ul>
+		<li>Selain daripada membaca keseluruhan anda juga boleh membaca data pada
+		baris-baris tertentu yang ditetapkan.</li>
+		<li>fread() akan digunakan untuk membaca data yang ditetapkan.</li>
+		<li>file() pula akan membaca keseluruhan data yang terdapat di dalam sesuatu fail.</li>
+		<li>Data-data ini akan disimpan dalam bentuk array.</li>
+		</li>
+	</section>
+	<section>
+		Latihan 20 : Membaca data tertentu dalam fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 21 : Membaca keseluruhan data dalam fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.3 : Menulis Fail</h2>
+		<ul>
+		<li>Untuk menulis data ke dalam sesuatu fail, fungsi fwrite() akan digunakan.</li>
+		<li>Sebelum menulis data ke dalam fail, fungsi is_writable() <br>
+			boleh digunakan untuk menyemak samada fail tersebut boleh ditulis atau tidak.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 22 : Menulis fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.4 : Menyalin Fail</h2>
+		<ul>
+		<li>PHP membenarkan sesuatu fail disalin dan ditampal ke direktori yang lain.</li>
+		<li>Fungsi copy() akan digunakan untuk membuat salinan fail. </li>
+		<li>Kemudiannya ia akan	membawa nilai TRUE sekiranya berjaya atau FALSE sekiranya gagal.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 23 : Membuat salinan fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.5 : Menghapuskan Fail</h2>
+		<ul>
+		<li>Fail juga boleh dihapuskan dengan menggunakan fungsi unlink(). </li>
+		<li>Ia akan membawa nilai TRUE sekiranya berjaya atau FALSE sekiranya gagal.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 24 : Menghapuskan fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.6 : Menamakan Fail</h2>
+		<ul>
+		<li>Untuk menamakan fail, kita akan menggunakan fungsi rename().</li>
+		</ul>
+		Latihan 25 : Menamakan faill<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.7 : Semak Fail</h2>
+		<ul>
+		<li>Adalah sebaiknya terlebih dahulu kita menyemak samada fail tersebut exist atau
+		tidak sebelum kita menghapuskan atau menamakan sesuatu fail. </li>
+		<li>Untuk membuat semakan ini, fungsi file_exists() akan digunakan.</li>
+		<li> Selain itu fungsi filesize() juga boleh digunakan untuk menyemak saiz fail dan
+		fungsi filetype() untuk menyemak jenis fail.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 26 : Menyemak Fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Bab 8.8 : Memuatnaik (Upload) Fail</h2>
+		<ul>
+		<li>Selain daripada aplikasi FTP, PHP juga membolehkan fail-fail dimuatnaik ke web server. </li>
+		<li>Untuk memuatnaik fail ke dalam web server, elemen &lt;input type=file&gt;
+		dalam HTML form digunakan.</li>
+		<li>Tetapan nilai file_uploads, upload_max_filesize, upload_tmp_dir,
+		post_max_size dan max_input_time boleh ditetapkan dalam php.ini</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Bab 8.8.1 : Pembolehubah $_FILES</h3>
+		<ol>
+		<li>
+		$_FILES['userfile']['name'] akan memaparkan nama fail yang hendak
+		dimuatnaik</li>
+		<li>
+		$_FILES['userfile']['type'] akan memaparkan mime type fail berkenaan.
+		Contohnya: "image/gif"</li>
+		<li>
+		$_FILES['userfile']['size'] akan memaparkan saiz fail yang dimuatnaik dalam
+		bytes</li>
+		</ol>
+	</section>
+	<section>
+		<h3>Bab 8.8.1 : Pembolehubah $_FILES</h3>
+		<ol start="4">
+		<li>
+		$_FILES['userfile']['tmp_name'] akan memaparkan nama sementara
+		(temporary) fail dimana fail yang dimuatnaik disimpan di web server.</li>
+		<li>
+		$_FILES['userfile']['error'] akan memaparkan status muatnaik fail
+		is_upload_file akan menyemak samada fail berjaya (TRUE) 
+		atau tidak dimuatnaik melalui HTTP POST</li>
+		<li>
+		move_uploaded_file akan menyemak samada fail berjaya atau tidak dimuatnaik ke lokasi yang
+		baru</li>
+		</ol>
+		
+	</section>
+	<section>
+		Latihan 27 : Memuatnaik fail<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 28 : Membuat counter<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 29 : Membuat random quote<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
 </section>
 <!-- bab 8 - tamat -->
 <!-- bab 9 - mula -->
