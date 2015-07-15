@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pembangunan Laman Sesawang | Raya 2015</title>
+
+<meta name="description" content="Slaid mengenai pembangunan web menggunakan HTML, JavaScript, CSS dan PHP - Raya 2015" />
+<meta name="author" content="Amin007 Ledang" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">	
+<style>
+.reveal i{
+    font-family: 'FontAwesome';
+    font-style: normal;
+}
+table.excel {
+	border-style:ridge;
+	border-width:1;
+	border-collapse:collapse;
+	/*font-family:sans-serif; font-size:11px;*/
+	margin: auto;
+	border-spacing: 0; 
+}
+table.excel thead th, table.excel tbody th {
+	background:#CCCCCC;
+	border-style:ridge;
+	border-width:1;
+	text-align: center;
+	vertical-align: top;
+}
+table.excel tbody th { text-align:center; vertical-align: top; }
+table.excel tbody td 
+{
+	vertical-align:bottom;
+	/*padding: 0 3px; border: 1px solid #aaaaaa;*/
+	background:#ffffff;
+	text-align: left;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	border-bottom: 1px solid;
+}
+
+</style>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+	
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+document.write( '<link rel="stylesheet" href="css/print/' 
++ ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) 
++ '.css" type="text/css" media="print">' );
+</script>
+	
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="reveal"><div class="slides">
+<!-- mula slide di sini ###################################################################### -->
+
+<!-- bab 1 - mula -->
+<section>
+	<section><h1>Bab 1</h1></section>
+	<section>
+		<h2>BAB 1 : PENGENALAN PHP</h2><hr>
+		<ul>
+		<li>Apa Itu PHP ? PHP adalah PHP Hypertext Preprocessor.</li>
+		<li>PHP dicipta oleh Rasmus Lerdorf.</li>
+		<li>PHP adalah bahasa pengaturcaraan yang boleh berinteraksi dgn server (server
+		side scripting). </li>
+		<li>Ia juga boleh digunakan di dalam HTML itu sendiri. </li>
+		<li>Ini menjadikan PHP ini lebih senang di fahami berbanding dengan pesaingnya yang
+		lain seperti ASP, Cold Fusion, JSP, Perl, Python dan lain-lain.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>BAB 1.1 : PENGENALAN PHP</h2><hr>
+		<ul>
+		<li>PHP memerlukan pelayan server (web server) untuk berfungsi seperti Apache dan IIS. </li>
+		<li>Walau bagaimanapun, PHP akan menjadi lebih stabil dengan menggunakan Apache sebagai pelayan server.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>BAB 1.2 : PENGENALAN PHP</h2><hr>
+		<ul>
+		<li>PHP juga boleh berinteraksi dengan pangkalan data (database) bagi
+		membangunkan aplikasi web yang dinamik. </li>
+		<li>Antara pengkalan data yang boleh berinteraksi dengan PHP adalah 
+			mySql, MSSQl, Oracle, PostgreSql, dBase, mSQl, ODBC dan Sybase</li>
+		<li>PHP mempunyai modul atau API tertentu supaya dapat berkomunikasi dengan
+		pengkalan data tersebut. </li>
+		<li>Di antara pangkalan data diatas yang paling stabil dan efektif berfungsi dengan PHP adalah mySQL.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Apakah Kelebihan PHP</h2><hr>
+		<ol>
+		<li>PHP dapat menghasilkan laman web yang dinamik berbanding laman web
+		statik yang dihasilkan oleh HTML (HyperText Markup Language)</li>
+		<li>Data-data dapat dimanipulasi dan dipaparkan dalam bentuk yang lebih menarik dan pelbagai</li>
+		<li>Namun begitu, PHP juga boleh digabungkan penggunaannya dengan HTML</li>
+		</ol>
+	</section>
+	<section>
+		<h2>Apakah Kelebihan PHP</h2><hr>
+		<ol start="4">
+		<li>PHP adalah aplikasi sumber terbuka (open source) </li>
+		<li>Ini bermakna anda tidak perlu membuat bayaran atau lesen untuk menggunakan aplikasi ini.</li>
+		</ol>
+	</section>
+	<section>
+		<h2>Apakah Kelebihan PHP</h2><hr>
+		<ol start="6">
+		<li>Kod (code) PHP adalah embed dan tidak dipaparkan dalam Web Browser Source Code</li>
+		<li>Ini bermakna pelayar (client) tidak akan mengetahui maklumat data yang dicari 
+		seterusnya akan menjadikan ianya lebih selamat.</li>
+		</ol>
+	</section>
+</section>
+<!-- bab 1 - tamat -->
+<!-- bab 2 - mula -->
+<section>
+	<section><h1>Bab 2</h1></section>
+	<section><h2>BAB 2 : Menulis Halaman PHP</h2></section>
+	<section>
+		<h2>Penyunting PHP</h2><hr>
+		<ul>
+		<li> Kod PHP boleh ditulis menggunakan pelbagai penyunting (editor) seperti
+		PHPed, Crimson Editor, Adobe Dreamweaver dan sebagainya. </li>
+		<li>Malah notepad juga boleh digunakan untuk menulis kod PHP. </li>
+		<li>Setiap penyunting mempunyai kelebihannya sendiri.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>Script PHP Pertama Saya</h2><hr>
+		<ul>
+		<li>Kod PHP ditulis dalam lingkungan &lt;?php ... ?&gt;</li>
+		<li>Setiap fail yang mengandungi kod-kod PHP perlu disimpan dalam format file.php</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 1.1 : Halaman menggunakan kod PHP<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Latihan 1.2 : Contih namafail.php<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+	echo 'Aku tanya apa khabar';
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Kod Komen</h2><hr>
+		<ul>
+		<li>Kod komen adalah berguna untuk membuat nota atau mematikan sesuatu fungsi atau kod</li>
+		<li> Terdapat 3 kaedah yang boleh digunakan untuk memasukkan komen dalam kod PHP 
+		iaitu menggunakan simbol #, // atau /* ... */</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 2 : Menulis komen<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+// ini komen sebaris
+# ini komen sebaris juga
+/*
+boleh komen
+panjang panjang
+*/
+
+/////////////////////////////////////////////////////////////////////////
+// untuk buat garisan
+
+##########################################################################
+# untuk buat garisan juga
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Backslash</h2><hr>
+		<ul>
+		<li>Untuk kes-kes tertentu kita perlu memasukkan karektor (character) tertentu
+		dalam string untuk kita paparkan dipelayar. </li>
+		<li>Antaranya ialah tanda ', ", \ dan $ </li>
+		<li>Fungsi backslash adalah bagi memastikan string yang mengandungi karektorkarektor
+		ini akan dapat dipaparkan </li>
+		</ul>
+	</section>
+	<section>
+		Latihan 3 : Menggunakan backslash<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+	# guna ' 
+	echo ' \' \" \\ \$ ';
+	
+	# guna "
+	echo " \' \" \\ \$ ";
+
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+</section>
+<!-- bab 2 - tamat -->
+<!-- bab 3 - mula -->
+<section>
+	<section><h2>Bab 3</h2></section>
+	<section><h2>BAB 3 : SINTAKS ASAS PHP</h2></section>
+	<section>
+		<h2> Bab 3.1 : Jenis-jenis Data </h2>
+		<ul>
+		<li>Terdapat 3 jenis data asas dalam PHP iaitu interger, double dan string. </li>
+		<li>Selain itu 	PHP juga mempunyai data yang lebih kompleks iaitu arrays dan objects.</li>
+		<li>Integer adalah data dalam bentuk nombor.<br> Contohnya: 2, 564</li>
+		<li>Double pula adalah data dalam bentuk perpuluhan.<br> Contohnya: 2.62, 0.23</li>
+		<li>Manakala string adalah data yang atau tidak mengandungi interger atau double.</li>
+		<li>Contohnya: Saya suka belajar PHP, "2"</li>
+		</ul>
+	</section>
+	<section>
+		<h2> Bab 3.2 : Pembolehubah PHP</h2>
+		<ol>
+		<li>Seperti bahasa pengaturcaraan yang lain, PHP juga boleh menyimpan data sebagai pembolehubah (variables) </li>
+		<li> kemudiannya memanggil data tadi dengan menggunakan nama pembolehubah yang telah ditetapkan tadi. </li>
+		<li>Setiap pembolehubah akan bermula dengan symbol $.</li>
+		</ol>
+	</section>
+	<section>
+		<h2> Bab 3.2 : Pembolehubah PHP</h2>
+		<ol start="4">
+		<li>isset() digunakan untuk menyemak samada sesuatu pembolehubah telah dicipta atau belum.</li>
+		<li>empty() adalah bertentangan dengan isset(). <br>
+		Ia akan menjadi true jika tiada pembolehubah ditetapkan <br>
+		atau nilai bagi pembolehubah berkenaan adalah 0.</li>
+		<li>unset() digunakan untuk menghapus pembolehubah berkenaan.</li>
+		</ol>
+	</section>
+	<section>
+		Latihan 4 : Mencipta dan memanggil pembolehubah<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$mula = 1;
+echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
+echo (empty($mula) "\$mula = $mula<br>" ? "\$mula = kosong<br>";
+
+unset($mula);
+echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2> Bab 3.3 : Identifiers</h2>
+		<ul>
+		<li>Identifiers memegang sesuatu nilai yang telah diistiharkan. </li>
+		<li>Identifiers adalah 	dalam bentuk '$'. <br> Contohnya : $maklumat, $tempat. </li>
+		<li>Identifiers juga adalah case sensitive.</li>
+		<li>Nilai yang dipegang oleh $maklumat tak sama dengan nilai yang dipegang oleh $Maklumat. </li>
+		<li>Identifiers tidak boleh dimulai dengan nombor.</li>
+		</ul>
+	</section>
+	<section>
+		<h2> Bab 3.4 : 	Pemalar (Constant)</h2>
+		<ul>
+		<li>Nilai yang dibawa oleh identifiers boleh berubah melalui proses atau fungsi tertentu. </li>
+		<li>Namun ada juga nilai yang tetap. </li>
+		<li>Ia dilkenali sebagai pemalar (constant). </li>
+		<li>PHP juga mempunyai pemalar yang telah siap dibina seperti PHP_VERSION, PHP_OS, TRUE, FALSE</li>
+		<li>defined() digunakan bagi menyemak samada pemalar telah dicipta atau belum</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 5 : Mencipta dan menggunakan pemalar<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+	# isytihar tatarajah mysql
+	define('DB_TYPE', 'mysql');
+	define('DB_HOST', 'localhost');
+	define('DB_NAME', 'rahsia');
+	define('DB_USER', 'root');
+	define('DB_PASS', '***');
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+</section>
+<!-- bab 3 - tamat -->
+<!-- bab 4 - mula -->
+<section>
+	<section><h2>Bab 4</h2></section>
+	<section>
+		<h2>BAB 4 : OPERATOR</h2>
+		<ul>
+		<li>Operator digunakan untuk menentukan sesuatu nilai dengan melakukan operasi
+		terhadap satu atau lebih nilai yang lain. </li>
+		<li>Di dalam PHP konsep operasi adalah hampir sama dengan konsop operasi C atau Perl.</li>
+		</li>
+	</section>
+	<section>
+		<h2>Operator Aritmetik</h2><hr>
+		<table class="excel">
+		<caption>Operator Operasi Contoh</caption>
+		<tbody>
+		<tr><td>+ </td><td>Tambah </td><td>6 + 2</td></tr>
+		<tr><td>- </td><td>Tolak </td><td>6 - 2</td></tr>
+		<tr><td>* </td><td>Darab </td><td>6 * 2</td></tr>
+		<tr><td>/ </td><td>Bahagi </td><td>6 / 2</td></tr>
+		<tr><td>% </td><td>Modulus </td><td>7 % 2</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		Latihan 6 : Penggunaan operator aritmetik<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Operator Perbandingan</h2><hr>
+		<table class="excel">
+		<caption>Operator Operasi Contoh</caption>
+		<tbody>
+		<tr><td>== </td><td>Sama dengan </td><td>6 == 6</td></tr>
+		<tr><td>&gt; </td><td>Lebih besar </td><td>6 &gt; 2</td></tr>
+		<tr><td>&lt; </td><td>Lebih kecil </td><td>2 &lt; 6</td></tr>
+		<tr><td>&gt;= </td><td>Lebih sama atau sama dengan </td><td>6 &gt;= 6</td></tr>
+		<tr><td>&lt;= </td><td>Lebih kecil atau sama dengan </td><td>2 &lt;= 6</td></tr>
+		<tr><td>!= </td><td>Tidak sama </td><td>6 != 2</td></tr>
+		<tr><td>&lt;&gt;  </td><td>Tidak sama </td><td>6 &lt;&gt; 2</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		Latihan 7 : Penggunaan operator perbandingan<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2>Operator Logikal</h2><hr>
+		<table class="excel">
+		<caption>Operator Operasi Contoh</caption>
+		<tbody>
+		<tr><td>&& </td><td>Dan </td><td>$a && $b</td></tr>
+		<tr><td>|| </td><td>Or </td><td>$a || $b</td></tr>
+		<tr><td>and </td><td>Dan </td><td>$a and $b</td></tr>
+		<tr><td>or </td><td>Atau </td><td>$a or b</td></tr>
+		<tr><td>! </td><td>Tidak </td><td>!$a </td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		Latihan 8 : Penggunaan operator logikal<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+</section>
+<!-- bab 4 - tamat -->
+<!-- bab 5 - mula -->
+<section>
+	<section><h2>Bab 5</h2></section>
+	<section><h2>Bab 5 : PERNYATAAN</h2></section>
+	<section>
+		<h2> Bab 5.1 : Pernyataan if </h2>
+		<ul>
+		<li>Pernyataan yang berada dalam syarat if hanya akan diproses sekiranya ia memenuhi syarat tersebut.</li>
+		<li>Simbol { dan } akan digunakan sekiranya proses melibatkan lebih daripada satu pernyataan.</li>
+		<li>Syarat-syarat tersebut juga boleh menggabungkan dua <br>
+			atau lebih operator logikal seperti &&, ||, and atau or.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 9 : Penggunaan pernyataan if<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$mula = 1; echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
+
+$mula = 0;
+if (isset($mula): echo '$mula sudah wujud<br>';
+else: '$mula tidak wujud<br>';
+endif;
+
+if (isset($mula)
+	echo '$mula sudah wujud<br>';
+else
+	'$mula tidak wujud<br>';
+
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2> Bab 5.2 : Pernyataan switch </h2>
+		<ul>
+		<li>Konsep pernyataan switch hampir sama dengan <br>
+			pernyataan if iaitu bagi tujuan membuat perbandingan <br>
+			terhadap sesuatu nilai. </li>
+		<li>Pernyataan switch lebih efisyen digunakan sekiranya <br>
+			anda membuat perbandingan antara satu <br>
+			pembolehubah dengan nilai-nilai yang banyak.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 10 : Penggunaan switch<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$warna = 'merah';
+
+switch ($warna) 
+{
+	case 'merah':
+		echo "Warna kegemaran adalah merah!!!";
+		break;
+	case 'biru':
+		echo "Warna kegemaran adalah biru!!!";
+		break;
+	case 'hijau':
+		echo "Warna kegemaran adalah hijau!!!";
+		break;
+	default:
+		echo "Warna kegemaran bukan merah, biru atau hijau !!!";
+}
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2> Bab 5.3 : Pernyataan Loop</h2>
+		<ul>
+		<li>Pernyataan loop digunakan untuk mengulangi sesuatu arahan bagi satu set pernyataan yang ditetapkan. </li>
+		<li>Terdapat 3 jenis pernyataan loop iaitu while loop, do... while loop dan for loop.</li>
+		<li>Terdapat pernyataan loop yang khas iaitu foreach. Biasanya melibatkan tatasusunan.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 11.1 : Penggunaan pernyataan while loop<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$x = 1;
+
+while($x <= 5) 
+{
+	echo "Ini nombor: $x <br>";
+	$x++;
+} 
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Latihan 11.2 : Penggunaan pernyataan do... while loop<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$i = 0;
+
+do{ $i++; }
+while($i < 10);
+
+echo "Gelong berhenti pada i = $i";
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 12 : Penggunaan pernyataan for loop<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+for ($x = 0; $x <= 10; $x++) 
+{
+    echo "Ini nombor: $x <br>";
+} 
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Latihan 13 : Penggunaan pernyataan foreach<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$x = array(1,2,3,4,5,6,7,8,9,10);
+foreach ($x as $kunci => $nilai) 
+{
+    echo "\$kunci = $kunci | \$nilai = $nilai <br>";
+} 
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2> Bab 5.4 : Memasukan Fail Ke Dalam Halaman PHP </h2>
+		<ul>
+		<li>PHP mempunyai 2 lagi pernyataan iaitu require() dan include()</li>
+		<li>Ia membolehkan sesuatu halaman PHP memanggil sesuatu fungsi atau pemalar
+		yang telah dikodkan dalam sesuatu halaman PHP yang lain. </li>
+		<li>require() lebih sesuai digunakan untuk mendapatkan nilai pemalar kekal.</li>
+		</ul>
+	</section>
+	<section>
+		Latihan 14 : Penggunaan require() dan include()<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+</section>
+<!-- bab 5 - tamat -->
+<!-- bab 6 - mula -->
+<section>
+	<section><h2>Bab 6</h2></section>
+	<section><h2>Bab 6.1</h2></section>
+	<section><h2>Bab 6.2</h2></section>
+</section>
+<!-- bab 6 - tamat -->
+<!-- bab 7 - mula -->
+<section>
+	<section><h2>Bab 7</h2></section>
+	<section><h2>Bab 7.1</h2></section>
+	<section><h2>Bab 7.2</h2></section>
+</section>
+<!-- bab 7 - tamat -->
+<!-- bab 8 - mula -->
+<section>
+	<section><h2>Bab 8</h2></section>
+	<section><h2>Bab 8.1</h2></section>
+	<section><h2>Bab 8.2</h2></section>
+</section>
+<!-- bab 8 - tamat -->
+<!-- bab 9 - mula -->
+<section>
+	<section><h2>Bab 9</h2></section>
+	<section><h2>Bab 9.1</h2></section>
+	<section><h2>Bab 9.2</h2></section>
+</section>
+<!-- bab 9 - tamat -->
+<!-- bab 10 - mula -->
+<section>
+	<section><h2>Bab 10</h2></section>
+	<section><h2>Bab 10.1</h2></section>
+	<section><h2>Bab 10.2</h2></section>
+</section>
+<!-- bab 10 - tamat -->
+<!-- bab 11 - mula -->
+<section>
+	<section><h2>Bab 11</h2></section>
+	<section><h2>Bab 11.1</h2></section>
+	<section><h2>Bab 11.2</h2></section>
+</section>
+<!-- bab 11 - tamat -->
+<!-- bab 12 - mula -->
+<section>
+	<section><h2>Bab 12</h2></section>
+	<section><h2>Bab 12.1</h2></section>
+	<section><h2>Bab 12.2</h2></section>
+</section>
+<!-- bab 12 - tamat -->
+<!-- bab 13 - mula -->
+<section>
+	<section><h2>Bab 13</h2></section>
+	<section><h2>Bab 13.1</h2></section>
+	<section><h2>Bab 13.2</h2></section>
+</section>
+<!-- bab 13 - tamat -->
+
+<!-- tamat slide di sini ###################################################################### -->
+</div><!-- / class="slides" -->
+</div><!-- / class="reveal -->
+<!-- untuk javascrip 
+======================================================== -->
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	
+	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Optional reveal.js plugins
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true },
+		{ src: 'plugin/notes/notes.js', async: true }
+	]
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+});
+</script>	
+</body>
+</html>
