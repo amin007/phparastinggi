@@ -20,7 +20,8 @@ table.excel {
 	border-style:ridge;
 	border-width:1;
 	border-collapse:collapse;
-	/*font-family:sans-serif; font-size:11px;*/
+	/*font-family:sans-serif; */
+	font-size:30px;
 	margin: auto;
 	border-spacing: 0; 
 }
@@ -34,12 +35,12 @@ table.excel thead th, table.excel tbody th {
 table.excel tbody th { text-align:center; vertical-align: top; }
 table.excel tbody td 
 {
-	vertical-align:bottom;
-	/*padding: 0 3px; border: 1px solid #aaaaaa;*/
+	vertical-align:middle; //bottom;
+	/*padding: 0 3px; */
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	border: 1px solid #aaaaaa;
 	background:#ffffff;
 	text-align: left;
-	padding: 0.2em 0.5em 0.2em 0.5em;
-	border-bottom: 1px solid;
 }
 
 </style>
@@ -893,6 +894,79 @@ foreach ($x as $kunci => $nilai)
 <section>
 	<section><h2>Bab 10</h2></section>
 	<section>
+		<h2>BAB 10 : MANIPULASI STRING</h2>
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>addslashes()</td><td>untuk menambah backslash bagi string yang mempunyai karektor
+			tertentu seperti single quote ('), double quote ("), backslash (\) and NUL
+			(the NULL byte).</td></tr>
+		<tr><td>concatenation </td><td>digunakan untuk menggabungkan dua atau lebih nilai string</td></tr>
+		<tr><td>html_entity_decode() </td><td>untuk menukarkan entiti HTML kepada kod HTML</td></tr>
+		<tr><td>htmlentities() </td><td>untuk menukarkan kod HTML kepada entiti HTML. Ia berlawan
+			dengan html_entity_decode</td></tr>		</tbody>
+		</table>
+	</section>
+	<section>		
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>implode() </td><td>untuk menggabungkan string. Ia bertentangan dengan explode()</td></tr>
+		<tr><td>explode() </td><td>untuk memisahkan string di dalam sesuatu string berdasarkan sesuatu
+			delimiter</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>		
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>ltrim() </td><td>untuk membuang whitespace characters pada permulaan string</td></tr>
+		<tr><td>nl2br() </td><td>untuk menambah baris baru (HTML) sebelum baris baru dalam string</td></tr>
+		<tr><td>rtrim() </td><td>untuk membuang whitespace characters pada akhiran string</td></tr>
+		<tr><td>trim() </td><td>untuk membuang input daripada borang (HTML form). Ia akan
+			menyahkan whitespace characters seperti (spaces, tab, newlines) pada
+			permulaan dan akhiran string</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>		
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>str_replace() </td><td>untuk menukarkan sesuatu string kepada string yang lain</td></tr>
+		<tr><td>strcmp() </td><td>untuk membuat perbandingan antara string</td></tr>
+		<tr><td>stripslashes() </td><td>untuk membuang backslash. Ia bertentangan dengan addslashes()</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>		
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>strlen() </td><td>untuk mendapatkan jumlah karektor di dalam sesuatu string</td></tr>
+		<tr><td>strtolower() </td><td>untuk menukarkan semua karektor alphabetic dalam sesuatu string
+			kepada huruf kecil</td></tr>
+		<tr><td>strtoupper() </td><td>untuk menukarkan semua karektor alphabetic dalam sesuatu string
+			kepada huruf besar. Bertentangan dengan strtolower()</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>		
+		<table class="excel">
+		<tbody><tr><th>Fungsi</th><th>Keterangan</th></tr>
+		<tr><td>substr() </td><td>untuk memaparkan karektor tertentu dalam sesuatu string.</td></tr>
+		<tr><td>ucfirst() </td><td>untuk menukar karektor pertama perkataan pertama dalam string
+			kepada huruf besar</td></tr>
+		<tr><td>ucwords() </td><td>untuk menukar karektor pertama setiap perkataan dalam string
+			kepada huruf besar</td></tr>
+		<tr><td>wordwrap() </td><td>untuk memisahkan string kepada baris baru berdasarkan karektor
+			tentu dalam sesuatu proses</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+	Latihan 31 : Manipulasi string<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 </section>
 <!-- bab 10 - tamat -->
