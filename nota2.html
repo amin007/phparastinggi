@@ -42,7 +42,6 @@ table.excel tbody td
 	background:#ffffff;
 	text-align: left;
 }
-
 </style>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
 <!-- For syntax highlighting -->
@@ -90,10 +89,10 @@ document.write( '<link rel="stylesheet" href="css/print/'
 		<ul>
 		<li>PHP juga boleh berinteraksi dengan pangkalan data (database) bagi
 		membangunkan aplikasi web yang dinamik. </li>
-		<li>Antara pengkalan data yang boleh berinteraksi dengan PHP adalah 
+		<li>Antara pangkalan data yang boleh berinteraksi dengan PHP adalah 
 			mySql, MSSQl, Oracle, PostgreSql, dBase, mSQl, ODBC dan Sybase</li>
 		<li>PHP mempunyai modul atau API tertentu supaya dapat berkomunikasi dengan
-		pengkalan data tersebut. </li>
+		pangkalan data tersebut. </li>
 		<li>Di antara pangkalan data diatas yang paling stabil dan efektif berfungsi dengan PHP adalah mySQL.</li>
 		</ul>
 	</section>
@@ -260,21 +259,30 @@ echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<h2> Bab 3.3 : Identifiers</h2>
+		<h2> Bab 3.3 : Pengecam (Identifiers)</h2>
 		<ul>
-		<li>Identifiers memegang sesuatu nilai yang telah diistiharkan. </li>
-		<li>Identifiers adalah 	dalam bentuk '$'. <br> Contohnya : $maklumat, $tempat. </li>
-		<li>Identifiers juga adalah case sensitive.</li>
+		<li>Pengecam adalah cara bagi nama untuk pembolehubah, fungsi, dan pelbagai lagi</li>
+		<li>Ia memegang sesuatu nilai yang telah diistiharkan. </li>
+		<li>Biasanya dalam bentuk '$'. <br> Contohnya : $maklumat, $tempat. </li>
+		<li>Ia juga adalah case sensitive.</li>
 		<li>Nilai yang dipegang oleh $maklumat tak sama dengan nilai yang dipegang oleh $Maklumat. </li>
-		<li>Identifiers tidak boleh dimulai dengan nombor.</li>
+		<li>Ia tidak boleh dimulai dengan nombor.</li>
 		</ul>
+	</section>
+	<section>
+		<h2> Bab 3.3 : Pengecam (Identifiers)</h2>
+		<table class="excel">
+		<tbody><tr><th>Boleh</th><th>Tidak boleh</th></tr>
+		<tr><td>saya_zahra</td><td>Ini&amp;itu</td></tr>
+		<tr><td>Saiz</td><td>!kaunter</td>	</tr>
+		<tr><td>_perkataan</td><td>3suku</td></tr>
+		</tbody></table>
 	</section>
 	<section>
 		<h2> Bab 3.4 : 	Pemalar (Constant)</h2>
 		<ul>
 		<li>Nilai yang dibawa oleh identifiers boleh berubah melalui proses atau fungsi tertentu. </li>
-		<li>Namun ada juga nilai yang tetap. </li>
-		<li>Ia dilkenali sebagai pemalar (constant). </li>
+		<li>Namun ada juga nilai yang tetap iaitu pemalar (constant). </li>
 		<li>PHP juga mempunyai pemalar yang telah siap dibina seperti PHP_VERSION, PHP_OS, TRUE, FALSE</li>
 		<li>defined() digunakan bagi menyemak samada pemalar telah dicipta atau belum</li>
 		</ul>
@@ -308,9 +316,7 @@ echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
 	</section>
 	<section>
 		<h2>Operator Aritmetik</h2><hr>
-		<table class="excel">
-		<caption>Operator Operasi Contoh</caption>
-		<tbody>
+		<table class="excel"><tbody>
 		<tr><td>+ </td><td>Tambah </td><td>6 + 2</td></tr>
 		<tr><td>- </td><td>Tolak </td><td>6 - 2</td></tr>
 		<tr><td>* </td><td>Darab </td><td>6 * 2</td></tr>
@@ -328,9 +334,7 @@ echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
 	</section>
 	<section>
 		<h2>Operator Perbandingan</h2><hr>
-		<table class="excel">
-		<caption>Operator Operasi Contoh</caption>
-		<tbody>
+		<table class="excel"><tbody>
 		<tr><td>== </td><td>Sama dengan </td><td>6 == 6</td></tr>
 		<tr><td>&gt; </td><td>Lebih besar </td><td>6 &gt; 2</td></tr>
 		<tr><td>&lt; </td><td>Lebih kecil </td><td>2 &lt; 6</td></tr>
@@ -350,9 +354,7 @@ echo (isset($mula) '$mula sudah wujud<br>' ? '$mula tidak wujud<br>';
 	</section>
 	<section>
 		<h2>Operator Logikal</h2><hr>
-		<table class="excel">
-		<caption>Operator Operasi Contoh</caption>
-		<tbody>
+		<table class="excel"><tbody>
 		<tr><td>&& </td><td>Dan </td><td>$a && $b</td></tr>
 		<tr><td>|| </td><td>Or </td><td>$a || $b</td></tr>
 		<tr><td>and </td><td>Dan </td><td>$a and $b</td></tr>
@@ -535,8 +537,324 @@ function kira($kiraan)
     # pecahan kepada ratus
     return number_format($kiraan,0,'.',',');
 } 
+
+echo kira(123456); # output 123,456
 ?&gt;
 </code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	1.1 Membentuk Function
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function namaFunction ($var1,$var2,$var3)
+{
+		Arahan-arahan;
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	1.2 Memanggil Function
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+namaFunction ($var1,$var2,$var3);
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	Contoh ringkas
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+selamatDatang();
+
+function selamatDatang()
+{
+	print"Selamat Datang<br>\n";
+	print"ke Pusat Pembangunan Maklumat dan Komunikasi<br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	Menghantar maklumat
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$aplikasi="Sistem XYZ";
+selamatDatang("Abu",$aplikasi);
+
+function selamatDatang($nama,$app)
+{
+	print"Selamat Datang $nama<br>\n";
+	print" ke aplikasi $app <br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	Menerima maklumat
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$gaji=1000;
+$bil=230;
+$baki = kiraBaki($gaji, $bil);
+jumlahBersih(kiraBaki($gaji, $bil));
+
+function kiraBaki($a,$b)
+{
+	$simpanan=$a-$b;
+	return $simpanan;
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	Menghantar maklumat ke fail lain
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function selamatDatang($nama,$app)
+{
+	print"Selamat Datang $nama<br>\n";
+	print" ke aplikasi $app <br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+	include('failFunction');
+	selamatDatang('Abu",$aplikasi);
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	1.3 Contoh-contoh Function<br>
+	Membaca fail konfigurasi 'system.php'
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+//[Database]
+host='xyz.upm.edu.my'; user='user1'; pwd='rahsia'; db='abcdef';
+//[Konfig]
+tajuk="Aplikasi XYZ"; versi=3.12;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	'failFunction.php'
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function bacaKonfigurasi()
+{
+	$ini_array = parse_ini_file("system.php",TRUE);
+	return $ini_array;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+include('failFunction.php');
+$SETTING=bacaKonfigurasi();
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	Mengguna MySQL 'dll.php'
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function connection($host,$ user,$ pswd,$ db)
+{
+	$link = mysql_connect($host, $ user, $ pswd) 
+	or die("Could not connect");
+	mysql_select_db($db) or die("Could not select database");
+	return $link;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+include('dll.php');
+$SETTING=bacaKonfigurasi();
+connection(
+	$SETTING['Database']['host'], 
+	$SETTING['Database']['user'], 
+	$SETTING['Database']['pwd'], 
+	$SETTING['Database']['db']
+);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	fungsi verifyUserInput <hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function verifyUserInput($userInput,$maxlength,$toLower,
+$addSlashes,$stripTag,$stripNONnumber,$reserve2)
+{
+	$userInput=trim($userInput);
+	if($toLower==1)
+		{ $userInput=strtolower($userInput); }
+
+	if($stripTag)
+		{ $userInput=strip_tags($userInput); }
+
+	if($addSlashes)
+		{ $userInput=addslashes($userInput); }
+
+	if($stripNONnumber)
+	{ 
+		$userInput=preg_replace("/\D/","",$userInput);
+		$userInput=str_replace(" ","",$userInput); 
+	}
+
+	if($maxlength)
+		{ $userInput=substr($userInput,0,$maxlength); }
+
+	$userInput=rtrim($userInput);
+	$userInput=ltrim($userInput);
+	return $userInput;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	fungsi selectInput
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function selectInput($SETTING,$outputType,$table,$id,
+$disp,$default,$order,$where1,$where2)
+{	#$outputType, p=print v=return value
+	$value="";
+	if($where1) {$where = "where $where1";} else {$where="";}
+	if($where2) {$where .= " $where2";} //tambah AND/OR sendiri
+	if($order) {$order = "order by $order";}
+	$sql="select $id,$disp from $table $where $order";
+	$result=executemysql($SETTING,$sql);
+	while($data=mysql_fetch_array($result))
+	{
+		if($data[0] == $default){$check="selected";} else {$check="";}
+		if($outputType=="p")
+		{print"&lt;option value=$data[0] $check 
+		style=\"background-Color:#eeffee\"&gt;$data[1]\n";}
+		if($outputType=="v")
+		{$value.="&lt;option value=$data[0] $check 
+		style=\"background-Color:#eeffee\"&gt;$data[1]\n";}
+	}
+	if($outputType=="v") {return $value; }
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	checkboxInput()
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function checkboxInput($SETTING,$column,$class,$tableName,$id,
+$disp,$namePrefix,$valuePrefix,$default,
+$hidden,$where1,$where2,$order,$js)
+{
+	/*
+	$column = number bermaksud num of column
+	$default = array of checked item  */
+		  
+	if($class) {$class = "class=$class";}
+	if($where1) 
+		{$where = "where $where1";} 
+	else {$where="";}
+	if($where2 and $where1) {$where .= " and $where2";}
+	if($order) {$order = "order by $order";}
+	$sql="select $id,$disp from $tableName $where $order";
+	$result=executemysql($SETTING,$sql);
+	$count=0;  
+	print"&lt;table>\n";
+	while($data=mysql_fetch_array($result))
+	{
+		if(!$hidden OR !in_array($data[0], $hidden))
+		{
+			if($default AND in_array($data[0], $default))
+			{$check="checked";} 
+			else {$check="";}
+			print "&lt;td align=left $class>"
+			. "&lt;input type=checkbox name=$namePrefix$data[0] "
+			. "value=$valuePrefix$data[0] $check $class $js>$data[1]&lt;/td>\n";
+			$count++;
+			if($count==$column) {print"&lt;tr>"; $count=0;}
+		}
+	}
+	print"&lt;/table>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	borderStart()
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function borderStart($width,$tajuk,$tab,$borderType)
+{
+	$TAB="";
+	for($aa=1;$aa<=$tab;$aa++){$TAB.="\t";}
+
+	list($leftwidth, $leftheight) = getimagesize("image/border/$borderType/1.png");
+	list($rightwidth, $rightheight) = getimagesize("image/border/$borderType/3.png");
+	$borderTitleclass="border".$borderType."Title";
+	$borderTeksclass="border".$borderType."Teks";
+
+	if($tajuk){$tajuk="&lt;span class=$borderTitleclass>$tajuk&lt;/span>&lt;br>";} else{$tajuk="";}
+	print"
+	$TAB&lt;table border=0 cellpadding=0 cellspacing=0 align=center width=$width height=100%>
+	$TAB&lt;tr valign=top height=$leftheight>&lt;td width=$leftwidth height=$leftheight background=/image/border/$borderType/1.png>&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/2.png>&lt;/td>
+	$TAB&lt;td height=$rightheight width=$rightwidth background=/image/border/$borderType/3.png>&lt;/td>
+	$TAB&lt;tr valign=top>&lt;td background=/image/border/$borderType/4.png>&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/5.png class=$borderTeksclass>$tajuk
+	$TAB	
+	\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	borderEnd()
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function borderEnd($class,$text,$tab,$borderType)
+{
+	if($class){$class="class='$class'";}
+	$TAB="";
+	for($aa=1;$aa<=$tab;$aa++){$TAB.="\t";}
+
+	list($leftwidth, $leftheight) = getimagesize("image/border/$borderType/7.png");
+	list($rightwidth, $rightheight) = getimagesize("image/border/$borderType/9.png");
+
+	print"
+	$TAB	
+	$TAB&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/6.png></td>
+	$TAB&lt;tr valign=top><td background=/image/border/$borderType/7.png border=0 height=$leftheight></td> 
+	$TAB&lt;td background=/image/border/$borderType/8.png $class valign=center>$text</td> 
+	$TAB&lt;td background=/image/border/$borderType/9.png border=0 height=$rightheight></td>
+	$TAB&lt;/table>
+	\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	GET_REF_kodLANDLINE() & GET_REF_fullmonth($LANG)<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+
+function GET_REF_kodLANDLINE()
+{return array('03','04','05','06','07','081','082','083','087','088','089','09','1300','1800');}
+
+function GET_REF_fullmonth($LANG)
+{
+	if($LANG=="en")
+		return array('', 'January', 'February', 'March', 'April', 
+		'May', 'June', 'July', 'August', 
+		'September', 'October', 'November', 'December'); 
+	else 
+		return array('', 'Januari', 'Februari', 'Mac', 'April', 
+		'Mei', 'Jun', 'Julai', 'Ogos', 
+		'September', 'Oktober', 'November', 'Disember'); 
+}
+?&gt;</code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 </section>
@@ -545,7 +863,7 @@ function kira($kiraan)
 <section>
 	<section><h2>Bab 7</h2></section>
 	<section>
-		<h2>Bab 7.1 : Tatasusunan</h2>
+		<h3>Bab 7.1 : Tatasusunan</h3>
 		<ul>
 		<li>Pembolehubah hanya membawa satu nilai tertentu. </li>
 		<li>Berbanding dengan pembolehubah, tatasusunan (arrays) pula membawa nilai lebih daripada satu.</li>
@@ -554,13 +872,141 @@ function kira($kiraan)
 		<ul>
 	</section>
 	<section>
-		<h2>Bab 7.2 : Contoh tatasusunan</h2>
+		<h3>Bab 7.2 : Contoh tatasusunan</h3>
 		<table class="excel">
 		<tbody>
 		<tr><td>$negara[0]</td><td>$negara[1]</td><td>$negara[2]</td><td>$negara[3]</td><td>$negara[4]</td></tr>
 		<tr><td>"MY"</td><td>"ID"</td><td>"SG"</td><td>"TH"</td><td>"UK"</td></tr>
 		</tbody>
 		</table>
+	</section>
+	<section>
+		<h3>Bab 7.3 : Membentuk Tatasusunan </h3><hr>
+		<ol><li>Cara mudah</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php $bunga= array("Ros","Orkid","Raya","Tulip");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menetapkan terus kedudukan dalam tatasusunan</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$majalah[3]="Dewan Masyarakat";
+$majalah[23]="Ujang";
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan associative array</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kereta=array("Proton"=>"Saga","Toyota"=>"Wish",
+"Nissan"=>"Livina");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Mendapatkan dari pembolehubah lain</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kad_pengenalan = explode ('-', $ic);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ol>
+	</section>
+	<section>
+		<h3>Bab 7.3 : Membentuk Tatasusunan </h3><hr>	
+		<ol start="5">
+		<li>Menggunakan function PHP </li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+#tambah elemen dibelakang array
+array_push ($pelajar,"Salleh"); 
+#buang elemen dibelakang array
+$terkini = array_pop ($pelajar); 
+#tambah elemen di hadapan array
+array_unshift ($pelajar,"Salleh"); 
+#buang elemen di hadapan array
+array_shift ($pelajar); 
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan function PHP-MySQL</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$data=mysql_fetch_array($result);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Mendapatkan tatasusunan dari fail</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$baris=file("pelajar.txt");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ol>
+	</section>
+	<section>
+		<h3>Bab 7.4 : Paparan Tatasusunan</h3><hr>
+		<ul>
+		<li>Berikut merupakan kaedah yang boleh digunakan untuk memaparkan tatasusunan</li>
+		<li>Paparan elemen tertentu</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print  $majalah[3];
+print  $kereta["Toyota"];
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan function PHP</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print_r($namaArray);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan foreach</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+foreach($namaArray as $a=>$b)
+{ print "$b";  }
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ul>
+	</section>
+	<section>
+		<h3>Bab 7.5 : Tatasusunan Multi-dimensional</h3><hr>
+		<ul><li>Tatasusunan juga boleh diisikan kebeberapa peringkat</li></ul>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kereta= array( 
+	'Proton'=>array('Saga','Iswara','Gen2'),
+	'Toyota'=>array('Rav4','Wish','Alphard','Estima'),
+	'Perodua'=>array('Kancil','Kembara','Kelisa')
+);
+
+print $kereta['Proton'][2];
+print_r($kereta);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Bab 7.6 : Menghapuskan array</h3><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+unset ($majalah[3]);
+unset ($kereta);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Bab 7.7 : function array PHP</h3><hr>
+		<ul>
+		<li>Selain dari contoh diatas, berikut merupakan function dalaman PHP yang lain untuk PHP</li>
+		</ul>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+array_change_key_case, array_chunk, array_combine, array_count_values, array_diff_assoc, array_diff_uassoc, 
+array_diff, array_fill, array_filter, array_flip, array_intersect_assoc, array_intersect, array_key_exists, 
+array_keys, array_map, array_merge_recursive, array_merge, array_multisort, array_pad, array_pop, array_push, 
+array_rand, array_reduce, array_reverse, array_search, array_shift, array_slice, array_splice, array_sum, 
+array_udiff_assoc, array_udiff_uassoc, array_udiff, array_unique, array_unshift, array_values, 
+array_walk_recursive, array_walk, array, arsort, asort, compact, count, current, each, end, extract, 
+in_array, key, krsort, ksort, list, natcasesort, natsort, next, pos, prev, range, reset, rsort, 
+shuffle, sizeof, sort, uasort, uksort, usort,
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		Latihan 16 : Penggunaan array<hr>
@@ -582,7 +1028,7 @@ foreach ($x as $kunci => $nilai)
 <section>
 	<section><h2>Bab 8</h2></section>
 	<section><h2>Bab 8 : MANIPULASI FAIL</h2>
-		Selain daripada pengkalan data seperti mySQL, data juga boleh disimpan dalam
+		Selain daripada pangkalan data seperti mySQL, data juga boleh disimpan dalam
 		fail teks.
 	</section>
 	<section>
@@ -635,6 +1081,19 @@ foreach ($x as $kunci => $nilai)
 		</table>
 	</section>
 	<section>
+		Latihan 17 : <a target="_blank" href="http://php.net/manual/en/function.fopen.php">
+		Membuka fail</a><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$fail = fopen("/rumah/kita/file.txt", "r");
+$fail = fopen("/rumah/kita/file.gif", "wb");
+$fail = fopen("http://www.example.com/", "r");
+$fail = fopen("ftp://user:password@example.com/somefile.txt", "w");
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
 		<table class="excel">
 		<tbody><tr><th>Mod</th><th>Keterangan</th></tr>
 		<tr><td>b(windows)</td><td>
@@ -645,15 +1104,16 @@ foreach ($x as $kunci => $nilai)
 		</table>
 	</section>
 	<section>
-		Latihan 17 : Membuka fail<hr>
+		Latihan 18 : <a target="_blank" src="">
+		Memaparkan fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
-?&gt;
-</code></pre>
-<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-		Latihan 18 : Memaparkan fail<hr>
-<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
+print exec("uptime");
+passthru("who");
+
+exec("dir", $output, $return);
+echo "Dir returned $return, and output:\n";
+var_dump($output);
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -666,9 +1126,12 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 19 : Menutup fail<hr>
+		Latihan 19 : <a target="_blank" src="http://php.net/manual/en/function.fclose.php">
+		Menutup fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+$fail = fopen("/rumah/kita/file.txt", "r");
+fclose($fail);
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -684,17 +1147,39 @@ foreach ($x as $kunci => $nilai)
 		</li>
 	</section>
 	<section>
-		Latihan 20 : Membaca data tertentu dalam fail<hr>
+		Latihan 20 : <a  target="_blank" src="http://php.net/manual/en/function.fread.php">
+		Membaca data tertentu dalam fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+// get contents of a file into a string
+$filename = "/usr/local/something.txt";
+$handle = fopen($filename, "r");
+$contents = fread($handle, filesize($filename));
+fclose($handle);
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		Latihan 21 : Membaca keseluruhan data dalam fail<hr>
+		Latihan 21 : <a target="_blank" src="http://php.net/manual/en/function.file.php">
+		Membaca keseluruhan data dalam fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+/ Get a file into an array.  In this example we'll go through HTTP to get
+// the HTML source of a URL.
+$lines = file('http://www.example.com/');
+
+// Loop through our array, show HTML source as HTML source; and line numbers too.
+foreach ($lines as $line_num => $line) {
+    echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
+}
+
+// Another example, let's get a web page into a string.  See also file_get_contents().
+$html = implode('', file('http://www.example.com/'));
+
+// Using the optional flags parameter since PHP 5
+$trimmed = file('somefile.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -708,9 +1193,19 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 22 : Menulis fail<hr>
+		Latihan 22 : <a target="_blank" src="http://php.net/manual/en/function.is-writable.php">
+		Menulis fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+$fail = 'test.txt';
+if (is_writable($fail)) 
+{
+	echo 'Fail ini boleh ditulis';
+} 
+else 
+{
+	echo 'Fail ini tidak boleh ditulis';
+}
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -724,9 +1219,17 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 23 : Membuat salinan fail<hr>
+		Latihan 23 : <a target="_blank" src="http://php.net/manual/en/function.copy.php">
+		Membuat salinan fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+$fail_lama = 'contoh.txt';
+$fail_baru = 'contoh.txt.bak';
+
+if (!copy($fail_lama, $fail_baru)) 
+{
+	echo "gagal untuk salin $file...\n";
+}
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -739,9 +1242,19 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 24 : Menghapuskan fail<hr>
+		Latihan 24 : <a target="_blank" src="http://php.net/manual/en/function.unlink.php">
+		Menghapuskan fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+$fh = fopen('test.html', 'a');
+fwrite($fh, '<h1>Hello world!</h1>');
+fclose($fh);
+unlink('test.html');
+
+# buang folder
+if (!is_dir('examples'))
+	mkdir('examples');
+rmdir('examples');
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -750,10 +1263,13 @@ foreach ($x as $kunci => $nilai)
 		<h2>Bab 8.6 : Menamakan Fail</h2>
 		<ul>
 		<li>Untuk menamakan fail, kita akan menggunakan fungsi rename().</li>
+		<li>Latihan 25 : <a target="_blank" src="http://php.net/manual/en/function.rename.php">
+			Menamakan fail</a></li>
 		</ul>
-		Latihan 25 : Menamakan faill<hr>
+		<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+rename("/tmp/tmp_fail.txt", "/sistem/fail_kita.txt");
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -761,7 +1277,7 @@ foreach ($x as $kunci => $nilai)
 	<section>
 		<h2>Bab 8.7 : Semak Fail</h2>
 		<ul>
-		<li>Adalah sebaiknya terlebih dahulu kita menyemak samada fail tersebut exist atau
+		<li>Adalah sebaiknya terlebih dahulu kita menyemak samada fail tersebut wujud atau
 		tidak sebelum kita menghapuskan atau menamakan sesuatu fail. </li>
 		<li>Untuk membuat semakan ini, fungsi file_exists() akan digunakan.</li>
 		<li> Selain itu fungsi filesize() juga boleh digunakan untuk menyemak saiz fail dan
@@ -769,9 +1285,22 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 26 : Menyemak Fail<hr>
+		Latihan 26 : <a target="_blank" src="http://php.net/manual/en/function.file-exists.php">
+		Menyemak Fail</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+$fail = '/path/to/foo.txt';
+
+if (file_exists($fail))
+	echo 'Fail ' . $fail . ' ini wujud';
+else 
+	echo 'Fail ' . $fail . ' ini tidak wujud';
+   
+// outputs e.g.  somefile.txt: 1024 bytes
+echo $fail . ': ' . filesize($fail) . ' bytes';
+
+echo filetype('/etc/passwd');  // file
+echo filetype('/etc/');        // dir
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -789,35 +1318,49 @@ foreach ($x as $kunci => $nilai)
 	<section>
 		<h3>Bab 8.8.1 : Pembolehubah $_FILES</h3>
 		<ol>
-		<li>
-		$_FILES['userfile']['name'] akan memaparkan nama fail yang hendak
-		dimuatnaik</li>
-		<li>
-		$_FILES['userfile']['type'] akan memaparkan mime type fail berkenaan.
+		<li>$_FILES['userfile']['name'] => papar nama fail yang hendak dimuatnaik</li>
+		<li>$_FILES['userfile']['type'] => papar  mime type fail berkenaan.
 		Contohnya: "image/gif"</li>
-		<li>
-		$_FILES['userfile']['size'] akan memaparkan saiz fail yang dimuatnaik dalam
-		bytes</li>
+		<li>$_FILES['userfile']['size'] => papar  saiz fail yang dimuatnaik dalam bytes</li>
 		</ol>
 	</section>
 	<section>
 		<h3>Bab 8.8.1 : Pembolehubah $_FILES</h3>
 		<ol start="4">
 		<li>
-		$_FILES['userfile']['tmp_name'] akan memaparkan nama sementara
+		$_FILES['userfile']['tmp_name'] => papar nama sementara
 		(temporary) fail dimana fail yang dimuatnaik disimpan di web server.</li>
-		<li>
-		$_FILES['userfile']['error'] akan memaparkan status muatnaik fail
-		is_upload_file akan menyemak samada fail berjaya (TRUE) 
+		<li>$_FILES['userfile']['error'] => papar status muatnaik fail</li>
+		<li>is_upload_file() => semak samada fail berjaya (TRUE) 
 		atau tidak dimuatnaik melalui HTTP POST</li>
-		<li>
-		move_uploaded_file akan menyemak samada fail berjaya atau tidak dimuatnaik ke lokasi yang
-		baru</li>
+		<li>move_uploaded_file() => semak samada fail berjaya 
+		atau tidak dimuatnaik ke lokasi yang baru</li>
 		</ol>
-		
 	</section>
 	<section>
-		Latihan 27 : Memuatnaik fail<hr>
+		Latihan 27 : <a target="_blank" src="http://php.net/manual/en/function.is-uploaded-file.php">
+		Memuatnaik fail</a><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+if (is_uploaded_file($_FILES['fail']['tmp_name'])) 
+{
+	echo "Fail " . $_FILES['fail']['name'] 
+	. " berjaya dimuatnaik .\n";
+	echo "Papar kandungan\n";
+	readfile($_FILES['fail']['tmp_name']);
+} 
+else 
+{
+	echo "Fail mungkin serangan muatnaik: ";
+	echo "fail '" . $_FILES['fail']['tmp_name'] . "'.";
+}
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 28 : <a target="_blank" src="">
+		Membuat counter</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 ?&gt;
@@ -825,15 +1368,8 @@ foreach ($x as $kunci => $nilai)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		Latihan 28 : Membuat counter<hr>
-<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
-?&gt;
-</code></pre>
-<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-	</section>
-	<section>
-		Latihan 29 : Membuat random quote<hr>
+		Latihan 29 : <a target="_blank" src="">
+		Membuat random quote</a><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 ?&gt;
@@ -880,6 +1416,96 @@ foreach ($x as $kunci => $nilai)
 		<li>time() untuk memaparkan Unix timestamp semasa</li>
 		</ol>
 	</section>
+	<section>
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>	
+		<tr><td>a</td><td>am / pm </td><td>A </td><td>AM / PM</td></tr>
+		<tr><td>d</td><td>day 01-31 </td><td>D </td><td>3 char wday Mon-Sun</td></tr>
+		<tr><td>F</td><td>full month January-December </td><td>g</td><td>12 hour 1-12</td></tr>
+		<tr><td>G</td><td>24 hour 0-23 </td><td>h</td><td>12 hour 01-12</td></tr>
+		<tr><td>H</td><td>24 hour 00-23 </td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>
+		<tr><td>i</td><td>minutes 00-59	</td><td>I</td><td>daylight </td></td></tr>
+		<tr><td>j</td><td>day 1-31</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		<tr><td>l</td><td>full day Monday-Sunday </td><td>L</td><td>boolean for leap year</td></tr>
+		<tr><td>m</td><td>month 01-12 </td><td>M</td><td>month Jan-Dec</td></tr>
+		<tr><td>n</td><td>month 1-12 </td></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		</tbody></table>
+	</section>
+	<section>	
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>
+		<tr><td>s</td><td>seconds 00-59 </td><td>S</td><td>suffix st, nd, rd, th</td></td></tr>
+		<tr><td>t </td><td>total day in month 28-31 </td><td>T </td><td>time zone setting EST</td></td></tr>
+		<tr><td>U</td><td>total UNIX seconds from 1 jan 1970 </td><td>w</td><td>day of week 0-6 (sunday-saturday)</td></td></tr>
+		<tr><td>y</td><td>2 digit year </td><td>Y</td><td>4 digit year</td></td></tr>
+		<tr><td>z</td><td>day of year 0-365 </td><td>Z</td><td>timezone offset in seconds</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		Contoh<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print date("d/m/Y");   #18/06/2012
+
+$tarikh = date("jS F Y");
+print "$tarikh"; #18th June 2012
+
+print date("h:ia, d/m/Y");   11:33am, 16/03/2011
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Function mktime()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+int mktime ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Menukar format tarikh ke UNIX Epoch<br>
+		Contoh:
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print mktime(12, 33, 22, 3, 5, 1957);
+$masaLahir = mktime(12, 33, 22, 3, 5, 1957);
+print"$masaLahir";
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
+
+	</section>
+	
 	<section>
 		Latihan 30 : Penggunaan fungsi tarikh dan masa<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
@@ -963,8 +1589,27 @@ foreach ($x as $kunci => $nilai)
 	<section>
 	Latihan 31 : Manipulasi string<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
-?&gt;
+<pre><code class="php">&lt;?
+function huruf($jenis, $papar)
+{   
+    switch ($jenis) 
+    {// mula - pilih $jenis
+    case 'BESAR':
+        $papar = strtoupper($papar);
+        break;
+    case 'kecil':
+        $papar = strtolower($papar);
+        break;
+    case 'Depan':
+        $papar = ucfrist($papar);
+        break;
+    case 'Besar_Depan':
+        $papar = mb_convert_case($papar, MB_CASE_TITLE);
+        break;
+    }// tamat - pilih $jenis
+    
+    return $papar;
+}?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
@@ -1017,9 +1662,37 @@ foreach ($x as $kunci => $nilai)
 		Latihan 33 : Mencipta, mendapatkan nilai dan menghapuskan session<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
+session_start(); # mulakan sesi
+
+$_SESSION[$key] = 'auam';
+
+if (isset($_SESSION[$key]))
+	return $_SESSION[$key];
+
+session_unset();
+session_destroy();
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+
+		Regular Expression
+		regular expression merupakan arahan untuk memastikan teks mengandungi sebahagian teks yang ingin kita cari. 
+<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print date("d/
+$tarikh="13 Disember 2005";
+if( preg_match ("/\d{2} (\w+)  \d{4}/", $tarikh) )
+{print "Tarikh sah}
+
+$host="http://www.php.net/index.html";
+preg_match("/^(http:\/\/)?([^\/]+)/i", $host, $matches);
+echo "domain name is: {$matches[2]}\n";
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
 	</section>
 </section>
 <!-- bab 11 - tamat -->
@@ -1030,7 +1703,7 @@ foreach ($x as $kunci => $nilai)
 	<section>
 		<h3>Sejarah mySQL</h3>
 		<ul>
-		<li>Pada awalnya, para pencipta mySQL mencuba satu pengkalan data iaitu mSQL
+		<li>Pada awalnya, para pencipta mySQL mencuba satu pangkalan data iaitu mSQL
 			(mini Structure Query Language)</li>
 		<li>Tujuannya menghubungkan table-table dengan menggunakan 
 			fast-low level (ISAM) routine mereka sendiri. </li>
@@ -1052,7 +1725,7 @@ foreach ($x as $kunci => $nilai)
 		<h3>Apa Itu mySQL</h3>
 		<ul>
 		<li>mySQL adalah satu aplikasi untuk pengurusan (menambah, mengakses dan memproses) data. </li>
-		<li>Pengkalan data pula adalah satu kumpulan data yang 	terstruktur. </li>
+		<li>pangkalan data pula adalah satu kumpulan data yang 	terstruktur. </li>
 		<li>mySQL adalah sumber terbuka. </li>
 		<li>Ini bermakna ia boleh digunakan	serta diubahsuai oleh sesiapa sahaja.</li>
 		</ul>
@@ -1068,14 +1741,31 @@ foreach ($x as $kunci => $nilai)
 	<section>
 		<h3>Apakah Kelebihan mySQL</h3>
 		<ol>
-		<li>MySQL merupakan pengkalan data yang sangat cepat dan mudah untuk
+		<li>MySQL merupakan pangkalan data yang sangat cepat dan mudah untuk
 		digunakan.</li>
-		<li>Selain itu, sintaks-sintaksnya juga adalah mudah untuk dipahami dan
+		<li>Selain itu, sintaks-sintaksnya juga adalah mudah untuk difahami dan
 		tidak rumit</li>
 		<li>Boleh digunakan pada platform yang lain seperti LINUX, Windows, MacOS dll</li>
 		<li>Beberapa table dari pelayan server yang berlainan dapat digunakan dalam
 		query yang sama</li>
 		</ol>
+	</section>
+	<section>
+		<h3>PDO - PHP Data Objects</h3>
+		<hr/>
+		<ul>
+		<li>Sambungan PDO - antara muka ringan untuk akses pangkalan data</li>
+		<li>Menyediakan lapisan capaian data abstraksi - fungsi yang sama untuk melakukan pertanyaan dan mengambil data</li>
+		<li>Boleh mencapai sebarang pangkalan data yang sedia ada</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Mysqli</h3>
+		<hr/>
+		<ul>
+		<li>Sambungan Mysqli - pengganti Mysql yang lama</li>
+		<li>Menyediakan lapisan capaian data abstraksi - fungsi yang sama untuk melakukan pertanyaan dan mengambil data</li>
+		</ul>
 	</section>
 </section>
 <!-- bab mysql -  1 - tamat -->
@@ -1083,13 +1773,13 @@ foreach ($x as $kunci => $nilai)
 <section>
 	<section><h2>Bab Mysql - 2</h2></section>
 	<section>
-		<h3>Bab Mysql 2 : MANIPULASI PENGKALAN DATA</h3>
+		<h3>Bab Mysql 2 : MANIPULASI PANGKALAN DATA</h3>
 	</section>
 	<section>
 		<h3>Mencipta Akaun Pengguna</h3>
-		Di dalam sesuatu pengkalan data, adalah digalakkan agar para webmaster
-		menetapkan akaun pengguna baru bagi pengkalan data atau menetapkan
-		katalaluan bagi mengakses pengkalan data tersebut.
+		Di dalam sesuatu pangkalan data, adalah digalakkan agar para webmaster
+		menetapkan akaun pengguna baru bagi pangkalan data atau menetapkan
+		katalaluan bagi mengakses pangkalan data tersebut.
 	</section>
 	<section>
 		Latihan 33 : Menetapkan username dan password<hr>
@@ -1100,38 +1790,17 @@ foreach ($x as $kunci => $nilai)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<h3>Menghubungi Database</h3>
+		<h3>Mencipta pangkalan Data</h3>
 		<ul>
-		<!-- li>Sebelum anda boleh mencipta, menghapus, menambah, memilih, mengemaskini
-		data menggunakan Kod PHP, anda perlu menghubungi pengkalan data anda.</li -->
-		<li>mysql_connect() akan membuat sambungan ke mySQL sebelum sesuatu
-		pengkalan data boleh diakses.</li>
-		<li>mysql_select_db() pula akan menetapkan pengkalan data yang dipilih adalah
-		pengkalan data default</li>
-		</ul>
-	</section>
-	<section>
-		Latihan 34 : Menghubungi database<hr>
-<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
-		$conn = mysql_connect("localhost", "username", "password");
-		$database = mysql_select_db("databasename", $conn);
-?&gt;
-</code></pre>
-<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-	</section>
-	<section>
-		<h3>Mencipta Pengkalan Data</h3>
-		<ul>
-		<li>Arahan CREATE digunakan untuk mencipta pengkalan data serta 
-			table-table	dalam sesuatu pengkalan data. </li>
-		<li>Di dalam UNIX, nama-nama pengkalan data 	adalah case-sensitive.</li>
+		<li>Arahan CREATE digunakan untuk mencipta pangkalan data serta 
+			table-table	dalam sesuatu pangkalan data. </li>
+		<li>Di dalam UNIX, nama-nama pangkalan data	adalah case-sensitive.</li>
 		<li>Format : <code class="mysql">CREATE DATABASE databasename</code></li>
 		<li>Format : <code class="mysql">CREATE TABLE table (id INT)</code></li>
 		</ul>
 	</section>
 	<section>
-		Latihan 35 : Mencipta pengkalan data<hr>
+		Latihan 35 : Mencipta pangkalan data<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 ?&gt;
@@ -1145,9 +1814,9 @@ foreach ($x as $kunci => $nilai)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<h3>Menghapuskan Pengkalan Data</h3>
+		<h3>Menghapuskan pangkalan Data</h3>
 		<ul>
-		<li>Arahan DROP akan digunakan untuk menghapuskan pengkalan data atau table
+		<li>Arahan DROP akan digunakan untuk menghapuskan pangkalan data atau table
 		atau index atau function. </li>
 		<li>Arahan ini juga boleh digunakan untuk menghapuskan
 		lebih daripada satu table dalam sesuatu arahan.</li>
@@ -1156,7 +1825,7 @@ foreach ($x as $kunci => $nilai)
 		</ul>
 	</section>
 	<section>
-		Latihan 37 : Menghapuskan pengkalan data<hr>
+		Latihan 37 : Menghapuskan pangkalan data<hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 ?&gt;
@@ -1167,7 +1836,7 @@ foreach ($x as $kunci => $nilai)
 		<h3>Menambah Data</h3>
 		<ul>
 		<li>Arahan INSERT digunakan untuk menambah baris (row) data ke dalam
-		pengkalan data yang telah dibina.</li>
+		pangkalan data yang telah dibina.</li>
 		<li>Format : <code class="mysql">INSERT INTO table (field1, field2) VALUES(15,20)</code></li>
 		<li>Format : <code class="mysql">INSERT INTO table (field1, field2) VALUES(15, field1*2)</code></li>
 		</ul>
@@ -1240,6 +1909,25 @@ foreach ($x as $kunci => $nilai)
 	</section>
 </section>
 <!-- bab mysql - 2 - tamat -->
+<!-- penghabisan - mula -->
+<section>
+	<section><h2>SUDAH HABIS DAA</h2>
+		<hr/>
+			<ul>
+			<li><i class="fa fa-bookmark"></i>: www.amin007.org</li>
+			<li><i class="fa fa-envelope-o"></i>: al.amin007@yahoo.com</li>
+			<li><i class="fa fa-facebook"></i>: amin007.ledang</li>
+			<li><i class="fa fa-twitter"></i>: amin007_ledang</li>
+			<li><i class="fa fa-google-plus"></i>: abdulmuhaiminabdulghaniamin007ledang</li>
+			<li><i class="fa fa-linkedin"></i>: </li>
+			<li><i class="fa fa-github"></i>: amin007</li>
+			<li><i class="fa fa-instagram"></i>: aminledang</li>
+			<li><i class="fa fa-skype"></i>: amin800507</li>
+			<li><i class="fa fa-youtube"></i>: user/abdmuhaimin</li>
+			</ul>
+	</section>
+</section>
+<!-- penghabisan - tamat -->
 
 <!-- tamat slide di sini ###################################################################### -->
 </div><!-- / class="slides" -->
