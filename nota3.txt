@@ -1,0 +1,26 @@
+Secure	Programming
+Module	1:	Web	Application	&	Programming	Basics
+HTTP,	 HTTPS,	 Cookies,	 Sessions,	 Web	 Server,	 SSL,	 Object	 Oriented,	 Objects,	 Classes	 and	
+Databases
+Module	2	:	Principles	of	Secure	Development
+Input	Validation,	Output	Validation,	Error	Handling,	Authentication	and	Authorization,	Session	
+Management,	Secure	Communications,	Secure	Storage	and	Secure	Resource	Access	
+Module	3:	OWASP	&	SANS	Top	Application	Vulnerabilities	–	Attacks	&	Solutions
+Attacks	with	Hands-on	Labs	on	SQL	Injection,	Cross	Site	Scripting,	Cross	Site	Request	Forgery,	
+LDAP	 Injection,	 Command	 Injection,	 Parameter/Form	 Tampering,	 Improper	 Error	 Handling,	
+unvalidated	 Input,	 Directory	 Traversal,	 Cookie	 Poisoning,	 Insecure	 storage,	 Information	
+Leakage,	 Broken	 Account	 Management,	 Denial	 of	 Service,	 Buffer	 Overflow,	 Log	 Tampering,	
+Broken	 Access	 Control,	 Broken	 Session	 Management,	 Session	 Fixation,	 Security	
+Misconfiguration
+
+Module	4:	Vulnerability	Symptoms	&	Investigations
+Symptoms	 of	 Attacks	 and	 Investigating SQL	 Injection,	 Cross-Site	 Scripting	 (XSS),	 Command	
+Injection	 Attacks,	 File	 Upload	 Attack,	 Log	 Tampering,	 Directory	 Traversal,	 Parameter/Form	
+Tampering	and	many	more	from	Server	Logs,	Firewalls	and	IPS	/	IDS
+Module	5	:	Defending	Vulnerabilities
+Steps	&	Methodologies	to	defend	from	web	application	vulnerabilities	and	attacks	for	the	Top	
+OWASP	Vulnerabilities	with	detailed	checklist
+Module	6:	Vulnerability	Assessment	&	Penetration	Testing	tools
+Passive	 and	 Active	 Information	 Gathering,	 Passive	 Recon	 Firefox	 Addon,	 Information	
+intelligence	with	Maltego,	Information	intelligence	with	FOCA	,	Firefox	Add-ons,	W3af,	Samurai,	
+SQLMap,	 Paros,	 Backtrack	 5	 R2,	 Acunetix	Web	 Scanner	 and	 many	 more	 tools	 with	Hands-on Labs
