@@ -404,8 +404,151 @@ dir</code></pre>
 		direktori "pms". </p>
 	</section>
 	<section>
-
 		<h2> Bab 5.1. CakePHP Skema & Model </h2>
+		<p>Kelebihan model didalam cakephp adalah ia kemampuan model membuat perhubungan dan
+pemetaan objek atau Object Relational Mapping(ORM). Untuk melakukan perhubungan ini, kita
+perlu menggunakan penyatuan model (Association).</p>
+	</section>
+	<section>
+		<small> Bab 5.1. CakePHP Skema & Model </small>
+		<p>Jenis Perhubungan (Relationship Type)</p>
+
+		<table class="excel"><tbody>
+		<tr><th> Perhubungan(Relationship) </th>
+			<th> Jenis Penyatuan (Association Type) </th>
+			<th> Contoh </th></tr>
+		<tr><td> one to one</td>
+			<td> hasOne </td>
+			<td> Satu pengguna sistem mempunyai satu projek.</td></tr>
+		<tr><td> one to many </td>
+			<td> hasMany </td>
+			<td> Satu projek mempunyai banyak ahli.</td></tr>
+		<tr><td> many to one </td>
+			<td> belongsTo </td>
+			<td> 10 projek mempunyai satu ahli.</td></tr>
+		<tr><td> many to many </td>
+			<td> hasAndBelongsToMany (HABTM) </td>
+			<td> 10 projek mempunyai 10 ahli dan sebaliknya.</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 5.1. CakePHP Skema & Model </small>
+		<p align="left">Untuk aplikasi pengurusan projek ini kita akan menggunakan perhubungan 
+		belongsTo, dan 	hasMany. Perhubungan model ini adalah seperti berikut:
+		<br><br>Projects <strong>hasMany</strong> Project Applicants
+		<br>Users <strong>hasMany</strong> ProjectApplicants
+
+		<br><br>Project Applicants <strong>belongsTo</strong> Projects
+		<br>Project Applicants <strong>belongsTo</strong> Users
+
+		<br><br>Table yang perlu ada :-
+		<br>projects : untuk menyimpan data projek.
+		<br>users : untuk menyimpan data pengguna/ahli.
+		<br>project_applicants : untuk menyimpan data ahli yang menyertai projek.
+		</p>
+	</section>
+	<section>
+		<small> Bab 5.1. CakePHP Skema & Model </small>
+		<p>Rujuk gambarajah dibawah untuk memahami ERD pangkalan data aplikasi ini.</p>
+		<dir align="center"><img height="75%" width="75%" src="imgs/cakephp-erd.png">
+		<small>Entity Relationship Diagram(ERD) untuk aplikasi Pengurusan Projek.</small>
+		</dir>
+	</section>
+	<section>
+		<small> Bab 5.1. CakePHP Skema & Model </small>
+		<p>Untuk membina table pangkalan data tadi. Sila copy skrip arahan MySQL di bawah & paste ke
+		MySQL DBA Tool yang anda gunakan contohnya phpmyadmin:</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="mysql">CREATE TABLE `projects` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+`user_id` int(11) NOT NULL,
+`name` varchar(255) NOT NULL DEFAULT '',
+`details` varchar(255) NOT NULL DEFAULT '',
+`start_date` datetime NOT NULL,
+`end_date` datetime NOT NULL,
+`created` datetime DEFAULT NULL,
+`modified` datetime DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE TABLE `project_applicants` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+`project_id` int(11) NOT NULL,
+`user_id` int(11) NOT NULL,
+`created` datetime DEFAULT NULL,
+`modified` datetime DEFAULT NULL,
+`created_by` int(11) DEFAULT NULL,
+`modified_by` int(11) DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `users` (
+`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(255) DEFAULT NULL,
+`username` varchar(255) NOT NULL DEFAULT '',
+`role` varchar(255) NOT NULL,
+`password` varchar(255) NOT NULL,
+`created` datetime DEFAULT NULL,
+`modified` datetime DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5.1. CakePHP Skema & Model </small>
+		<p>Anda juga boleh mencipta skema data dengan menggunakan php skrip.
+		Caranya adalah dengan mencipta satu fail schema.php didalam direktori Config/Schema.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php 
+// Skrip fail Config/Schema/schema.php
+class AppSchema extends CakeSchema 
+{
+	public function before($event = array()) 
+	{
+		return true;
+	}
+	
+	public function after($event = array()) {}
+	
+	public $project_applicants = array(
+	'id' => array('type' => 'integer', 'null' => false, 'default'=> null, 'unsigned' => true, 'key' => 'primary'),
+	'project_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+	'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+	'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+	'indexes' => array(	'PRIMARY' => array('column' => 'id', 'unique' => 1)	),
+	'tableParameters' => array('charset' => 'latin1', 'collate' =>	' latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
+	public $projects = array(
+	'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
+	'name' => array('type' => 'string', 'null' => false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'details' => array('type' => 'string', 'null' => false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'start_date' => array('type' => 'datetime', 'null' => false, 'default' => null),
+	'end_date' => array('type' => 'datetime', 'null' => false, 	'default' => null),
+	'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'user_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
+	'indexes' => array(	'PRIMARY' => array('column' => 'id', 'unique' => 1)	),
+	'tableParameters' => array('charset' => 'latin1',
+	'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+	
+	public $users = array(
+	'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => true, 'key' => 'primary'),
+	'name' => array('type' => 'string', 'null' => false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'username' => array('type' => 'string', 'null' => false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'password' => array('type' => 'string', 'null' => false, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
+	'indexes' => array(	'PRIMARY' => array('column' => 'id', 'unique' => 1)	),
+	'tableParameters' => array('charset' => 'latin1', 'collate' =>'latin1_swedish_ci', 'engine' => 'InnoDB')
+	);
+}
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
 	</section>
 	<section>
 		<h2> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </h2>
