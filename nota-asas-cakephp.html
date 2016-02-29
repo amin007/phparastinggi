@@ -226,13 +226,56 @@ document.write( '<link rel="stylesheet" href="css/print/'
 	</section>
 	<section>
 		<h2> Bab 3.1. Windows </h2><small>Cara memasang Cake Console CLI</small>
-		
+		<p align="justify">	1.Pergi ke Start 
+		<i class="fa fa-long-arrow-right"></i> Control Panel 
+		<i class="fa fa-long-arrow-right"></i> System and Security 
+		<i class="fa fa-long-arrow-right"></i> Advanced system settings
+		<i class="fa fa-long-arrow-right"></i> Advanced 
+		<i class="fa fa-long-arrow-right"></i> Enviroment Variables 
+		<i class="fa fa-long-arrow-right"></i> cari PATH dan klik Edit.
+		</p>
+	</section>
+	<section>
+		<small>Cara memasang Cake Console CLI</small>
+		<p align="justify">2. Anda perlu menambah path ke direktori CakePHP yang anda muat turun tadi ke Variable Value.
+		<br>Contoh path yang akan ditambah: <small>C:\xampp\htdocs\cakephp-2.5.7\lib\Cake\Console.</small></p>
+		<dir align="center"><img height="55%" width="55%" src="imgs/cakephp-win7-path.png"></dir>
 	</section>
 	<section>
 		<h2> Bab 3.2. Linux/*nix. </h2><small>Cara memasang Cake Console CLI</small>
+		<p>1.Buka terminal dan jalankan arahan(command) ini:</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">~$ vi ~/.bashrc</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small>Cara memasang Cake Console CLI</small><p>2. Tambahkan kod ini :</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">export PATH="$PATH:/var/www/html/cakephp/lib/Cake/Console"
+// atau
+export PATH="$PATH:/var/www/cakephp/lib/Cake/Console"</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<dir align="center"><img height="55%" width="55%" src="imgs/cakephp-ubuntu-path.png"></dir>
 	</section>
 	<section>
 		<h2> Bab 3.3. OSX. </h2><small>Cara memasang Cake Console CLI</small>
+		<p>1.Buka terminal dan jalankan arahan(command) ini:</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">~$ vi ~/.bashrc
+// atau
+~$ vi ~/.bash_profile
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small>Cara memasang Cake Console CLI</small><p>2. Tambahkan kod ini :</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">export PATH="$PATH:/var/www/html/cakephp/lib/Cake/Console"
+// atau
+export PATH="$PATH:/var/www/cakephp/lib/Cake/Console"
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<dir align="center"><img height="55%" width="55%" src="imgs/cakephp-osx-path.png"></dir>
 	</section>
 </section>
 <!-- bab 3 - tamat -->
