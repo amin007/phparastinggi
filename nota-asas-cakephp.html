@@ -312,6 +312,58 @@ export PATH="$PATH:/var/www/cakephp/lib/Cake/Console"
 <section>
 	<section>
 		<h2> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </h2>
+		<p align="justify">CakePHP Bake Console adalah satu lagi usaha untuk mencipta aplikasi CakePHP dengan
+		pantas. Bake dapat membina satu aplikasi yang boleh terus berfungsi dalam masa beberapa minit
+		sahaja. Bake console akan mencipta fail untuk model,view dan controller beserta kod sumber
+		fungsi asas seperti index,view,add,edit,dan delete di dalam controller.</p>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<p>Untuk menjana atau mencipta struktur aplikasi Cake menggunakan Bake Console,
+		sila taip arahan di bawah di terminal/cmd anda.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">cake bake</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p>Paparan seperti dibawah akan muncul </p>
+		<dir align="center"><img height="65%" width="65%" src="imgs/cakephp-osx-cakebake.png"></dir>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<p align="justify">*Sila pastikan anda berada di dalam document root server yang betul.
+		<br>Contoh:
+		<br>Jika anda menggunakan Linux,anda perlu berada di /var/www/html/ atau /var/www/.
+		<br>Jika anda menggunakan XAMPP di OSX,anda perlu berada di /Applications/XAMPP/htdocs/.
+		<br>Jika anda menggunakan XAMPP di windows,anda perlu berada di C:\xampp\htdocs.</p>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<p align="left">Ikut arahan di bawah ini untuk langkah seterusnya.
+		<br>S = Soalan | J = Jawapan
+		<br>S:What is the path to the project you want to bake?
+		<br>Jika anda menggunakan Linux/OSX, sila letakkan nama aplikasi yang anda mahu.
+		<br>Untuk modul panduan ini saya menggunakan nama pms untuk aplikasi pengurusan projek ini.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">Skel Directory: /Aplications/XAMPP/xamppfiles/htdocs/cakephp/lib/Cake/Console/Templates/skel
+Will be copied to: /var/www/html/pms
+-------------------------------------------------------
+Look okay? (y/n/q) 
+[y] > _ </code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p align="left">J: Taip "y" untuk yes.</p>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<p align="justify"> Tukar lokasi direktori anda sekarang dan masuk ke direktori aplikasi yang baru kita cipta tadi iaitu
+		direktori pms
+		cd pms
+		lihat senarai direktori dan fail dengan menggunakan arahan ini.
+		Linux/OSX
+		ls –la
+		Windows
+		dir
+		Hasilnya adalah seperti di bawah ini:
+
+		</p>
 	</section>
 	<section>
 		<h2> Bab 5.1. CakePHP Skema & Model </h2>
