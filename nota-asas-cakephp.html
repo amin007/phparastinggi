@@ -354,18 +354,57 @@ Look okay? (y/n/q)
 	<section>
 		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
 		<p align="justify"> Tukar lokasi direktori anda sekarang dan masuk ke direktori aplikasi yang baru kita cipta tadi iaitu
-		direktori pms
-		cd pms
+		direktori pms</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">cd pms</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 		lihat senarai direktori dan fail dengan menggunakan arahan ini.
-		Linux/OSX
-		ls –la
-		Windows
-		dir
-		Hasilnya adalah seperti di bawah ini:
-
-		</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// Linux/OSX
+ls –la
+// Windows
+dir</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<dir align="center">Hasilnya adalah seperti di bawah ini:
+		<img height="85%" width="85%" src="imgs/cakephp-osx-dir-pms.png"></dir>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<table class="excel"><tbody>
+		<tr><th colspan="2">Penerangan struktur direktori dan fail.</th></tr>
+		<tr><td>Config </td><td> Menyimpan (beberapa) fail konfigurasi CakePHP , maklumat sambungan
+		pangkalan data,dan beberapa fail yang penting.</td></tr>
+		<tr><td>Console </td><td> Mengandungi arahan dan tugas untuk Cake Console & Shell.</td></tr>
+		<tr><td>Controller </td><td> Mengandungi fail controller untuk aplikasi anda</td></tr>
+		<tr><td>Index.php </td><td> Fail untuk bootstrapping aplikasi anda.</td></tr>
+		<tr><td>Lib </td><td> Mengandungi libraries yang bukan dari 3rd parties vendor.</td></tr>
+		<tr><td>Locale </td><td> Menyimpan baris bahasa untuk tujuan pelbagai bahasa dalam satu aplikasi</td></tr>
+		<tr><td>Model </td><td> Mengandungi fail model untuk aplikasi anda</td></tr>
+		<tr><td>Plugin </td><td> Pakej plugin disimpan disini</td></tr>
+		<tr><td>Test </td><td> Menyimpan fail test case dan test fixtures untuk tujuan unit test ke atas
+		aplikasi anda</td></tr>
+		<tr><td>tmp </td><td> Disini CakePHP menyimpan data sementara(temporary data) seperti error
+		log,cookies,session,dll.</td></tr>
+		<tr><td>Vendor </td><td> 3rd parties class atau libraries disimpan disini</td></tr>
+		<tr><td>View </td><td> Mengandungi fail view untuk aplikasi anda</td></tr>
+		<tr><td>webroot </td><td> Menyimpan fail CSS,Javascript,Image,dll</td></tr>
+		<tr><td>.htaccess </td><td> Untuk melakukan apache url rewriting.</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 5. Menjana struktur aplikasi menggunakan Cake Bake Console. </small>
+		<p> Nota peringatan ! <br>
+		Jika anda sudah mempunyai direktori aplikasi, anda harus menggunakan
+		Cake Console & Command didalam direktori aplikasi anda. Sebagai
+		contoh,jika direktori aplikasi anda bernama "pms", anda perlu
+		menjalankan arahan cake bake didalam direktori "pms" bukan di luar dari
+		direktori "pms". </p>
+	</section>
+	<section>
+
 		<h2> Bab 5.1. CakePHP Skema & Model </h2>
 	</section>
 	<section>
