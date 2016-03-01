@@ -827,6 +827,29 @@ public $default = array(
 	</section>
 	<section>
 		<h2> Bab 6.3. Route </h2>
+		<p align="justify">
+		Routing adalah salah satu kelebihan yang berfungsi untuk mencantikkan url sebuah sistem web.
+		<br><br>Route dapat menukarkan url anda dari begini:
+		<br>http://localhost/pms/projects/view/1
+		<br><br>kepada
+		<br>http://localhost/pms/projek/tunjuk/1
+		<br><br>Untuk mengemaskini route, anda perlu melakukannya pada fail Config/route.php.
+		Kesemua route akan dikawal disini.</p>
+	</section>
+	<section>
+		<small> Bab 6.3.1. Route.</small>
+		<p align="justify">Ok mari kita cuba tukar url untuk bahagian projects pada bahasa melayu.</p>
+		<p align="justify">Copy &amp; paste kod dibawah ini ke dalam fail Config/route.php</p>
+
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">Router::connect('/senarai-projek', array('controller' => 'projects', 'action' => 'index'));
+Router::connect('/projek/tambah', array('controller' => 'projects', 'action' => 'add'));
+Router::connect('/senarai-pengguna', array('controller' => 'users', 'action' => 'index'));
+Router::connect('/pengguna/tambah', array('controller' => 'users', 'action' => 'add'));
+Router::connect('/senarai-peserta-projek', array('controller' => 'project_applicants', 'action' => 'index'));
+Router::connect('/peserta-projek/tambah', array('controller' => 'project_applicants', 'action' => 'add'));
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 </section>
 <!-- bab 6 - tamat -->
@@ -834,16 +857,188 @@ public $default = array(
 <section>
 	<section>
 		<h2> Bab 7. Membina fungsi log masuk dan log keluar</h2> 
-		
-		(Login & Logout with Simple Authentication
-		and Authorization Application)
-		 
+		<small>
+		<br>(Login & Logout with Simple Authentication and Authorization Application)
+		<br>Rujukan : http://book.cakephp.org/2.0/en/tutorials-and-examples/blog-auth-example/auth.html
+		</small> 
 	</section>
 	<section>
 		<h2> Bab 7.1. Membuat Tetapan dan Kemaskini </h2>
+		<p>Kita perlu menambah satu lagi field di table users,iaitu field “role”.
+		Untuk melakukan pengubahan ini,kita cuma perlu menambah key dan value seperti dibawah ini
+		pada array $users di dalam fail Config/Schema/schema.php.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">'role' => array('type'=> 'string', 'null' => false, 'collate'=>
+'latin1_swedish_ci', 'charset'=> 'latin1'),
+</code></pre>
+	<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<h2> Bab 7.2. Pengesahan Log Masuk & Log Keluar (Login & Logout Authentication) </h2>
+		<small> Bab 7.1.1. Membuat Tetapan dan Kemaskini </small>
+		<p>untuk mengemaskini skema pangkalan data yang baru kita tambah tadi,taip arahan di bawah ini
+		pada terminal/cmd.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">cake schema update</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p>skema pangkalan data akan dikemaskini mengikut field table yang kita tambah tadi.</p>
+	</section>
+	<section>
+		<small> Bab 7.1.2. Membuat Tetapan dan Kemaskini </small>
+		<p>Seterusnya, buka fail Model/User.php
+		Tambahkan index array dibawah ini ke dalam array $validate.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">'role' => array(
+	'valid'=> array(
+		'rule' => array('inList', array('admin', 'staff')),
+		'message' => 'Sila pilih salah satu jenis pengguna',
+		'allowEmpty' => false
+		)
+	)
+// Rujuk gambar disebelah.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<img height="40%" width="40%" src="imgs/cakephp-fail_model_user.png">
+	</section>
+	<section>
+		<small> Bab 7.1.3. Membuat Tetapan dan Kemaskini </small>
+		<p>Seterusnya buka fail View/Users/add.ctp dan tambahkan kod dibawah ini selepas 
+		kod <code class="php"> echo $this->Form->input('password); </code></p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">echo $this->Form->input('role', 
+	array(options' => array('admin' => 'Admin', 'staff' => 'Staff'))
+);
+//Rujuk gambar dibawah.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">echo $this->Form->input('password); 
+echo $this->Form->input('role', 
+	array(options' => array('admin' => 'Admin', 'staff' => 'Staff'))
+);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h2> Bab 7.2. Pengesahan Log Masuk & Log Keluar </h2>
+		<small>(Login & Logout Authentication)</small>
+		<p align="justify">
+		Kita sekarang sudah boleh bermula untuk membina fungsi pengesahan log masuk dan log keluar
+		untuk sistem pengurusan projek ini.
+		Kita akan menggunakan 2 komponen yang telah terbina bersama CakePHP iaitu:
+		-Komponen Session
+		-Komponen Auth
+		Buka fail Controller/AppController.php dan tambahkan kod dibawah ini ke dalam class
+		AppController.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public $components = array(
+'Session',
+'Auth' => array(
+	'loginRedirect' => array('controller' => 'projects','action' => 'index',),
+	'logoutRedirect' => array('controller' => 'users','action' => 'login'),
+	'authenticate' => array('Form' => array('passwordHasher' => 'Blowfish',))
+)
+);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
+Rujuk gambar di sebelah.
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
+		Kita perlu menambah dua fungsi pada UsersController iaitu fungsi login() dan fungsi logout()
+		untuk mengawal perjalanan log masuk dan log keluar sistem ini.
+		Buka fail Controller/UsersController.php dan tambahkan kod dibawah ini pada class
+		UsersController</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function login() {
+if ($this->request->is('post')) {
+if ($this->Auth->login()) {
+return $this->redirect($this->Auth->redirectUrl());
+}
+$this->Session->setFlash(__('Maaf ada sila cek semula
+username & password anda.'));
+}
+}
+public function logout() {
+return $this->redirect($this->Auth->logout());
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+Rujuk gambar di sebelah.
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
+		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau
+		tidak.Jika data yang diberi adalah sah,ia akan membenarkan pengguna mengakses url yang
+		diminta.
+		Fungsi logout akan memadam sesi (Session) pengguna yang telah mengakses sistem dan terus
+		dibawa keluar dari sistem.
+		Seterusnya kita akan membuat paparan untuk fungsi login.
+		Untuk membuat paparan login,anda perlu membuka direktori View/Users/ .dan cipta satu fail
+		bernama login.ctp.Tambahkan kod dibawah ini pada fail login.ctp tadi.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;div class="users form">
+&lt;?php echo $this->Session->flash('auth'); ?>
+&lt;?php echo $this->Form->create('User'); ?>
+&lt;fieldset>
+&lt;legend>
+&lt;?php echo __(‘Sila isikan Username & password’); ?>
+&lt;/legend>
+&lt;?php echo $this->Form->input('username');
+echo $this->Form->input('password');
+?>
+&lt;/fieldset>
+&lt;?php echo $this->Form->end(__('Login')); ?>
+&lt;/div>
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
+		Untuk mengetahui sama ada fungsi ini berjaya atau tidak,sila buka browser dan akses sistem
+		kita.
+		Jika anda berjaya, anda akan mendapat paparan seperti dibawah</p>
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
+		Seterusnya kita akan menambah hyperlink untuk fungsi logout & login pada header page
+		sistem pms ini.
+		Buka fail View/Layouts/default.ctp,copy kod dibawah ini dan paste ke dalam elemen &lt;header>.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$userDetails = $this->Session->read('Auth.User');
+if(isset($userDetails)):
+echo $this->Html->link('Log
+Masuk',array('controller'=>'users','action'=>'logout'));
+else:
+echo $this->Html->link('Log
+Keluar',array('controller'=>'users','action'=>'logout'));
+endif;
+?>
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">Maksud kod di atas ialah:
+		$this->Session->read(‘Auth.User’) :Membaca sesi pengguna sistem menggunakan
+		Session Helper.
+		if(isset($userDetails)) : Memeriksa sama ada sesi pengguna wujud atau
+		tidak.
+		Jika sesi pengguna wujud, hyperlink akan bertukar kepada teks “Log Keluar” untuk fungsi
+		Logout.
+		Jika tidak,teks hyperlink akan bertukar kepada “Log Masuk” untuk fungsi login.
+		</p>
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
+		Jika anda berjaya,paparannya adalah seperti di bawah ini.
+		</p>		
 	</section>
 	<section>
 		<h2> Bab 7.3. Penggunaan fungsi beforeFilter. </h2>
