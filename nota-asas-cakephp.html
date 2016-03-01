@@ -746,7 +746,84 @@ public $default = array(
 		</tbody></table>		
 	</section>
 	<section>
-		<h2> Bab 6.2. Menjana kod sumber untuk Model,View & Controller. </h2>
+		<h2> Bab 6.2. Menjana kod sumber untuk MVC. </h2>
+		<p>Pastikan anda berada di dalam direktori aplikasi anda iaitu "pms".
+		Sekarang taipkan arahan di bawah.</p>
+		<table class="excel"><tbody>
+		<tr><th colspan="2"> </th></tr>
+		<tr><td>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<code class="php">cake bake all</code>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</td><td><img height="85%" width="85%" src="imgs/cakephp-osx-cake_bake_all.png"></td></tr>
+		</tbody></table>
+
+	</section>
+	<section>
+		<small> Bab 6.2.1. Menjana kod sumber untuk MVC.</small>
+		<p align="justify">Sekarang apa yang perlu anda lakukan adalah, masukkan nombor mengikut urutan.
+		Kita akan bake ProjectApplicant dahulu. Jadi masukkan nombor 1 pada terminal/cmd.</p>
+	</section>
+	<section>
+		<small> Bab 6.2.2. Menjana kod sumber untuk MVC.</small>
+		<p align="justify">Anda akan mendapat paparan seperti ini apabila ia 
+		console bake berjaya menjana kod sumber
+		untuk Model,View & Controller. Rujuk gambar.</p>
+		<div align="center">
+		<img height="45%" width="45%" src="imgs/cakephp-osx-project_applicant.png">
+		<small>Proses bake selesai untuk ProjectApplicant.</small>
+		</div>
+	</section>
+	<section>
+		<small> Bab 6.2.3. Menjana kod sumber untuk MVC.</small>
+		<p>Seterusnya, untuk bake model Project & User, anda cuma perlu mengulangi langkah di atas.
+		Untuk mengetahui sama ada cake menjana & mencipta kod sumber tadi,kita buka folder
+		Model,View & Controller
+		</p>
+	</section>
+	<section>
+		<small> Bab 6.2.4. Menjana kod sumber untuk MVC.</small>
+		<table><tbody>
+		<tr>
+		<td valign="top"><img height="100%" width="100%" src="imgs/cakephp-folder_view.png">
+		<br>Fail view <br> yang telah dicipta </td>
+		<td valign="top"><img height="100%" width="100%" src="imgs/cakephp-folder_model.png">
+		<br>Fail model <br> yang telah dicipta </td>
+		<td valign="top"><img height="100%" width="100%" src="imgs/cakephp-folder_controller.png">
+		<br>Fail controller <br> yang telah dicipta </td>
+		</tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 6.2.5. Menjana kod sumber untuk MVC.</small>
+
+<p>
+Kita akan cuba menambah user ke dalam sistem kita dengan membuka url
+http://localhost/pms/users/add.
+Paparan seperti dibawah ini akan muncul.</p>
+<p>Sila cuba tambah user dan submit.
+Kemudian ia akan membawa kita ke url http://localhost/pms/users dan menyenaraikan users
+yang ada didalam pangkalan data.
+</p>
+<p>Sekarang ini anda sudah pun mempunyai kod sumber asas untuk sistem pengurusan projek ini.
+Jika anda buka fail Controller/UsersController.php,anda akan melihat fungsi
+index,view,add,edit dan delete sudah terbina.Fungsi inilah yang memainkan peranan untuk
+mengawal perjalan sistem anda.
+</p>
+<p>
+Jika anda buka fail Model/User.php,anda akan melihat validation rules & association telah
+terbina dan ia akan mengawal bisnes logik aplikasi anda.
+</p>
+	</section>
+	<section>
+		<small> Bab 6.2.6. Menjana kod sumber untuk MVC.</small>
+<p>
+Jika anda buka fail View/Users/index.ctp,anda akan melihat kod HTML bersama PHP yang
+digunakan untuk memapar data dari pangkalan data.Disini jugalah anda akan menghias dan
+mereka bentuk paparan antaramuka pengguna(User Interface) sistem anda.
+Mudah kan?
+</p>
+		
 	</section>
 	<section>
 		<h2> Bab 6.3. Route </h2>
