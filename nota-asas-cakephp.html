@@ -599,11 +599,85 @@ cake schema</code></pre>
 		<dir align="center"><small>Contoh pangkalan data MySQL yang telah dicipta 
 		dan dibuka menggunakan perisian Sequel Pro.</small>
 		<img height="65%" width="65%" src="imgs/cakephp-mysql_sequalpro.png"></dir>
-		
 	</section>
 	<section>
-		<h2> Bab 5.3. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP
-		Connection).</h2>
+		<h2> Bab 5.3. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</h2>
+		<p align="justify">Untuk membuat penyambungan antara MySQL dan CakePHP dengan mudah, anda boleh
+		menggunakan arahan cake bake. Pastikan anda berada didalam direktori aplikasi anda iaitu 
+		direktori pms & jalankan arahan cake bake sekali lagi.
+		</p>
+	</section>
+	<section>
+		<small> Bab 5.3.1. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// J: Jawapan
+Your database configuration was not found. Take a moment to create one
+----------------------------------------------------------------------
+Database Configuration
+----------------------------------------------------------------------
+Name:
+[default] > _
+// J: Tekan "enter" .Kita akan gunakan tetapan default .
+Datasource: (Mysql/Postgress/Sqlite/Sqlserver)
+[Mysql] > _
+// J: Tekan "enter". Kita akan gunakan MySQL untuk datasource/database.
+Persistent Connection?
+// J: Taip "y" jika hendak mengaktifkan,Tekan "enter" jika tidak.
+Database Host
+// J: Tekan "enter" jika localhost,isikan host anda jika ia berlainan dari localhost.
+Port?
+// J: Taipkan nombor MySQL jika anda menggunakan port untuk melakukan 
+// penyambungan MySQL, Tekan "enter" jika tidak.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5.3.2. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// J: Jawapan
+User
+// J: Taipkan nama pengguna(username) MySQL anda,jika ia adalah "root" tekan "enter".
+Password
+// J: Taipkan kata laluan(password) MySQL anda,
+// jika tiada tekan "enter" dan taip "y" untuk soalan seterusnya.
+Database Name
+// J: Taipkan nama pangkalan data yang kita cipta tadi iaitu "pms"
+Table Prefix?
+// J: Taipkan nama table prefix jika anda mahu.
+Table encoding
+// J: Taipkan nama table encoding jika anda mahu ubah.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5.3.3. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// J: Jawapan
+-------------------------------------------------------------------------------------------
+The following database configuration will be created
+-------------------------------------------------------------------------------------------
+Name: 		default
+Datasource: 	Mysql
+Persistent: 	false
+Host: 		localhost
+User: 		root
+Pass: 		*******
+Database: 	pms
+-------------------------------------------------------------------------------------------
+Look okay (y/n)
+[y] > _
+// J: Taip "y" jika anda berpuashati,taip "n" jika anda ingin mengulangi proses semula.
+Do you wish to add another database configuration?
+// J: Taip "y" jika anda mahu menambah penyambungan 
+// pangkalan data, tekan "enter" jika tidak.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5.3.4. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+		<p>Untuk mengetahui sama ada penyambungan tadi berjaya atau tidak, 
+		buka browser dengan url ini, http://localhost/pms </p>
+		<dir align="center"><img height="75%" width="75%" src="imgs/cakephp-localhost-pms.png"></dir>
 	</section>
 </section>
 <!-- bab 5 - tamat -->
