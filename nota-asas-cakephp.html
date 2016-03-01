@@ -676,8 +676,42 @@ Do you wish to add another database configuration?
 	<section>
 		<small> Bab 5.3.4. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
 		<p>Untuk mengetahui sama ada penyambungan tadi berjaya atau tidak, 
-		buka browser dengan url ini, http://localhost/pms </p>
-		<dir align="center"><img height="75%" width="75%" src="imgs/cakephp-localhost-pms.png"></dir>
+		buka browser dengan url ini, http://localhost/pms 
+		<img height="75%" width="75%" src="imgs/cakephp-localhost-pms.png"></p>
+	</section>
+	<section>
+		<small> Bab 5.3.4. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+		<p>	Jika anda mendapat mesej seperti ini </p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">CakePHP is NOT able to connect to the database
+Database connection "Mysql" is missing, or could not be created
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p>	Bermakna anda mempunyai masalah dengan penyambungan yang dibuat sebentar tadi. </p>
+	</section>
+	<section>
+		<small> Bab 5.3.5. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+		<p> Anda boleh melakukan pengubahan tetapan dengan membuka fail database.php di dalam direktori
+		<strong>Config/Schema/database.php</strong>
+		<img height="65%" width="65%" src="imgs/cakephp-osx-folder_pms_config_schema_database.png"></p>
+	</section>
+	<section>
+		<small> Bab 5.3.6. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP Connection).</small>
+		<p>Anda perlu menambah variable ‘unix_socket’ ke dalam $default = array() dan tetapkan nilainya.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// Contoh:
+public $default = array(
+'datasource' => 'Database/Mysql',
+'persistent' => false,
+'host' => 'localhost',
+'login' => 'root',
+'password' => 'admin321',
+'database' => 'pms',
+'unix_socket' => '/var/mysql.sock', //unix socket
+);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
 	</section>
 </section>
 <!-- bab 5 - tamat -->
