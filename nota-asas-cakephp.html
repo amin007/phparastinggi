@@ -554,6 +554,52 @@ class AppSchema extends CakeSchema
 	</section>
 	<section>
 		<h2> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </h2>
+		<p align="justify">Schema shell berfungsi untuk membina skema objek dan juga skema MySQL dump. 
+		Schema shell juga boleh digunakan untuk mengemaskini atau mengubah skema pangkalan data.
+		Rujuk http://book.cakephp.org/2.0/en/console-and-shells/schema-management-and-migrations.html</p>
+	</section>
+	<section>
+		<small> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </small>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">// Untuk mengetahui arahan-arahan yang ada didalam Schema Console, gunakan arahan ini
+cake schema</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<dir align="center">Paparan seperti dibawah akan muncul
+		<img height="65%" width="65%" src="imgs/cakephp-cake_schema.png"></dir>
+	</section>
+	<section>
+		<small> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </small>
+		<p>Sebentar tadi anda telah mencipta fail schema.php. Oleh itu gunakan arahan dibawah ini untuk
+		membina skema objek di pangkalan data MySQL.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">cake schema create</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p>Hasil daripada arahan di atas adalah, ia akan mencipta table di pangkalan data MySQL.</p>
+	</section>
+	<section>
+		<small> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </small>
+		<p>Jadual dibawah menerangkan kegunaan arahan Schema Console.</p>
+		<table class="excel"><tbody>
+		<tr><th colspan="2"> Arahan Fungsi</th></tr>
+		<tr><td> view </td>
+			<td> Memaparkan kandungan fail skema.</td></tr>
+		<tr><td> generate </td>
+			<td> Menjana skema berdasarkan model yang dicipta. Untuk memproses kesemua data 
+				yang ada didalam table sql gunakan parameter –f .</td></tr>
+		<tr><td> dump </td>
+			<td> Menjana/mencipta SQL dump fail. contoh : schema.sql.</td></tr>
+		<tr><td> create </td>
+			<td> Memadam dan menjana semula skema berdasarkan fail skema yang dicipta.</td></tr>
+		<tr><td> update </td>
+			<td> Mengubah table data berdasarkan fail skema yang dicipta.</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 5.2. Cara untuk membina skema pangkalan data menggunakan Cake Schema Console. </small>	
+		<dir align="center"><small>Contoh pangkalan data MySQL yang telah dicipta 
+		dan dibuka menggunakan perisian Sequel Pro.</small>
+		<img height="65%" width="65%" src="imgs/cakephp-mysql_sequalpro.png"></dir>
+		
 	</section>
 	<section>
 		<h2> Bab 5.3. Penyambungan pangkalan data menggunakan Cake Bake Console (MYSQL & CakePHP
