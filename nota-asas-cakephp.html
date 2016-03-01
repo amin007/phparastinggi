@@ -940,7 +940,6 @@ echo $this->Form->input('role',
 );
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-
 Rujuk gambar di sebelah.
 	</section>
 	<section>
@@ -951,18 +950,15 @@ Rujuk gambar di sebelah.
 		Buka fail Controller/UsersController.php dan tambahkan kod dibawah ini pada class
 		UsersController</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">public function login() {
-if ($this->request->is('post')) {
-if ($this->Auth->login()) {
-return $this->redirect($this->Auth->redirectUrl());
+<pre><code class="php">public function login() 
+{
+	if ($this->request->is('post')) 
+	{
+		if ($this->Auth->login()) {return $this->redirect($this->Auth->redirectUrl());}
+		$this->Session->setFlash(__('Maaf ada sila cek semula username & password anda.'));
+	}
 }
-$this->Session->setFlash(__('Maaf ada sila cek semula
-username & password anda.'));
-}
-}
-public function logout() {
-return $this->redirect($this->Auth->logout());
-}
+public function logout() {return $this->redirect($this->Auth->logout());}
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 Rujuk gambar di sebelah.
@@ -970,14 +966,19 @@ Rujuk gambar di sebelah.
 	<section>
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
-		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau
-		tidak.Jika data yang diberi adalah sah,ia akan membenarkan pengguna mengakses url yang
-		diminta.
+		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau tidak.<br>
+		Jika data yang diberi adalah sah,ia akan membenarkan pengguna mengakses url yang
+		diminta. <br>
 		Fungsi logout akan memadam sesi (Session) pengguna yang telah mengakses sistem dan terus
-		dibawa keluar dari sistem.
+		dibawa keluar dari sistem.</p>
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">
 		Seterusnya kita akan membuat paparan untuk fungsi login.
-		Untuk membuat paparan login,anda perlu membuka direktori View/Users/ .dan cipta satu fail
-		bernama login.ctp.Tambahkan kod dibawah ini pada fail login.ctp tadi.</p>
+		Untuk membuat paparan login, anda perlu membuka direktori View/Users/ .
+		dan cipta satu fail bernama login.ctp. 
+		Tambahkan kod dibawah ini pada fail login.ctp tadi.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;div class="users form">
 &lt;?php echo $this->Session->flash('auth'); ?>
@@ -1012,11 +1013,9 @@ echo $this->Form->input('password');
 <pre><code class="php">&lt;?php
 $userDetails = $this->Session->read('Auth.User');
 if(isset($userDetails)):
-echo $this->Html->link('Log
-Masuk',array('controller'=>'users','action'=>'logout'));
+	echo $this->Html->link('Log Masuk',array('controller'=>'users','action'=>'logout'));
 else:
-echo $this->Html->link('Log
-Keluar',array('controller'=>'users','action'=>'logout'));
+	echo $this->Html->link('Log Keluar',array('controller'=>'users','action'=>'logout'));
 endif;
 ?>
 </code></pre>
