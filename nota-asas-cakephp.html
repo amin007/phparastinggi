@@ -1075,13 +1075,13 @@ endif;
 	
 		<table class="excel"><tbody>
 		<tr><td> 
-Ini kerana fungsi loginRedirect didalam komponen Auth telah berjalan dan menapis akses anda
-ke url yang anda minta kerana untuk melihat isi kandungan url
-http://localhost/pms/projects/index anda perlu log masuk terlebih dahulu. Bagaimana pula jika
-anda hendak melihat senarai projek tanpa perlu log masuk?
-<br><br>Anda hanya perlu menambah kod seperti dibawah ini bersama fungsi beforeFilter ke dalam
-ProjectsController. Buka fail Controller/ProjectsController.php dan tambah kod dibawah
-didalam class ProjectsController.
+		Ini kerana fungsi loginRedirect didalam komponen Auth telah berjalan dan menapis akses anda
+		ke url yang anda minta kerana untuk melihat isi kandungan url
+		http://localhost/pms/projects/index anda perlu log masuk terlebih dahulu. Bagaimana pula jika
+		anda hendak melihat senarai projek tanpa perlu log masuk?
+		<br><br>Anda hanya perlu menambah kod seperti dibawah ini bersama fungsi beforeFilter ke dalam
+		ProjectsController. Buka fail Controller/ProjectsController.php dan tambah kod dibawah
+		didalam class ProjectsController.
 		</td></tr>
 		</tbody></table>
 		
@@ -1111,35 +1111,45 @@ didalam class ProjectsController.
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+		<table class="excel"><tbody>
+		<tr><td> 
 		Anda boleh menambah seberapa banyak fungsi yang anda mahu penggunaannya diakses tanpa
-log masuk ke dalam sistem.
-Contoh kod:
+		log masuk ke dalam sistem.
+		</td></tr>
+		</tbody></table>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">//Contoh kod:
 public function beforeFilter() {
 parent::beforeFilter();
 $this->Auth->allow('index',’add’,’view’);
 }
-Contoh kod diatas akan membenarkan fungsi index,add dan view pada class ProjectsController
-diakses tanpa pengguna perlu log masuk ke dalam sistem.
-
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel"><tbody>
+		<tr><td> 
+		Contoh kod diatas akan membenarkan fungsi index,add dan view pada class ProjectsController
+		diakses tanpa pengguna perlu log masuk ke dalam sistem.
+		</td></tr>
+		</tbody></table>
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
-Mari teruskan dengan membenarkan fungsi login,logout dan add di UsersController
-dapat diakses sebelum ditapis oleh Auth komponen.Ini membolehkan pengguna
-mendaftar/menambah pengguna baru .
-Tambah kod dibawah ini ke dalam fail Controller/UsersController.php
-public function beforeFilter() {
+		<table class="excel"><tbody>
+		<tr><td> 
+		Mari teruskan dengan membenarkan fungsi login,logout dan add di UsersController
+		dapat diakses sebelum ditapis oleh Auth komponen.Ini membolehkan pengguna
+		mendaftar/menambah pengguna baru .
+		<br><br>Tambah kod dibawah ini ke dalam fail Controller/UsersController.php
+		</td></tr>
+		</tbody></table>
+
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function beforeFilter() {
 parent::beforeFilter();
 $this->Auth->allow('login', 'logout','add');
 }
-		
-	</section>
-	<section>
-		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
-	</section>
-	<section>
-		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
-
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<h2> Bab 7.4. Password Hashing. </h2>
