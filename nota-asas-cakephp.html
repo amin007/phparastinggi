@@ -1153,32 +1153,208 @@ $this->Auth->allow('login', 'logout','add');
 	</section>
 	<section>
 		<h2> Bab 7.4. Password Hashing. </h2>
+		<table class="excel"><tbody>
+		<tr><td> 
+		Untuk password hashing kita akan gunakan BlowFishPasswordHasher yang terbina bersama CakePHP 2.
+
+		<br><br>Untuk mengetahui lebih lanjut tentang Blowfish Encryption sila rujuk:
+		http://en.wikipedia.org/wiki/Blowfish_%28cipher%29
+
+		<br><br>Untuk menggunakan class BlowFishPasswordHasher kita perlu memanggil class tersebut
+		dengan menggunakan kod dibawah ini ke dalam fail Model/User.php:
+		</td></tr>
+		</tbody></table>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+// Letak kod diatas selepas kod App::uses('AppModel', 'Model');.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Bab 7.4.1 Password Hashing </small>
-	
+		<p align="left"> 
+		Seterusnya tambahkan fungsi callback beforeSave ke dalam model User
+		</p>
+
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function beforeSave($options = array()) 
+{
+	if (isset($this->data[$this->alias]['password'])) 
+	{
+		$passwordHasher = new
+		BlowfishPasswordHasher();
+		$this->data[$this->alias]['password'] = $passwordHasher->
+			hash($this->data[$this->alias]['password']);
+	}
+	return true;
+};
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 7.4.1 Password Hashing </small>
 		<table class="excel"><tbody>
 		<tr><td> 
-
-		</td></tr>
-		<tr><td>
-			<img height="85%" width="85%" src="imgs/.png">
+		Sekarang ini,apabila anda menambah pengguna baru,setiap password akan disulitkan dengan beberapa unik karakter yang dipilih secara rawak.
+		<br><br>Contoh password yang telah menggunakan BlowFishPasswordHasher
 		</td></tr>
 		</tbody></table>
-		
+		<table class="excel"><tbody>
+		<tr>
+			<th> id </th>
+			<th> username </th>
+			<th> role </th>
+			<th> password </th>
+		</tr>
+		<tr>
+			<td> 1 </td>
+			<td> malik </td>
+			<td> admin </td>
+			<td> `1234567890-=+_)(*&^%$#@!) </td>
+		</tr>
+		</tbody></table>
 	</section>
 	<section>
 		<h2> Bab 7.5. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization). </h2>
+		<table class="excel"><tbody>
+		<tr><td> 
+		Sekarang ini,kita akan menambah penapisan bagi setiap pengguna yang akan mengakses sistem
+		ini supaya mereka berada di kawasan yang sepatutnya.
+
+		<br><br>Contohnya pengguna di dalam kategori staff tidak dibenarkan untuk edit atau delete projek yang telah dicipta oleh admin.
+
+		<br><br>Untuk menjayakan kaedah ini,anda perlu mengubah beberapa kod di model,view,dan controller.
+		</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<table class="excel"><tbody>
+		<tr><td> 
+		
+		Kita akan buat pada satu seksyen dahulu iaitu seksyen projects. Untuk seksyen seterusnya (seksyen users,sekysen project applicants), anda cuma perlu mengikuti langkah-langkah dibawah ini semula dan ubah kod mengikut nama controller/model seksyen yang anda ubah.
+
+		Kita mula dengan mengubah kod di dalam fail View/Projects/add.ctp.
+		</td></tr>
+		</tbody></table>
+
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+
+		<p>Sila buang kod dibawah ini dari fail View/Projects/add.ctp</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">echo $this->Form->input('user_id');
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<p>Kemudian buka fail Controller/ProjectsController.php dan tambahkan kod dibawah ini didalam fungsi add.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">$this->request->data['Project']['user_id'] = $this->Auth->user('id');
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+
+		<p>Kod fungsi add anda haruslah seperti dibawah ini</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function add() 
+{
+	if ($this->request->is('post')) 
+	{
+		$this->request->data['Project']['user_id'] = 
+			$this->Auth->user('id');
+			// Fungsi $this->Auth->user() akan membaca data pengguna yang telah log masuk kedalam sistem. 
+			// Jika anda mengisi parameter id seperti $this->Auth->user('id'),
+			// ia akan mengambil id pengguna tersebut sahaja.
+		$this->Project->create();
+		if ($this->Project->save($this->request->data)) 
+		{
+			$this->Session->setFlash(__('Projek berjaya disimpan!'));
+			return $this->redirect(array('action' => 'index'));
+		} else 
+		{
+			$this->Session->setFlash(__('Maaf projek tidak '
+			. 'berjaya disimpan,sila cuba sekali lagi'));
+		}
+	}
+	
+	$users = $this->Project->User->find('list');
+	$this->set(compact('users'));
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
+
+	<p>Seterusnya buka fail Controller/AppController.php dan tambah kod dibawah ini pada array
+komponen Auth.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">'authorize' => array('Controller')
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
+
+	<p>dan tambahkan fungsi isAuthorized() untuk mengesan kategori pengguna yang log masuk ke sistem.</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">
+public function isAuthorized($user) {
+// Admin boleh akses semua fungsi
+if (isset($user['role']) && $user['role'] === 'admin') {
+return true;
+}
+// Jika bukan admin,tidak dibenarkan akses
+return false;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
+		<p>Kod anda haruslah seperti dibawah ini.Rujuk gambar.</p>
+		<img height="45%" width="45%" src="imgs/cakephp-function_isAuthorized_user.png">
 	</section>
 	<section>
 		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 	
 		<table class="excel"><tbody>
 		<tr><td> 
+		Kita baru sahaja membina mekanisma pengesahan yang mudah dalam masa yang singkat.
+		Dengan ini,pengguna yang didalam kategori admin akan dapat mengakses kesemua lokasi
+		sistem tetapi tidak pada staff.
+		<br><br>
+		Untuk membenarkan staff atau pengguna lain yang sudah log masuk mengakses pada lokasi
+		tertentu (contoh: http://localhost/pms/projects/add), ianya amat mudah.
+		Kita akan gunakan fungsi isAuthorized sekali lagi tetapi pada kali ini kita tambah pada controller Projects.
+		</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 
+		<p align="left">Buka fail Controller/ProjectsController.php dan tambah kod dibawah ini,</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function isAuthorized($user) 
+{
+	//akan memberi akses kepada pengguna yang sudah log masuk
+	//supaya dapat menambah projek baru
+	if ($this->action === 'add') {return true;}
+}
+//Dengan fungsi di atas ini, kita akan membenarkan staff untuk menambah projek baru.
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
+
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<table class="excel"><tbody>
+		<tr><td> 
+		Baiklah,mari kita cuba apa yang kita sudah buat.
+		Anda akan mendapat paparan seperti dibawah ini jika anda berjaya.
 		</td></tr>
 		<tr><td>
-			<img height="85%" width="85%" src="imgs/.png">
+			<img height="65%" width="65%" src="imgs/cakephp-localhost_pms_projects_add.png">
 		</td></tr>
 		</tbody></table>
 		
@@ -1189,11 +1365,30 @@ $this->Auth->allow('login', 'logout','add');
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- penghabisan - mula -->
 <section>
+	<section>
+		<h2>Rujukan Kod Sumber</h2>
+		<small>Github : https://github.com/malikperang/pms.</small>
+		<table class="excel"><tbody>
+		<tr><td> 
+		Jika anda mengalami sebarang masalah, anda perlu mengulangi dan mengikut langkah-langkah
+		yang diberi dengan teliti.
+		<br><br>Jika anda mengalami masalah dengan konfigurasi database atau konfigurasi CakePHP,
+		<br>Pergi ke https://github.com/malikperang/pms/tree/master/Config.
+		<br><br>Jika anda mengalami masalah dengan Model,
+		<br>Pergi ke https://github.com/malikperang/pms/tree/master/Model.
+		<br><br>Jika anda mengalami masalah dengan Controller,
+		<br>Pergi ke https://github.com/malikperang/pms/tree/master/Controller.
+		<br><br>Jika anda mengalamai masalah dengan View
+		<br>Pergi ke https://github.com/malikperang/pms/tree/master/View.
+		</td></tr>
+		</tbody></table>
+	</section>
 	<section><h2>Kredit aka Penghargaan</h2>
 		<hr/>
 		Fariz Izwan Kamaruzzaman <br>
 		malikperang{dekat}gmail{titik}com)<br>
 		https://github.com/malikperang/pms
+		
 	</section>
 	<section><h2>SUDAH HABIS DAA</h2>
 		<hr/>
