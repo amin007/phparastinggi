@@ -1057,7 +1057,7 @@ endif;
 		</p>
 	</section>
 	<section>
-		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter</small>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
 		<table class="excel"><tbody>
 		<tr><td> 
 			Contoh situasi :
@@ -1069,6 +1069,48 @@ endif;
 			<img height="85%" width="85%" src="imgs/cakephp-localhost-pms-user-login-no.png">
 		</td></tr>
 		</tbody></table>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+	
+		<table class="excel"><tbody>
+		<tr><td> 
+Ini kerana fungsi loginRedirect didalam komponen Auth telah berjalan dan menapis akses anda
+ke url yang anda minta kerana untuk melihat isi kandungan url
+http://localhost/pms/projects/index anda perlu log masuk terlebih dahulu. Bagaimana pula jika
+anda hendak melihat senarai projek tanpa perlu log masuk?
+<br><br>Anda hanya perlu menambah kod seperti dibawah ini bersama fungsi beforeFilter ke dalam
+ProjectsController. Buka fail Controller/ProjectsController.php dan tambah kod dibawah
+didalam class ProjectsController.
+		</td></tr>
+		</tbody></table>
+		
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">public function beforeFilter() 
+{
+	parent::beforeFilter();
+	$this->Auth->allow('index');
+	// $this->Auth->allow akan membenarkan fungsi yang dinyatakan didalam parameter allow()
+	// berjalan tanpa dihalang oleh Auth.
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+
 	</section>
 	<section>
 		<h2> Bab 7.4. Password Hashing. </h2>
