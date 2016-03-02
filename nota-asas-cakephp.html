@@ -1233,7 +1233,10 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 		<table class="excel"><tbody>
 		<tr><td> 
 		
-		Kita akan buat pada satu seksyen dahulu iaitu seksyen projects. Untuk seksyen seterusnya (seksyen users,sekysen project applicants), anda cuma perlu mengikuti langkah-langkah dibawah ini semula dan ubah kod mengikut nama controller/model seksyen yang anda ubah.
+		Kita akan buat pada satu seksyen dahulu iaitu seksyen projects. 
+		Untuk seksyen seterusnya (seksyen users,sekysen project applicants), 
+		anda cuma perlu mengikuti langkah-langkah dibawah ini semula dan 
+		ubah kod mengikut nama controller/model seksyen yang anda ubah.
 
 		Kita mula dengan mengubah kod di dalam fail View/Projects/add.ctp.
 		</td></tr>
@@ -1241,7 +1244,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<small> Bab 7.5.2. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 
 		<p>Sila buang kod dibawah ini dari fail View/Projects/add.ctp</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
@@ -1255,7 +1258,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<small> Bab 7.5.3. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 
 		<p>Kod fungsi add anda haruslah seperti dibawah ini</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
@@ -1287,16 +1290,15 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
+		<small> Bab 7.5.4. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
 
-	<p>Seterusnya buka fail Controller/AppController.php dan tambah kod dibawah ini pada array
-komponen Auth.</p>
+		<p>Seterusnya buka fail Controller/AppController.php 
+		dan tambah kod dibawah ini pada array komponen Auth.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">'authorize' => array('Controller')
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
-
-	<p>dan tambahkan fungsi isAuthorized() untuk mengesan kategori pengguna yang log masuk ke sistem.</p>
+		<p>dan tambahkan fungsi isAuthorized() untuk mengesan kategori pengguna yang log masuk ke sistem.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">
 public function isAuthorized($user) {
@@ -1311,12 +1313,12 @@ return false;
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
-		<p>Kod anda haruslah seperti dibawah ini.Rujuk gambar.</p>
+		<small> Bab 7.5.5. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>	
+		<p>Kod anda haruslah seperti dibawah ini.</p>
 		<img height="45%" width="45%" src="imgs/cakephp-function_isAuthorized_user.png">
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<small> Bab 7.5.6. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 	
 		<table class="excel"><tbody>
 		<tr><td> 
@@ -1331,7 +1333,7 @@ return false;
 		</tbody></table>
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<small> Bab 7.5.7. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 
 		<p align="left">Buka fail Controller/ProjectsController.php dan tambah kod dibawah ini,</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
@@ -1344,10 +1346,9 @@ return false;
 //Dengan fungsi di atas ini, kita akan membenarkan staff untuk menambah projek baru.
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->	
-
 	</section>
 	<section>
-		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+		<small> Bab 7.5.8. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
 		<table class="excel"><tbody>
 		<tr><td> 
 		Baiklah,mari kita cuba apa yang kita sudah buat.
@@ -1357,7 +1358,6 @@ return false;
 			<img height="65%" width="65%" src="imgs/cakephp-localhost_pms_projects_add.png">
 		</td></tr>
 		</tbody></table>
-		
 	</section>
 </section>
 <!-- bab 7 - tamat -->
