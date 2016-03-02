@@ -408,8 +408,8 @@ dir</code></pre>
 	<section>
 		<h2> Bab 5.1. CakePHP Skema & Model </h2>
 		<p align="justify">Kelebihan model didalam cakephp adalah ia kemampuan model membuat perhubungan dan
-pemetaan objek atau Object Relational Mapping(ORM). Untuk melakukan perhubungan ini, kita
-perlu menggunakan penyatuan model (Association).</p>
+		pemetaan objek atau Object Relational Mapping(ORM). Untuk melakukan perhubungan ini, kita
+		perlu menggunakan penyatuan model (Association).</p>
 	</section>
 	<section>
 		<small> Bab 5.1. CakePHP Skema & Model </small>
@@ -863,7 +863,7 @@ Router::connect('/peserta-projek/tambah', array('controller' => 'project_applica
 	</section>
 	<section>
 		<h2> Bab 7.1. Membuat Tetapan dan Kemaskini </h2>
-		<p>Kita perlu menambah satu lagi field di table users,iaitu field “role”.
+		<p align="justify">Kita perlu menambah satu lagi field di table users,iaitu field "role".
 		Untuk melakukan pengubahan ini,kita cuma perlu menambah key dan value seperti dibawah ini
 		pada array $users di dalam fail Config/Schema/schema.php.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
@@ -874,7 +874,7 @@ Router::connect('/peserta-projek/tambah', array('controller' => 'project_applica
 	</section>
 	<section>
 		<small> Bab 7.1.1. Membuat Tetapan dan Kemaskini </small>
-		<p>untuk mengemaskini skema pangkalan data yang baru kita tambah tadi,taip arahan di bawah ini
+		<p align="justify">untuk mengemaskini skema pangkalan data yang baru kita tambah tadi,taip arahan di bawah ini
 		pada terminal/cmd.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">cake schema update</code></pre>
@@ -885,8 +885,12 @@ Router::connect('/peserta-projek/tambah', array('controller' => 'project_applica
 		<small> Bab 7.1.2. Membuat Tetapan dan Kemaskini </small>
 		<p>Seterusnya, buka fail Model/User.php
 		Tambahkan index array dibawah ini ke dalam array $validate.</p>
-<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">'role' => array(
+		<table><tbody>
+		<tr><td>
+		<img height="90%" width="90%" src="imgs/cakephp-fail_model_user.png">
+		</td><td>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// 
+<code class="php"><pre>'role' => array(
 	'valid'=> array(
 		'rule' => array('inList', array('admin', 'staff')),
 		'message' => 'Sila pilih salah satu jenis pengguna',
@@ -894,9 +898,10 @@ Router::connect('/peserta-projek/tambah', array('controller' => 'project_applica
 		)
 	)
 // Rujuk gambar disebelah.
-</code></pre>
+</pre></code>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-		<img height="40%" width="40%" src="imgs/cakephp-fail_model_user.png">
+		</td></tr>
+		</tbody></table>
 	</section>
 	<section>
 		<small> Bab 7.1.3. Membuat Tetapan dan Kemaskini </small>
@@ -922,24 +927,24 @@ echo $this->Form->input('role',
 		<small>(Login & Logout Authentication)</small>
 		<p align="justify">
 		Kita sekarang sudah boleh bermula untuk membina fungsi pengesahan log masuk dan log keluar
-		untuk sistem pengurusan projek ini.
-		Kita akan menggunakan 2 komponen yang telah terbina bersama CakePHP iaitu:
-		-Komponen Session
-		-Komponen Auth
-		Buka fail Controller/AppController.php dan tambahkan kod dibawah ini ke dalam class
+		untuk sistem pengurusan projek ini.<br><br>
+		Kita akan menggunakan 2 komponen yang telah terbina bersama CakePHP iaitu 
+		Komponen Session &amp; Auth.</p>
+	</section>
+	<section>
+		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<p align="justify">Buka fail Controller/AppController.php dan tambahkan kod dibawah ini ke dalam class
 		AppController.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">public $components = array(
-'Session',
-'Auth' => array(
+'Session','Auth' => array(
 	'loginRedirect' => array('controller' => 'projects','action' => 'index',),
 	'logoutRedirect' => array('controller' => 'users','action' => 'login'),
-	'authenticate' => array('Form' => array('passwordHasher' => 'Blowfish',))
-)
+	'authenticate' => array('Form' => array('passwordHasher' => 'Blowfish')))
 );
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-Rujuk gambar di sebelah.
+<Rujuk gambar di sebelah.>
 	</section>
 	<section>
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
@@ -960,13 +965,13 @@ Rujuk gambar di sebelah.
 public function logout() {return $this->redirect($this->Auth->logout());}
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-Rujuk gambar di sebelah.
+<Rujuk gambar di sebelah.>
 	</section>
 	<section>
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
-		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau tidak.<br>
-		Jika data yang diberi adalah sah,ia akan membenarkan pengguna mengakses url yang
+		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau tidak. <br>
+		Jika data yang diberi adalah sah, ia akan membenarkan pengguna mengakses url yang
 		diminta. <br>
 		Fungsi logout akan memadam sesi (Session) pengguna yang telah mengakses sistem dan terus
 		dibawa keluar dari sistem.</p>
@@ -975,32 +980,34 @@ Rujuk gambar di sebelah.
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
 		Seterusnya kita akan membuat paparan untuk fungsi login.
-		Untuk membuat paparan login, anda perlu membuka direktori View/Users/ .
+		Untuk membuat paparan login, anda perlu membuka direktori View/Users/
 		dan cipta satu fail bernama login.ctp. 
 		Tambahkan kod dibawah ini pada fail login.ctp tadi.</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;div class="users form">
-&lt;?php echo $this->Session->flash('auth'); ?>
-&lt;?php echo $this->Form->create('User'); ?>
-&lt;fieldset>
-&lt;legend>
-&lt;?php echo __(‘Sila isikan Username & password’); ?>
-&lt;/legend>
-&lt;?php echo $this->Form->input('username');
-echo $this->Form->input('password');
-?>
-&lt;/fieldset>
-&lt;?php echo $this->Form->end(__('Login')); ?>
-&lt;/div>
+<pre><code class="php">&lt;div class="users form"&gt;
+&lt;?php echo $this-&gt;Session-&gt;flash('auth'); ?&gt;
+&lt;?php echo $this-&gt;Form-&gt;create('User'); ?&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;
+&lt;?php echo __('Sila isikan Username & password'); ?&gt;
+&lt;/legend&gt;
+&lt;?php echo $this-&gt;Form-&gt;input('username');
+echo $this-&gt;Form-&gt;input('password');
+?&gt;
+&lt;/fieldset&gt;
+&lt;?php echo $this-&gt;Form-&gt;end(__('Login')); ?&gt;
+&lt;/div&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
-		<p align="justify">
-		Untuk mengetahui sama ada fungsi ini berjaya atau tidak,sila buka browser dan akses sistem
-		kita.
-		Jika anda berjaya, anda akan mendapat paparan seperti dibawah</p>
+		<p align="left">
+		Untuk mengetahui sama ada fungsi ini berjaya atau tidak, 
+		sila buka browser dan akses sistem kita.
+		Jika anda berjaya, anda akan mendapat paparan seperti dibawah
+		<img height="85%" width="8s5%" src="imgs/cakephp-localhost-pms-user-login.png"></p>
+		
 	</section>
 	<section>
 		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
