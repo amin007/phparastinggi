@@ -1098,12 +1098,41 @@ didalam class ProjectsController.
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+		<table class="excel"><tbody>
+		<tr><td> 
+		Dan sekarang anda buka semula url http://localhost/pms/projects/index. Anda
+		sudah boleh melihat senarai projek seperti paparan dibawah ini.
+		</td></tr>
+		<tr><td>
+			<img height="85%" width="85%" src="imgs/cakephp-localhost-pms-project-index.png">
+		</td></tr>
+		</tbody></table>
+
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+		Anda boleh menambah seberapa banyak fungsi yang anda mahu penggunaannya diakses tanpa
+log masuk ke dalam sistem.
+Contoh kod:
+public function beforeFilter() {
+parent::beforeFilter();
+$this->Auth->allow('index',’add’,’view’);
+}
+Contoh kod diatas akan membenarkan fungsi index,add dan view pada class ProjectsController
+diakses tanpa pengguna perlu log masuk ke dalam sistem.
+
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
+Mari teruskan dengan membenarkan fungsi login,logout dan add di UsersController
+dapat diakses sebelum ditapis oleh Auth komponen.Ini membolehkan pengguna
+mendaftar/menambah pengguna baru .
+Tambah kod dibawah ini ke dalam fail Controller/UsersController.php
+public function beforeFilter() {
+parent::beforeFilter();
+$this->Auth->allow('login', 'logout','add');
+}
+		
 	</section>
 	<section>
 		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter </small>
