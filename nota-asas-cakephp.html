@@ -947,7 +947,7 @@ echo $this->Form->input('role',
 <Rujuk gambar di sebelah.>
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<small> Bab 7.2.2. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
 		Kita perlu menambah dua fungsi pada UsersController iaitu fungsi login() dan fungsi logout()
 		untuk mengawal perjalanan log masuk dan log keluar sistem ini.
@@ -968,7 +968,7 @@ public function logout() {return $this->redirect($this->Auth->logout());}
 <Rujuk gambar di sebelah.>
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<small> Bab 7.2.3. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
 		Fungsi login akan mengesan sama ada pengguna telah memasukkan data yang sah atau tidak. <br>
 		Jika data yang diberi adalah sah, ia akan membenarkan pengguna mengakses url yang
@@ -977,7 +977,7 @@ public function logout() {return $this->redirect($this->Auth->logout());}
 		dibawa keluar dari sistem.</p>
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
+		<small> Bab 7.2.4. Pengesahan Log Masuk & Log Keluar </small>
 		<p align="justify">
 		Seterusnya kita akan membuat paparan untuk fungsi login.
 		Untuk membuat paparan login, anda perlu membuka direktori View/Users/
@@ -1001,23 +1001,30 @@ echo $this-&gt;Form-&gt;input('password');
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
-		<p align="left">
-		Untuk mengetahui sama ada fungsi ini berjaya atau tidak, 
+		<small> Bab 7.2.5. Pengesahan Log Masuk & Log Keluar </small>
+		<table class="excel"><tbody>
+		<tr><td> Untuk mengetahui sama ada fungsi ini berjaya atau tidak, 
 		sila buka browser dan akses sistem kita.
 		Jika anda berjaya, anda akan mendapat paparan seperti dibawah
-		<img height="85%" width="8s5%" src="imgs/cakephp-localhost-pms-user-login.png"></p>
-		
+		</td></tr>
+		<tr><td>
+			<img height="85%" width="85%" src="imgs/cakephp-localhost-pms-user-login.png">
+		</td></tr>
+		</tbody></table>
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
-		<p align="justify">
+		<small> Bab 7.2.6. Pengesahan Log Masuk & Log Keluar </small>
+		<table class="excel"><tbody>
+		<tr><td> 
 		Seterusnya kita akan menambah hyperlink untuk fungsi logout & login pada header page
 		sistem pms ini.
-		Buka fail View/Layouts/default.ctp,copy kod dibawah ini dan paste ke dalam elemen &lt;header>.</p>
+		Buka fail View/Layouts/default.ctp, copy kod dibawah ini dan paste ke dalam elemen &lt;header>.
+		</tbody></table>		
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
-$userDetails = $this->Session->read('Auth.User');
+// Membaca sesi pengguna sistem menggunakan Session Helper.
+$userDetails = $this->Session->read('Auth.User'); 
+// Memeriksa sama ada sesi pengguna wujud atau tidak.
 if(isset($userDetails)):
 	echo $this->Html->link('Log Masuk',array('controller'=>'users','action'=>'logout'));
 else:
@@ -1028,31 +1035,72 @@ endif;
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
-		<p align="justify">Maksud kod di atas ialah:
-		$this->Session->read(‘Auth.User’) :Membaca sesi pengguna sistem menggunakan
-		Session Helper.
-		if(isset($userDetails)) : Memeriksa sama ada sesi pengguna wujud atau
-		tidak.
-		Jika sesi pengguna wujud, hyperlink akan bertukar kepada teks “Log Keluar” untuk fungsi
-		Logout.
-		Jika tidak,teks hyperlink akan bertukar kepada “Log Masuk” untuk fungsi login.
-		</p>
-	</section>
-	<section>
-		<small> Bab 7.2.1. Pengesahan Log Masuk & Log Keluar </small>
-		<p align="justify">
-		Jika anda berjaya,paparannya adalah seperti di bawah ini.
-		</p>		
+		<small> Bab 7.2.7. Pengesahan Log Masuk & Log Keluar </small>
+		<table class="excel"><tbody>
+		<tr><td> Jika sesi pengguna wujud, hyperlink akan bertukar 
+		kepada teks "Log Keluar" untuk fungsi Logout.
+		<br>Jika tidak, teks hyperlink akan bertukar kepada "Log Masuk" untuk fungsi login.
+		<br><br>Jika anda berjaya,paparannya adalah seperti di bawah ini.</td></tr>
+		<tr><td><img height="75%" width="75%" src="imgs/cakephp-localhost-pms-login.png"></td></tr>
+		</tbody></table>
 	</section>
 	<section>
 		<h2> Bab 7.3. Penggunaan fungsi beforeFilter. </h2>
+		<small>Rujukan : http://book.cakephp.org/2.0/en/controllers.html#request-life-cycle-callbacks</small>
+		<p align="justify">
+		Fungsi beforeFilter adalah fungsi callback yang telah terbina bersama CakePHP .
+		<br>Apa itu fungsi callback (Callback function) ?
+		<br>Secara ringkas fungsi callback ini adalah fungsi yang akan berjalan selepas fungsi yang dipilih
+		telah dijalankan.
+		<br>Contoh callback: beforeFilter akan berfungsi sebelum fungsi yang ada didalam sesebuah
+		controller dijalankan dan selepas fungsi didalam komponen Auth berjaya dijalankan.
+		</p>
+	</section>
+	<section>
+		<small> Bab 7.3.1. Penggunaan fungsi beforeFilter</small>
+		<table class="excel"><tbody>
+		<tr><td> 
+			Contoh situasi :
+			<br>Anda membuka sistem anda seperti biasa untuk melihat senarai projek di url
+			http://localhost/pms/projects/index. Akan tetapi,anda telah dibawa ke url
+			http://localhost/pms/users/login.
+		</td></tr>
+		<tr><td>
+			<img height="85%" width="85%" src="imgs/cakephp-localhost-pms-user-login-no.png">
+		</td></tr>
+		</tbody></table>
 	</section>
 	<section>
 		<h2> Bab 7.4. Password Hashing. </h2>
 	</section>
 	<section>
+		<small> Bab 7.4.1 Password Hashing </small>
+	
+		<table class="excel"><tbody>
+		<tr><td> 
+
+		</td></tr>
+		<tr><td>
+			<img height="85%" width="85%" src="imgs/.png">
+		</td></tr>
+		</tbody></table>
+		
+	</section>
+	<section>
 		<h2> Bab 7.5. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization). </h2>
+	</section>
+	<section>
+		<small> Bab 7.5.1. Penapisan akses kandungan mengikut kategori pengguna sistem (Authorization) </small>
+	
+		<table class="excel"><tbody>
+		<tr><td> 
+
+		</td></tr>
+		<tr><td>
+			<img height="85%" width="85%" src="imgs/.png">
+		</td></tr>
+		</tbody></table>
+		
 	</section>
 </section>
 <!-- bab 7 - tamat -->
