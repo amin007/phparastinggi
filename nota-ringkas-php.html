@@ -80,7 +80,7 @@ document.write( '<link rel="stylesheet" href="css/print/'
 		<h2> Modul panduan ini merangkumi: </h2><hr>
 		<ol>
 		<li> Pengenalan ringkas Apache, Php dan Mysql. </li>
-		<li> Membina borang untuk $_POST dan $_GET. </li>
+		<li> Membina borang untuk $_POST, $_FILES dan $_GET. </li>
 		<li> Memahami tatasusunan. </li>
 		<li> Apakah yang dikatakan fungsi. </li>
 		<li> Berkenalan dengan class. </li>
@@ -245,19 +245,59 @@ panjang panjang
 <!-- bab 2 - mula -->
 <section>
 	<section>
-		<h2> Bab 2 : Membina borang untuk $_POST dan $_GET. </h2><hr>
+		<h2> Bab 2 : Membina borang untuk $_POST, $_FILES dan $_GET. </h2><hr>
 	</section>
 	<section>
-		<small> Bab 2a : Definasi $_POST dan $_GET. </small><hr>
-		
+		<small> Bab 2a : Definasi $_POST, $_FILES dan $_GET. </small><hr>
+		<ul>
+		<li>Ia dipanggil => Pembolehubah Pelayan Server</li>
+		<li>Pembolehubah pelayan server disimpan dalam bentuk tatasusunan (array).</li>
+		<li>Untuk melihat nilai-nilai yang disimpan dalam tatasusunan ini, gunakan fungsi
+		print_r() atau foreach().</li>
+		</ul>
 	</section>
 	<section>
-		<small> Bab 2b : Jenis borang untuk $_POST dan $_GET. </small><hr>
-		
+		<small> Bab 2a : Definasi Pembolehubah Pelayan Server. </small><hr>
+		<table class="excel2">
+		<thead><tr><th>Kod</th><th>Keterangan</th></tr></thead>
+		<tbody><tr><td>$_POST</td><td>pembolehubah yang ada pada script dan dihantar melalui
+		kaedah HTTP POST</td><tr>
+		<tbody><tr><td>$_GET</td><td>pembolehubah yang ada pada script dan dihantar melalui
+		kaedah HTTP GET</td><tr>
+		<tbody><tr><td>$_FILES</td><td>pembolehubah yang ada pada script dan dihantar melalui
+		kaedah HTTP POST muatnaik (upload file)</td><tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<small> Bab 2a : Definasi Pembolehubah Pelayan Server. </small><hr>
+		<table class="excel2">
+		<thead><tr><th>Kod</th><th>Keterangan</th></tr></thead>
+		<tbody><tr><td>$_SERVER</td><td>pembolehubah yang telah ditetapkan oleh pelayan server</td><tr>
+		<tbody><tr><td>$_SESSION</td><td>pembolehubah yang terdapat pada sesi semasa yang telah
+		ditetapkan. Sesi ini disimpan dalam pelayan server.</td><tr>
+		<tbody><tr><td>$_COOKIE</td><td>pembolehubah yang terdapat pada sesi semasa yang telah
+		ditetapkan. Namun begitu, sesi ini disimpan dalam komputer pengguna.</td><tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<small> Bab 2b : Jenis borang untuk $_POST, $_FILES dan $_GET. </small><hr>	
+		Nama fail => latihan2b.1.php<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Bab 2c : Contoh $_POST dan $_GET. </small><hr>
-		
+		Nama fail => latihan2c.2.php<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Bab 2d : Latihan-latihan membina borang untuk $_POST dan $_GET. </small><hr>
