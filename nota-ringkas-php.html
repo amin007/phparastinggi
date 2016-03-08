@@ -393,7 +393,6 @@ if (file_exists($target_file))
 	<section>
 		<small> Bab 2b : Keterangan maksud $_FILES[***]['size']. </small><hr>
 		<p align="left">
-		Saiz Fail had
 		Bidang input fail dalam bentuk HTML kami di atas dinamakan "fileToUpload".
 		Sekarang, kita mahu untuk memeriksa saiz fail. 
 		Jika fail yang lebih besar daripada 500KB, mesej ralat akan dipaparkan, 
@@ -410,10 +409,9 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 	<section>
 		<small> Bab 2b : Keterangan maksud $_FILES[***]['type']. </small><hr>
 		<p align="left">
-		Jenis Had Fail
 		Kod di bawah sahaja membolehkan pengguna untuk memuat naik 
 		JPG, JPEG, PNG, dan fail GIF. Semua jenis fail lain memberikan 
-		mesej ralat sebelum menetapkan $ uploadOk ke 0:</p>
+		mesej ralat sebelum menetapkan $uploadOk ke 0:</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -427,8 +425,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 	<section>
 		<small> Bab 2b : Papar semua koding</small><hr>
 		<p align="left">
-		Muat Naik Fail PHP Yang Lengkap
-		Lengkap "upload.php" fail kini kelihatan seperti ini:</p>
+		Fail "upload.php" yang lengkap kelihatan seperti ini:</p>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 $target_dir = "uploads/";
