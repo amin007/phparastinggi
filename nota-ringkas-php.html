@@ -344,6 +344,24 @@ echo '$_FILES:'; print_r($_FILES) . '';
 		</table>
 	</section>
 	<section>
+		<small> Bab 2b : Keterangan maksud $_FILES[***]['name']. </small><hr>
+		<p align="left">
+		Periksa sama ada fail Sudah Wujud
+		<br>Sekarang kita boleh menambah beberapa sekatan.
+		<br>Pertama, kita akan memeriksa jika fail yang telah wujud dalam "muat naik" folder. 
+		Jika ya, mesej ralat akan dipaparkan, dan $uploadOk ditetapkan kepada 0:
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php // Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</p>
+	</section>
+	
+	<section>
 		<small> Rujukan - Borang (form)</small><hr>
 		<p align="left">
 		<br>http://www.w3schools.com/php/php_file_upload.asp
