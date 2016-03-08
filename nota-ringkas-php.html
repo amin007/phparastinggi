@@ -344,15 +344,45 @@ echo '$_FILES:'; print_r($_FILES) . '';
 		</table>
 	</section>
 	<section>
+		<small> Bab 2b : Latihan borang yang mengunakan $_FILES. </small><hr>
+		<p align="left"></p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre># Buat fail PHP "latihan_2b/borang_muatnaik.php" <code class="php">&lt;?php
+$target_dir = "muatnaik/"; # menentukan direktori di mana fail akan diletakkan
+# $target_file menentukan laluan fail yang dimuat naik
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+# $UploadOk = 1 tidak digunakan lagi (akan digunakan kemudian)
+$uploadOk = 1;
+# $ImageFileType memegang sambungan fail fail
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+# Seterusnya, semak jika fail imej adalah imej sebenar atau imej palsu
+if(isset($_POST["submit"])) 
+{
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) 
+	{
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } 
+	else 
+	{
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	
+	<section>
 		<small> Bab 2b : Keterangan maksud $_FILES[***]['name']. </small><hr>
-		<p align="left">
-		Periksa sama ada fail Sudah Wujud
-		<br>Sekarang kita boleh menambah beberapa sekatan.
+		<p align="left">Periksa sama ada fail Sudah Wujud. Sekarang kita boleh menambah beberapa sekatan.
 		<br>Pertama, kita akan memeriksa jika fail yang telah wujud dalam "muat naik" folder. 
 		Jika ya, mesej ralat akan dipaparkan, dan $uploadOk ditetapkan kepada 0:
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php // Check if file already exists
-if (file_exists($target_file)) {
+if (file_exists($target_file)) 
+{
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
