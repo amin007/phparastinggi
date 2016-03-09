@@ -485,24 +485,189 @@ if ($uploadOk == 0) {
 <!-- bab 2 - tamat -->
 <!-- bab 3 - mula -->
 <section>
+/////////////////////////////////////////////////////////////////////////////////////////////////
 	<section>
 		<h2> Bab 3 : Memahami tatasusunan. </h2><hr>
-	</section>
-	<section>
-		<small> Bab 3a : Definasi pembolehubah dan tatasusunan. </small><hr>
-		
-	</section>
-	<section>
+<!--		<small> Bab 3a : Definasi pembolehubah dan tatasusunan. </small><hr>
 		<small> Bab 3b : Jenis-jenis tatasusunan. </small><hr>
-		
-	</section>
-	<section>
 		<small> Bab 3c : Contoh koding tatasusunan. </small><hr>
-		
+		<small> Bab 3d : Latihan-latihan tentang tatasusunan. </small><hr>-->		
 	</section>
 	<section>
-		<small> Bab 3d : Latihan-latihan tentang tatasusunan. </small><hr>
-		
+		<h3>Bab 3a-1 : Definasi pembolehubah dan tatasusunan</h3>
+		<ul>
+		<li>Pembolehubah hanya membawa satu nilai tertentu. </li>
+		<li>Berbanding dengan pembolehubah, tatasusunan (arrays) pula membawa nilai lebih daripada satu.</li>
+		<li>Penggunaan tatasusunan adalah dalam bentuk array().</li>
+		<li>Tatasusunan mengandungi sebaris elemen dimana setiap elemen mempunyai nilai tersendiri.</li>
+		<ul>
+	</section>
+	<section>
+		<h3>Bab 3a-2 : Gambaran bentuk tatasusunan</h3>
+		<table class="excel">
+		<tbody>
+		<tr><td>$negara[0]</td><td>$negara[1]</td><td>$negara[2]</td><td>$negara[3]</td><td>$negara[4]</td></tr>
+		<tr><td>"MY"</td><td>"ID"</td><td>"SG"</td><td>"TH"</td><td>"UK"</td></tr>
+		</tbody>
+		</table>
+	</section>
+	<section>
+		<h3>Bab 3a-3 : Tatasusunan Multi-dimensional</h3><hr>
+		<ul><li>Tatasusunan juga boleh diisikan kebeberapa peringkat</li></ul>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kereta= array( 
+	'Proton'=>array('Saga','Iswara','Gen2'),
+	'Toyota'=>array('Rav4','Wish','Alphard','Estima'),
+	'Perodua'=>array('Kancil','Kembara','Kelisa')
+);
+
+print $kereta['Proton'][2];
+print_r($kereta);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Bab 3b-1 : Jenis-jenis Tatasusunan </h3><hr>
+		<ol><li>Cara mudah</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php $bunga= array("Ros","Orkid","Raya","Tulip");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menetapkan terus kedudukan dalam tatasusunan</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$majalah[3]="Dewan Masyarakat";
+$majalah[23]="Ujang";
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan associative array</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kereta=array("Proton"=>"Saga","Toyota"=>"Wish",
+"Nissan"=>"Livina");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Mendapatkan dari pembolehubah lain</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kad_pengenalan = explode ('-', $ic);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ol>
+	</section>
+	<section>
+		<h3>Bab 3b-2 : Membentuk Tatasusunan </h3><hr>	
+		<ol start="5">
+		<li>Menggunakan function PHP </li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+#tambah elemen dibelakang array
+array_push ($pelajar,"Salleh"); 
+#buang elemen dibelakang array
+$terkini = array_pop ($pelajar); 
+#tambah elemen di hadapan array
+array_unshift ($pelajar,"Salleh"); 
+#buang elemen di hadapan array
+array_shift ($pelajar); 
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan function PHP-MySQL</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$data=mysql_fetch_array($result);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Mendapatkan tatasusunan dari fail</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$baris=file("pelajar.txt");
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ol>
+	</section>
+	<section>
+		<h3>Bab 3b-3 : Paparan Tatasusunan</h3><hr>
+		<ul>
+		<li>Berikut merupakan kaedah yang boleh digunakan untuk memaparkan tatasusunan</li>
+		<li>Paparan elemen tertentu</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print  $majalah[3];
+print  $kereta["Toyota"];
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan function PHP</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print_r($namaArray);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<li>Menggunakan foreach</li>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+foreach($namaArray as $a=>$b)
+{ print "$b";  }
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		</ul>
+	</section>
+	<section>
+		<h3>Bab 3b-4 : Tatasusunan Multi-dimensional</h3><hr>
+		<ul><li>Tatasusunan juga boleh diisikan kebeberapa peringkat</li></ul>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$kereta= array( 
+	'Proton'=>array('Saga','Iswara','Gen2'),
+	'Toyota'=>array('Rav4','Wish','Alphard','Estima'),
+	'Perodua'=>array('Kancil','Kembara','Kelisa')
+);
+
+print $kereta['Proton'][2];
+print_r($kereta);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Bab 3b-5 : Menghapuskan array</h3><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+unset ($majalah[3]);
+unset ($kereta);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Bab 3b-6 : function array PHP</h3><hr>
+		<ul>
+		<li>Selain dari contoh diatas, berikut merupakan function dalaman PHP yang lain untuk PHP</li>
+		</ul>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+array_change_key_case, array_chunk, array_combine, array_count_values, array_diff_assoc, array_diff_uassoc, 
+array_diff, array_fill, array_filter, array_flip, array_intersect_assoc, array_intersect, array_key_exists, 
+array_keys, array_map, array_merge_recursive, array_merge, array_multisort, array_pad, array_pop, array_push, 
+array_rand, array_reduce, array_reverse, array_search, array_shift, array_slice, array_splice, array_sum, 
+array_udiff_assoc, array_udiff_uassoc, array_udiff, array_unique, array_unshift, array_values, 
+array_walk_recursive, array_walk, array, arsort, asort, compact, count, current, each, end, extract, 
+in_array, key, krsort, ksort, list, natcasesort, natsort, next, pos, prev, range, reset, rsort, 
+shuffle, sizeof, sort, uasort, uksort, usort,
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Bab 3d : Latihan penggunaan tatasusunan (array)<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$x[0] = 'nombor1';
+$x = array(1,2,3,4,5,6,7,8,9,10);
+foreach ($x as $kunci => $nilai) 
+{
+    echo "\$kunci = $kunci | \$nilai = $nilai <br>";
+} 
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Rujukan - (a) Tatasusunan (array) </small><hr>
