@@ -708,22 +708,347 @@ foreach ($x as $kunci => $nilai)
 <section>
 	<section>
 		<h2> Bab 4 : Apakah yang dikatakan fungsi. </h2><hr>
-	</section>
-	<section>
-		<small> Bab 4a : Definasi fungsi. </small><hr>
-		
-	</section>
-	<section>
+<!--		<small> Bab 4a : Definasi fungsi. </small><hr>
 		<small> Bab 4b : Jenis-jenis fungsi. </small><hr>
-		
-	</section>
-	<section>
 		<small> Bab 4c : Contoh koding fungsi. </small><hr>
-		
+		<small> Bab 4d : Latihan-latihan tentang fungsi. </small><hr>
+-->		
 	</section>
 	<section>
-		<small> Bab 4d : Latihan-latihan tentang fungsi. </small><hr>
-		
+		<h2>Bab 4a : Definasi fungsi. </h2>
+		<ul>
+		<li>Fungsi adalah satu blok kod yang boleh dipanggil untuk melakukan sesuatu proses tertentu. </li>
+		<li>Fungsi diistiharkan menggunakan pernyataan function.</li>
+		</ul>
+	</section>
+	<section>
+		<small> Bab 4d-1 : Latihan-latihan tentang fungsi. </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function kira($kiraan)
+{
+    # pecahan kepada ratus
+    return number_format($kiraan,0,'.',',');
+} 
+
+echo kira(123456); # output 123,456
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-2 : Membentuk Function </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function namaFunction ($var1,$var2,$var3)
+{
+		Arahan-arahan;
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-3 : Memanggil Function </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+namaFunction ($var1,$var2,$var3);
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-4 : Contoh ringkas </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+selamatDatang();
+
+function selamatDatang()
+{
+	print"Selamat Datang<br>\n";
+	print"ke Pusat Pembangunan Maklumat dan Komunikasi<br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-5 : Menghantar maklumat </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$aplikasi="Sistem XYZ";
+selamatDatang("Abu",$aplikasi);
+
+function selamatDatang($nama,$app)
+{
+	print"Selamat Datang $nama<br>\n";
+	print" ke aplikasi $app <br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-6 : Menerima maklumat </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$gaji=1000;
+$bil=230;
+$baki = kiraBaki($gaji, $bil);
+jumlahBersih(kiraBaki($gaji, $bil));
+
+function kiraBaki($a,$b)
+{
+	$simpanan=$a-$b;
+	return $simpanan;
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-7 : Menghantar maklumat ke fail lain </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function selamatDatang($nama,$app)
+{
+	print"Selamat Datang $nama<br>\n";
+	print" ke aplikasi $app <br>\n";
+	print"Universiti Putra Malaysia<br>\n";
+}
+	include('failFunction');
+	selamatDatang('Abu",$aplikasi);
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-8 : Contoh-contoh Function </small><hr>
+	Membaca fail konfigurasi 'system.php'
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+//[Database]
+host='xyz.upm.edu.my'; user='user1'; pwd='rahsia'; db='abcdef';
+//[Konfig]
+tajuk="Aplikasi XYZ"; versi=3.12;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	'failFunction.php'
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function bacaKonfigurasi()
+{
+	$ini_array = parse_ini_file("system.php",TRUE);
+	return $ini_array;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+include('failFunction.php');
+$SETTING=bacaKonfigurasi();
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-9 : Mengguna MySQL 'dll.php' </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function connection($host,$ user,$ pswd,$ db)
+{
+	$link = mysql_connect($host, $ user, $ pswd) 
+	or die("Could not connect");
+	mysql_select_db($db) or die("Could not select database");
+	return $link;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+include('dll.php');
+$SETTING=bacaKonfigurasi();
+connection(
+	$SETTING['Database']['host'], 
+	$SETTING['Database']['user'], 
+	$SETTING['Database']['pwd'], 
+	$SETTING['Database']['db']
+);
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+	fungsi verifyUserInput <hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function verifyUserInput($userInput,$maxlength,$toLower,
+$addSlashes,$stripTag,$stripNONnumber,$reserve2)
+{
+	$userInput=trim($userInput);
+	if($toLower==1)
+		{ $userInput=strtolower($userInput); }
+
+	if($stripTag)
+		{ $userInput=strip_tags($userInput); }
+
+	if($addSlashes)
+		{ $userInput=addslashes($userInput); }
+
+	if($stripNONnumber)
+	{ 
+		$userInput=preg_replace("/\D/","",$userInput);
+		$userInput=str_replace(" ","",$userInput); 
+	}
+
+	if($maxlength)
+		{ $userInput=substr($userInput,0,$maxlength); }
+
+	$userInput=rtrim($userInput);
+	$userInput=ltrim($userInput);
+	return $userInput;
+}
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-10 : fungsi selectInput </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function selectInput($SETTING,$outputType,$table,$id,
+$disp,$default,$order,$where1,$where2)
+{	#$outputType, p=print v=return value
+	$value="";
+	if($where1) {$where = "where $where1";} else {$where="";}
+	if($where2) {$where .= " $where2";} //tambah AND/OR sendiri
+	if($order) {$order = "order by $order";}
+	$sql="select $id,$disp from $table $where $order";
+	$result=executemysql($SETTING,$sql);
+	while($data=mysql_fetch_array($result))
+	{
+		if($data[0] == $default){$check="selected";} else {$check="";}
+		if($outputType=="p")
+		{print"&lt;option value=$data[0] $check 
+		style=\"background-Color:#eeffee\"&gt;$data[1]\n";}
+		if($outputType=="v")
+		{$value.="&lt;option value=$data[0] $check 
+		style=\"background-Color:#eeffee\"&gt;$data[1]\n";}
+	}
+	if($outputType=="v") {return $value; }
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-11 : checkboxInput() </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function checkboxInput($SETTING,$column,$class,$tableName,$id,
+$disp,$namePrefix,$valuePrefix,$default,
+$hidden,$where1,$where2,$order,$js)
+{
+	/*
+	$column = number bermaksud num of column
+	$default = array of checked item  */
+		  
+	if($class) {$class = "class=$class";}
+	if($where1) 
+		{$where = "where $where1";} 
+	else {$where="";}
+	if($where2 and $where1) {$where .= " and $where2";}
+	if($order) {$order = "order by $order";}
+	$sql="select $id,$disp from $tableName $where $order";
+	$result=executemysql($SETTING,$sql);
+	$count=0;  
+	print"&lt;table>\n";
+	while($data=mysql_fetch_array($result))
+	{
+		if(!$hidden OR !in_array($data[0], $hidden))
+		{
+			if($default AND in_array($data[0], $default))
+			{$check="checked";} 
+			else {$check="";}
+			print "&lt;td align=left $class>"
+			. "&lt;input type=checkbox name=$namePrefix$data[0] "
+			. "value=$valuePrefix$data[0] $check $class $js>$data[1]&lt;/td>\n";
+			$count++;
+			if($count==$column) {print"&lt;tr>"; $count=0;}
+		}
+	}
+	print"&lt;/table>\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-12 : borderStart() </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function borderStart($width,$tajuk,$tab,$borderType)
+{
+	$TAB="";
+	for($aa=1;$aa<=$tab;$aa++){$TAB.="\t";}
+
+	list($leftwidth, $leftheight) = getimagesize("image/border/$borderType/1.png");
+	list($rightwidth, $rightheight) = getimagesize("image/border/$borderType/3.png");
+	$borderTitleclass="border".$borderType."Title";
+	$borderTeksclass="border".$borderType."Teks";
+
+	if($tajuk){$tajuk="&lt;span class=$borderTitleclass>$tajuk&lt;/span>&lt;br>";} else{$tajuk="";}
+	print"
+	$TAB&lt;table border=0 cellpadding=0 cellspacing=0 align=center width=$width height=100%>
+	$TAB&lt;tr valign=top height=$leftheight>&lt;td width=$leftwidth height=$leftheight background=/image/border/$borderType/1.png>&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/2.png>&lt;/td>
+	$TAB&lt;td height=$rightheight width=$rightwidth background=/image/border/$borderType/3.png>&lt;/td>
+	$TAB&lt;tr valign=top>&lt;td background=/image/border/$borderType/4.png>&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/5.png class=$borderTeksclass>$tajuk
+	$TAB	
+	\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-13 : borderEnd() </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+function borderEnd($class,$text,$tab,$borderType)
+{
+	if($class){$class="class='$class'";}
+	$TAB="";
+	for($aa=1;$aa<=$tab;$aa++){$TAB.="\t";}
+
+	list($leftwidth, $leftheight) = getimagesize("image/border/$borderType/7.png");
+	list($rightwidth, $rightheight) = getimagesize("image/border/$borderType/9.png");
+
+	print"
+	$TAB	
+	$TAB&lt;/td>
+	$TAB&lt;td background=/image/border/$borderType/6.png></td>
+	$TAB&lt;tr valign=top><td background=/image/border/$borderType/7.png border=0 height=$leftheight></td> 
+	$TAB&lt;td background=/image/border/$borderType/8.png $class valign=center>$text</td> 
+	$TAB&lt;td background=/image/border/$borderType/9.png border=0 height=$rightheight></td>
+	$TAB&lt;/table>
+	\n";
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 4d-14 : GET_REF_kodLANDLINE() & GET_REF_fullmonth($LANG)</small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+
+function GET_REF_kodLANDLINE()
+{return array('03','04','05','06','07','081','082','083','087','088','089','09','1300','1800');}
+
+function GET_REF_fullmonth($LANG)
+{
+	if($LANG=="en")
+		return array('', 'January', 'February', 'March', 'April', 
+		'May', 'June', 'July', 'August', 
+		'September', 'October', 'November', 'December'); 
+	else 
+		return array('', 'Januari', 'Februari', 'Mac', 'April', 
+		'Mei', 'Jun', 'Julai', 'Ogos', 
+		'September', 'Oktober', 'November', 'Disember'); 
+}
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
 		<small> Rujukan - Fungsi (function).</small><hr>
