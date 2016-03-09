@@ -715,14 +715,14 @@ foreach ($x as $kunci => $nilai)
 -->		
 	</section>
 	<section>
-		<h2>Bab 4a : Definasi fungsi. </h2>
+		<small> Bab 4a : Definasi fungsi. </small><hr>
 		<ul>
 		<li>Fungsi adalah satu blok kod yang boleh dipanggil untuk melakukan sesuatu proses tertentu. </li>
 		<li>Fungsi diistiharkan menggunakan pernyataan function.</li>
 		</ul>
 	</section>
 	<section>
-		<small> Bab 4d-1 : Latihan-latihan tentang fungsi. </small><hr>
+		<small> Bab 4b : Jenis-jenis fungsi. </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function kira($kiraan)
@@ -737,7 +737,7 @@ echo kira(123456); # output 123,456
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-2 : Membentuk Function </small><hr>
+		<small> Bab 4b-1 : Membentuk Function </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function namaFunction ($var1,$var2,$var3)
@@ -748,7 +748,7 @@ function namaFunction ($var1,$var2,$var3)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-3 : Memanggil Function </small><hr>
+		<small> Bab 4b-2 : Memanggil Function </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 namaFunction ($var1,$var2,$var3);
@@ -756,7 +756,7 @@ namaFunction ($var1,$var2,$var3);
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-4 : Contoh ringkas </small><hr>
+		<small> Bab 4c : Contoh ringkas </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 selamatDatang();
@@ -771,7 +771,7 @@ function selamatDatang()
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-5 : Menghantar maklumat </small><hr>
+		<small> Bab 4d-1 : Menghantar maklumat </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 $aplikasi="Sistem XYZ";
@@ -787,7 +787,7 @@ function selamatDatang($nama,$app)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-6 : Menerima maklumat </small><hr>
+		<small> Bab 4d-2 : Menerima maklumat </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 $gaji=1000;
@@ -804,7 +804,7 @@ function kiraBaki($a,$b)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-7 : Menghantar maklumat ke fail lain </small><hr>
+		<small> Bab 4d-3 : Menghantar maklumat ke fail lain </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function selamatDatang($nama,$app)
@@ -819,19 +819,17 @@ function selamatDatang($nama,$app)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-8 : Contoh-contoh Function </small><hr>
-	Membaca fail konfigurasi 'system.php'
+		<small> Bab 4d-4 : Contoh-contoh Function </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
+<pre>Membaca fail konfigurasi 'system.php'<code class="php">&lt;?php
 //[Database]
 host='xyz.upm.edu.my'; user='user1'; pwd='rahsia'; db='abcdef';
 //[Konfig]
 tajuk="Aplikasi XYZ"; versi=3.12;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
-	'failFunction.php'
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre><code class="php">&lt;?php
+<pre>'failFunction.php'<code class="php">&lt;?php
 function bacaKonfigurasi()
 {
 	$ini_array = parse_ini_file("system.php",TRUE);
@@ -847,7 +845,7 @@ $SETTING=bacaKonfigurasi();
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-9 : Mengguna MySQL 'dll.php' </small><hr>
+		<small> Bab 4d-5 : Mengguna MySQL 'dll.php' </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function connection($host,$ user,$ pswd,$ db)
@@ -873,7 +871,7 @@ connection(
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-	fungsi verifyUserInput <hr>
+		<small> Bab 4d-6 : fungsi verifyUserInput </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function verifyUserInput($userInput,$maxlength,$toLower,
@@ -906,7 +904,7 @@ $addSlashes,$stripTag,$stripNONnumber,$reserve2)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-10 : fungsi selectInput </small><hr>
+		<small> Bab 4d-7 : fungsi selectInput </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function selectInput($SETTING,$outputType,$table,$id,
@@ -934,7 +932,7 @@ $disp,$default,$order,$where1,$where2)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-11 : checkboxInput() </small><hr>
+		<small> Bab 4d-8 : checkboxInput() </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function checkboxInput($SETTING,$column,$class,$tableName,$id,
@@ -975,7 +973,7 @@ $hidden,$where1,$where2,$order,$js)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-12 : borderStart() </small><hr>
+		<small> Bab 4d-9 : borderStart() </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function borderStart($width,$tajuk,$tab,$borderType)
@@ -1003,7 +1001,7 @@ function borderStart($width,$tajuk,$tab,$borderType)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-13 : borderEnd() </small><hr>
+		<small> Bab 4d-10 : borderEnd() </small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 function borderEnd($class,$text,$tab,$borderType)
@@ -1029,7 +1027,7 @@ function borderEnd($class,$text,$tab,$borderType)
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
 	<section>
-		<small> Bab 4d-14 : GET_REF_kodLANDLINE() & GET_REF_fullmonth($LANG)</small><hr>
+		<small> Bab 4d-11 : GET_REF_kodLANDLINE() & GET_REF_fullmonth($LANG)</small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 
