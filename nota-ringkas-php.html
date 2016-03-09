@@ -1071,6 +1071,187 @@ function GET_REF_fullmonth($LANG)
 	<section>
 		<h2> Bab 6 : Cara membina hubungan antara Php dan Mysql. </h2><hr>
 	</section>
+	<section><h2>BAB 6.0 : Definasi Mysql</h2></section>
+	<section>
+		<h3>Apa Itu mySQL</h3>
+		<ul>
+		<li>mySQL adalah satu aplikasi untuk pengurusan (menambah, mengakses dan memproses) data. </li>
+		<li>pangkalan data pula adalah satu kumpulan data yang 	terstruktur. </li>
+		<li>mySQL adalah sumber terbuka. </li>
+		<li>Ini bermakna ia boleh digunakan serta diubahsuai oleh sesiapa sahaja.</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Apa Itu Pengurusan mySQL</h3>
+		<ul>
+		<li>phpMyadmin pula adalah satu aplikasi GUI (Graphic User Interface) bagi
+		memudahkan pengguna menguruskan data-data mySQL.</li>
+		<li>Namun adminer/phpminiadmin adalah pilihan lain GUI yang ringkas</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Apakah Kelebihan mySQL</h3>
+		<ol>
+		<li>MySQL merupakan pangkalan data yang sangat cepat dan mudah untuk digunakan.</li>
+		<li>Selain itu, sintaks-sintaksnya juga adalah mudah untuk difahami dan
+		tidak rumit</li>
+		<li>Boleh digunakan pada platform yang lain seperti LINUX, Windows, MacOS dll</li>
+		<li>Beberapa table dari pelayan server yang berlainan dapat digunakan dalam
+		query yang sama</li>
+		</ol>
+	</section>
+	<section>
+		<h3>PDO - PHP Data Objects</h3>
+		<hr/>
+		<ul>
+		<li>Sambungan PDO - antara muka ringan untuk akses pangkalan data</li>
+		<li>Menyediakan lapisan capaian data abstraksi - fungsi yang sama untuk melakukan pertanyaan dan mengambil data</li>
+		<li>Boleh mencapai sebarang pangkalan data yang sedia ada</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Mysqli</h3>
+		<hr/>
+		<ul>
+		<li>Sambungan Mysqli - pengganti Mysql yang lama</li>
+		<li>Menyediakan lapisan capaian data abstraksi - fungsi yang sama untuk melakukan pertanyaan dan mengambil data</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Bab Mysql 6.1 : MANIPULASI PANGKALAN DATA</h3>
+	</section>
+	<section>
+		<h3>Mencipta Akaun Pengguna</h3>
+		Di dalam sesuatu pangkalan data, adalah digalakkan agar para webmaster
+		menetapkan akaun pengguna baru bagi pangkalan data atau menetapkan
+		katalaluan bagi mengakses pangkalan data tersebut.
+	</section>
+	<section>
+		Latihan 33 : Menetapkan username dan password<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Mencipta pangkalan Data</h3>
+		<ul>
+		<li>Arahan CREATE digunakan untuk mencipta pangkalan data serta 
+			table-table dalam sesuatu pangkalan data. </li>
+		<li>Di dalam UNIX, nama-nama pangkalan data adalah case-sensitive.</li>
+		<li>Format : <code class="mysql">CREATE DATABASE databasename</code></li>
+		<li>Format : <code class="mysql">CREATE TABLE table (id INT)</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 35 : Mencipta pangkalan data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Latihan 36 : Mencipta table<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Menghapuskan pangkalan Data</h3>
+		<ul>
+		<li>Arahan DROP akan digunakan untuk menghapuskan pangkalan data atau table
+		atau index atau function. </li>
+		<li>Arahan ini juga boleh digunakan untuk menghapuskan
+		lebih daripada satu table dalam sesuatu arahan.</li>
+		<li>Format : <code class="mysql">DROP databasename</code></li>
+		<li>Format : <code class="mysql">DROP TABLE table1, table2</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 37 : Menghapuskan pangkalan data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Menambah Data</h3>
+		<ul>
+		<li>Arahan INSERT digunakan untuk menambah baris (row) data ke dalam
+		pangkalan data yang telah dibina.</li>
+		<li>Format : <code class="mysql">INSERT INTO table (field1, field2) VALUES(15,20)</code></li>
+		<li>Format : <code class="mysql">INSERT INTO table (field1, field2) VALUES(15, field1*2)</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 38 : Menambah baris data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Memilih Data</h3>
+		<ul>
+		<li>Arahan SELECT akan digunakan bagi memilih baris data. </li>
+		<li>Sekiranya arahan WHERE dinyatakan, maka baris data berkenaan sahaja akan dipilih. </li>
+		<li>Sekiranya tiada, seluruh baris data di dalam table berkenaan akan dipilih.</li>
+		<li>Format : <code class="mysql">SELECT * FROM table ORDER BY field1</code></li>
+		<li>Format : <code class="mysql">SELECT field1 FROM table WHERE jawatan='SA'</code></li>
+		<li>Format : <code class="mysql">SELECT t1.*, t2.* FROM table1 AS t1, table2 AS t2 WHERE t1.field=
+		t2.field</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 39 : Memilih data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Mengemaskini Data</h3>
+		<ul>
+		<li>Arahan UPDATE berfungsi untuk mengemaskini nilai sesuatu baris data yang
+			telah sedia ada dalam sesuatu table. </li>
+		<li>Sekiranya arahan WHERE dinyatakan, maka hanya nilai bagi 
+			data berkenaan sahaja akan dikemaskini. </li>
+		<li>Sekiranya tiada, seluruh baris data di dalam table berkenaan akan dikemaskini.</li>
+		<li>Format : <code class="mysql">UPDATE table SET field1='Makan'</code></li>
+		<li>Format : <code class="mysql">UPDATE table SET field1='Minum' WHERE id='17'</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 40 : Mengemaskini baris data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Menghapuskan Data</h3>
+		<ul>
+		<li>Arahan DELETE akan digunakan bagi menghapuskan baris data. </li>
+		<li>Sekiranya arahan WHERE dinyatakan, maka baris data berkenaan sahaja akan dihapuskan.</li>
+		<li>Sekiranya tiada, seluruh baris data di dalam table berkenaan akan dihapuskan.</li>
+		<li>Format : <code class="mysql">DELETE FROM table LIMIT 10</code></li>
+		<li>Format : <code class="mysql">DELETE FROM table WHERE id='17'</code></li>
+		</ul>
+	</section>
+	<section>
+		Latihan 41 : Menghapuskan baris data<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
 </section>
 <!-- bab 6 - tamat -->
 <!-- bab 7 - mula -->
