@@ -1445,7 +1445,136 @@ else
 	<section>
 		<h2> Bab 8 : Manipulasi tarikh. </h2><hr>
 	</section>
+	<section>
+		<h2>BAB 9 : MANIPULASI TARIKH DAN MASA</h2>
+		<ul>
+		<li>Fungsi tarikh dan masa adalah untuk mendapatkan tarikh dan masa daripada server. </li>
+		<li>Anda boleh menggunakan fungsi ini untuk menetapkan tarikh dan masa dalam pelbagai cara.</li>
+		</ul>
+	</section>
+	<section>
+		<h2>BAB 8.1 : Timestamp</h2>
+		<ol>
+		<li>Timestamp adalah nombor unik yang melambangkan sesuatu tarikh</li>
+		<li>Nilainya merupakan bilangan saat dari 1 Januari 1970 ke sesuatu tarikh tertentu. </li>
+		<li>Timestamp boleh dikira dengan menggunakan fungsi mktime().</li>
+		</ol>
+	</section>
+	<section>
+		<h2>BAB 8.2 : Fungsi dalam Tarikh & Masa</h2>
+		<ol start="1">
+		<li>checkdate() digunakan untuk menyemak adakah sesuatu tarikh adalah sah
+		(TRUE) atau tidak (FALSE)</li>
+		<li>date() untuk mendapatkan format tarikh dan masa tempatan</li>
+		<li>getdate() untuk mendapatkan maklumat tarikh/masa</li>
+		<li>microtime() untuk mendapatkan Unix timestamp semasa dalam format micro seconds</li>
+		</ol>
+	</section>
+	<section>
+		<h2>BAB 8.2 : Fungsi dalam Tarikh & Masa</h2>
+		<ol start="5">
+		<li>mktime() untuk mendapatkan Unix timestamp untuk tarikh. </li>
+		<li> Format mktime() adalah mktime(jam, minit, saat, bulan, hari, tahun)</li>
+		<li>strtotime() menukarkan sebarang English textual datetime description kepada
+		Unix timestamp</li>
+		<li>time() untuk memaparkan Unix timestamp semasa</li>
+		</ol>
+	</section>
+	<section>
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>	
+		<tr><td>a</td><td>am / pm </td><td>A </td><td>AM / PM</td></tr>
+		<tr><td>d</td><td>day 01-31 </td><td>D </td><td>3 char wday Mon-Sun</td></tr>
+		<tr><td>F</td><td>full month January-December </td><td>g</td><td>12 hour 1-12</td></tr>
+		<tr><td>G</td><td>24 hour 0-23 </td><td>h</td><td>12 hour 01-12</td></tr>
+		<tr><td>H</td><td>24 hour 00-23 </td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>
+		<tr><td>i</td><td>minutes 00-59	</td><td>I</td><td>daylight </td></td></tr>
+		<tr><td>j</td><td>day 1-31</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		<tr><td>l</td><td>full day Monday-Sunday </td><td>L</td><td>boolean for leap year</td></tr>
+		<tr><td>m</td><td>month 01-12 </td><td>M</td><td>month Jan-Dec</td></tr>
+		<tr><td>n</td><td>month 1-12 </td></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+		</tbody></table>
+	</section>
+	<section>	
+		<h3>Function date()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+string date ( string format [, int timestamp])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		<table class="excel">
+		<thead><th>kod</th><th>keterangan</th><th>kod</th><th>keterangan</th></thead>
+		<tbody>
+		<tr><td>s</td><td>seconds 00-59 </td><td>S</td><td>suffix st, nd, rd, th</td></td></tr>
+		<tr><td>t </td><td>total day in month 28-31 </td><td>T </td><td>time zone setting EST</td></td></tr>
+		<tr><td>U</td><td>total UNIX seconds from 1 jan 1970 </td><td>w</td><td>day of week 0-6 (sunday-saturday)</td></td></tr>
+		<tr><td>y</td><td>2 digit year </td><td>Y</td><td>4 digit year</td></td></tr>
+		<tr><td>z</td><td>day of year 0-365 </td><td>Z</td><td>timezone offset in seconds</td></tr>
+		</tbody></table>
+	</section>
+	<section>
+		Contoh<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print date("d/m/Y");   #18/06/2012
 
+$tarikh = date("jS F Y");
+print "$tarikh"; #18th June 2012
+
+print date("h:ia, d/m/Y");   11:33am, 16/03/2011
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<h3>Function mktime()</h3>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+int mktime ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+		Menukar format tarikh ke UNIX Epoch<br>
+		Contoh:
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+print mktime(12, 33, 22, 3, 5, 1957);
+$masaLahir = mktime(12, 33, 22, 3, 5, 1957);
+print"$masaLahir";
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		Latihan 30 : Penggunaan fungsi tarikh dan masa<hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
 	<section>
 		<small> Rujukan - Manipulasi tarikh </small><hr>
 		<p align="left">
