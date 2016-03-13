@@ -951,7 +951,7 @@ $hidden,$where1,$where2,$order,$js)
 	$sql="select $id,$disp from $tableName $where $order";
 	$result=executemysql($SETTING,$sql);
 	$count=0;  
-	print"&lt;table>\n";
+	print"&lt;table&gt;\n";
 	while($data=mysql_fetch_array($result))
 	{
 		if(!$hidden OR !in_array($data[0], $hidden))
@@ -959,14 +959,14 @@ $hidden,$where1,$where2,$order,$js)
 			if($default AND in_array($data[0], $default))
 			{$check="checked";} 
 			else {$check="";}
-			print "&lt;td align=left $class>"
+			print "&lt;td align=left $class&gt;"
 			. "&lt;input type=checkbox name=$namePrefix$data[0] "
-			. "value=$valuePrefix$data[0] $check $class $js>$data[1]&lt;/td>\n";
+			. "value=$valuePrefix$data[0] $check $class $js>$data[1]&lt;/td&gt;\n";
 			$count++;
-			if($count==$column) {print"&lt;tr>"; $count=0;}
+			if($count==$column) {print"&lt;tr&gt;"; $count=0;}
 		}
 	}
-	print"&lt;/table>\n";
+	print"&lt;/table&gt;\n";
 }
 ?&gt;</code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
@@ -985,14 +985,14 @@ function borderStart($width,$tajuk,$tab,$borderType)
 	$borderTitleclass="border".$borderType."Title";
 	$borderTeksclass="border".$borderType."Teks";
 
-	if($tajuk){$tajuk="&lt;span class=$borderTitleclass>$tajuk&lt;/span>&lt;br>";} else{$tajuk="";}
+	if($tajuk){$tajuk="&lt;span class=$borderTitleclass&gt;$tajuk&lt;/span>&lt;br&gt;";} else{$tajuk="";}
 	print"
-	$TAB&lt;table border=0 cellpadding=0 cellspacing=0 align=center width=$width height=100%>
-	$TAB&lt;tr valign=top height=$leftheight>&lt;td width=$leftwidth height=$leftheight background=/image/border/$borderType/1.png>&lt;/td>
-	$TAB&lt;td background=/image/border/$borderType/2.png>&lt;/td>
-	$TAB&lt;td height=$rightheight width=$rightwidth background=/image/border/$borderType/3.png>&lt;/td>
-	$TAB&lt;tr valign=top>&lt;td background=/image/border/$borderType/4.png>&lt;/td>
-	$TAB&lt;td background=/image/border/$borderType/5.png class=$borderTeksclass>$tajuk
+	$TAB&lt;table border=0 cellpadding=0 cellspacing=0 align=center width=$width height=100%&gt;
+	$TAB&lt;tr valign=top height=$leftheight&gt;&lt;td width=$leftwidth height=$leftheight background=/image/border/$borderType/1.png&gt;&lt;/td&gt;
+	$TAB&lt;td background=/image/border/$borderType/2.png&gt;&lt;/td&gt;
+	$TAB&lt;td height=$rightheight width=$rightwidth background=/image/border/$borderType/3.png&gt;&lt;/td&gt;
+	$TAB&lt;tr valign=top&gt;&lt;td background=/image/border/$borderType/4.png&gt;&lt;/td&gt;
+	$TAB&lt;td background=/image/border/$borderType/5.png class=$borderTeksclass&gt;$tajuk
 	$TAB	
 	\n";
 }
@@ -1014,12 +1014,12 @@ function borderEnd($class,$text,$tab,$borderType)
 
 	print"
 	$TAB	
-	$TAB&lt;/td>
-	$TAB&lt;td background=/image/border/$borderType/6.png></td>
-	$TAB&lt;tr valign=top><td background=/image/border/$borderType/7.png border=0 height=$leftheight></td> 
-	$TAB&lt;td background=/image/border/$borderType/8.png $class valign=center>$text</td> 
-	$TAB&lt;td background=/image/border/$borderType/9.png border=0 height=$rightheight></td>
-	$TAB&lt;/table>
+	$TAB&lt;/td&gt;
+	$TAB&lt;td background=/image/border/$borderType/6.png&gt;</td&gt;
+	$TAB&lt;tr valign=top&gt;<td background=/image/border/$borderType/7.png border=0 height=$leftheight&gt;</td&gt;
+	$TAB&lt;td background=/image/border/$borderType/8.png $class valign=center&gt;$text</td&gt;
+	$TAB&lt;td background=/image/border/$borderType/9.png border=0 height=$rightheight&gt;</td&gt;
+	$TAB&lt;/table&gt;
 	\n";
 }
 ?&gt;</code></pre>
