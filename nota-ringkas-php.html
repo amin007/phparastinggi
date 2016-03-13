@@ -1029,7 +1029,6 @@ function borderEnd($class,$text,$tab,$borderType)
 		<small> Bab 4d-11 : GET_REF_kodLANDLINE() & GET_REF_fullmonth($LANG)</small><hr>
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
-
 function GET_REF_kodLANDLINE()
 {return array('03','04','05','06','07','081','082','083','087','088','089','09','1300','1800');}
 
@@ -1071,10 +1070,38 @@ function GET_REF_fullmonth($LANG)
 	</section>
 	<section>
 		<small> Bab 5a : Definasi class. </small><hr>
-		<p align="left">class adalah koleksi pembolehubah dan fungsi.
+		<p align="left">Class adalah koleksi pembolehubah dan fungsi.
 		Pembolehubah ditakrifkan oleh var dan fungsi oleh fungsi. 
-		kelas ditakrifkan menggunakan sintaks berikut:
 		</p>
+	</section>
+	<section>
+		<small> Bab 5a : Definasi class. </small><hr>
+		<p align="left">Kelas ditakrifkan menggunakan sintaks berikut:</p>
+<pre><code class="php">&lt;?php
+class Cart 
+{
+	var $items; # Items in our shopping cart
+	# Add $num articles of $artnr to the cart
+	function add_item($artnr, $num) 
+	{
+		$this->items[$artnr] += $num;
+	}
+
+	# Take $num articles of $artnr out of the cart
+	function remove_item($artnr, $num)
+	{
+		if ($this->items[$artnr] > $num) {
+			$this->items[$artnr] -= $num;
+			return true;
+		} elseif ($this->items[$artnr] == $num) {
+			unset($this->items[$artnr]);
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+?&gt;</code></pre>
 	</section>
 </section>
 <!-- bab 5 - tamat -->
