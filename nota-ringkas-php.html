@@ -1077,6 +1077,7 @@ function GET_REF_fullmonth($LANG)
 	<section>
 		<small> Bab 5a : Definasi class. </small><hr>
 		<p align="left">Kelas ditakrifkan menggunakan sintaks berikut:</p>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
 <pre><code class="php">&lt;?php
 class Cart 
 {
@@ -1102,6 +1103,62 @@ class Cart
 	}
 }
 ?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5a : Definasi OOP. </small><hr>
+		<p align="left">Ada banyak jenis-jenis kelas.
+		Sebelum itu kena faham konsep OOP.
+		</p>
+	</section>
+	<section>
+		<small> Bab 5b : Jenis-jenis class. (Advance)</small><hr>
+		<p align="left">Berikut adalah rujukan OOP5 dari php.net
+		<br>php.net/manual/en/language.oop5.basic.php</p><hr>
+		<p align="left">Introduction, The Basics, Properties, Class Constants, Autoloading Classes
+		<br>Constructors and Destructors, Visibility, Object Inheritance, Scope Resolution Operator (::), Static Keyword
+		<br>Class Abstraction, Object Interfaces, Traits, Anonymous classes, Overloading
+		<br>Object Iteration, Magic Methods, Final Keyword, Object Cloning, Comparing Objects
+		<br>Type Hinting, Late Static Bindings, Objects and references, Object Serialization, OOP Changelog
+		</p>
+	</section>
+	<section>
+		<small> Bab 5c : Contoh koding class. </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+class Cart 
+{
+	var $todays_date; var $name; var $owner; var $items = array("VCR", "TV");
+
+	// public static function Cart() 
+	// public function Cart() 
+	// private static function Cart() -> php advance
+	// private function Cart() -> php advance
+	function Cart() 
+	{
+		$this->todays_date = date("Y-m-d");
+		$this->name = $GLOBALS['firstname'];
+	}
+}		
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+$cart = new Cart;
+$cart->add_item("10", 1);
+
+$another_cart = new Cart;
+$another_cart->add_item("0815", 3);	
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre><code class="php">&lt;?php
+Cart::add_item("1245", 2);
+?&gt;</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 5d : Latihan-latihan tentang class. </small><hr>
 	</section>
 </section>
 <!-- bab 5 - tamat -->
