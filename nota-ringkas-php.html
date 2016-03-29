@@ -345,17 +345,17 @@ echo '$_POST:'; print_r($_POST) . '';
 $posmen = array();
 $medanID = '...';
 $senarai = array('');
-
+# untuk validasi
 foreach ($_POST as $myTable => $value)
 {	if ( in_array($myTable,$senarai) )
-	{   foreach ($value as $kekunci => $papar)
-				{	$posmen[$myTable][$kekunci]= 
-						( in_array($kekunci,array('hasil','belanja','gaji','aset','staf','stok')) ) ?
-						str_replace( ',', '', bersih($papar) )// buang koma	
-						: bersih($papar);
-				}	$posmen[$myTable][$medanID] = $dataID;
-            }
-        }
+	{	foreach ($value as $kekunci => $papar)
+		{	$posmen[$myTable][$kekunci]= 
+			( in_array($kekunci,array('hasil','belanja','gaji','aset','staf','stok')) ) ?
+			str_replace( ',', '', bersih($papar) )// buang koma	
+			: bersih($papar);
+		}	$posmen[$myTable][$medanID] = $dataID;
+	}
+}
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 	</section>
@@ -413,16 +413,14 @@ foreach ($_POST as $myTable => $value)
 		$posmen[$jadual]['tmn_kg']=strtoupper($posmen[$jadual]['tmn_kg']);
 	if (isset($posmen[$jadual]['dp_baru']))
 		$posmen[$jadual]['dp_baru']=ucwords(strtolower($posmen[$jadual]['dp_baru']));//*/
-  //echo '<br>$dataID=' . $dataID . '<br>';
-  //echo '<pre>$_POST='; print_r($_POST) . '</pre>';
-  //echo '<pre>$posmen='; print_r($posmen) . '</pre>';
- 
-  # mula ulang $senarai
-  foreach ($senarai as $kunci => $jadual)
-  {// mula ulang table
-  	ubahSimpan($posmen[$jadual], $jadual, $medanID);
-  }// tamat ulang table
-        
+	//echo '<br>$dataID=' . $dataID . '<br>';
+	//echo '<pre>$_POST='; print_r($_POST) . '</pre>';
+	//echo '<pre>$posmen='; print_r($posmen) . '</pre>';
+	# mula ulang $senarai
+	foreach ($senarai as $kunci => $jadual)
+	{// mula ulang table
+		ubahSimpan($posmen[$jadual], $jadual, $medanID);
+  	}// tamat ulang table
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
