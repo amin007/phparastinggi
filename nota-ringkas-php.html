@@ -285,6 +285,25 @@ panjang panjang
 	</section>
 	<section>
 		<small> Bab 2d-1 : Latihan membina borang untuk $_POST dan $_GET. </small><hr>	
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre># Nama fail => latihan_2d-1/borang_isi.php
+<code class="html">&lt;form method="post" action="latihan_2b/borang_proses.php"&gt;
+&lt;label align="center" style="font-size: 15pt; background-color: #000000; 
+color:#ffffff"&gt;Masukkan nama pengguna&lt;/label&gt;
+&lt;input name="namapengguna" type="text" tabindex="1"&gt;&lt;br&gt;
+&lt;label align="center" style="font-size: 15pt; background-color: #000000; 
+color:#ffffff"&gt;Masukkan kata laluan&lt;/label&gt;
+&lt;input name="katalaluan" type="password" size="20" tabindex="2"&gt;&lt;br&gt;
+&lt;input type="submit" name="masuk" value="Masuk"&gt;
+&lt;/form&gt;
+</code># Nama fail => latihan_2d-1/borang_proses.php
+<code class="php">&lt;?php 
+echo '$_POST:'; print_r($_POST) . '';
+//echo '&lt;pre&gt;$_GET:'; print_r($_GET) . '&lt;/pre&gt;';
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+
 	</section>
 	<section>
 		<small> Bab 2d-2 : Latihan membina borang HTML biasa untuk $_POST dan $_GET. </small><hr>	
