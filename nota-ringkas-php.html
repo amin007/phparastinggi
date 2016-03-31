@@ -391,15 +391,15 @@ foreach ($_POST as $myTable => $value)
 <pre># Nama fail => latihan_2d-3.2/borang_proses.php
 <code class="php">&lt;?php
 	# semak data
-	//echo '<br>$dataID=' . $dataID . '<br>';
-	//echo '<pre>$_POST='; print_r($_POST) . '</pre>';
-	//echo '<pre>$posmen='; print_r($posmen) . '</pre>';
+	echo '<pre>$_POST='; print_r($_POST) . '</pre>';
+	echo '<pre>$posmen='; print_r($posmen) . '</pre>';
 
-	/*# mula ulang $senarai
+	# mula ulang $senarai
 	foreach ($senarai as $kunci => $jadual)
-	{// mula ulang table
-		ubahSimpan($posmen[$jadual], $jadual, $medanID);
-	}// tamat ulang table
+	{# tanya sql
+		ubahSqlSimpan($posmen[$jadual], $jadual, $medanID);
+		//ubahSimpan($posmen[$jadual], $jadual, $medanID);
+	}# tamat ulang $senarai
 	//*/
 ?&gt;
 </code></pre>
