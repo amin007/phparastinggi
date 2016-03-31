@@ -391,8 +391,8 @@ foreach ($_POST as $myTable => $value)
 <pre># Nama fail => latihan_2d-3.2/borang_proses.php
 <code class="php">&lt;?php
 	# semak data
-	echo &lt;pre&gt;$_POST='; print_r($_POST) . '&lt;/pre&gt;';
-	echo &lt;pre&gt;$posmen='; print_r($posmen) . '&lt;/pre&gt;';
+	echo '&lt;pre&gt;$_POST='; print_r($_POST) . '&lt;/pre&gt;';
+	echo '&lt;pre&gt;$posmen='; print_r($posmen) . '&lt;/pre&gt;';
 
 	# mula ulang $senarai
 	foreach ($senarai as $kunci => $jadual)
@@ -411,7 +411,7 @@ foreach ($_POST as $myTable => $value)
 <code class="php">&lt;?php
 function ubahSqlSimpan($data, $myTable, $medanID)
 {
-	$senarai = null; //echo &lt;pre&gt;$data-&gt;', print_r($data, 1) . '&lt;/pre&gt;';
+	$senarai = null; //echo '&lt;pre&gt;$data-&gt;', print_r($data, 1) . '&lt;/pre&gt;';
 		
 	foreach ($data as $medan => $nilai)
 	{
@@ -426,7 +426,7 @@ function ubahSqlSimpan($data, $myTable, $medanID)
 		
 	# set sql
 	$sql = " UPDATE `$myTable` SET \r$senaraiData\r WHERE $where";
-	echo &lt;pre&gt;$sql-&gt;', print_r($sql, 1) . '&lt;/pre&gt;';
+	echo '&lt;pre&gt;$sql-&gt;', print_r($sql, 1) . '&lt;/pre&gt;';
 }
 ?&gt;
 </code></pre>
