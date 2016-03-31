@@ -398,9 +398,82 @@ foreach ($_POST as $myTable => $value)
 	foreach ($senarai as $kunci => $jadual)
 	{# tanya sql
 		ubahSqlSimpan($posmen[$jadual], $jadual, $medanID);
-		//ubahSimpan($posmen[$jadual], $jadual, $medanID);
 	}# tamat ulang $senarai
 	//*/
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 2d-3.4 : Latihan membina borang HTML5 untuk $_POST dan $_GET. </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre># Nama fail => latihan_2d-3.2/borang_proses.php
+<code class="php">&lt;?php
+function ubahSqlSimpan($data, $myTable, $medanID)
+{
+	$senarai = null; //echo '<pre>$data->', print_r($data, 1) . '</pre>';
+		
+	foreach ($data as $medan => $nilai)
+	{
+		if ($medan == $medanID)
+			$cariID = $medan;
+		elseif ($medan != $medanID)
+			$senarai[] = ($nilai==null) ? " `$medan`=null" : " `$medan`='$nilai'"; 
+	}
+		
+	$senaraiData = implode(",\r",$senarai);
+	$where = "`$cariID` = '{$data[$cariID]}' ";
+		
+	# set sql
+	$sql = " UPDATE `$myTable` SET \r$senaraiData\r WHERE $where";
+	echo '<pre>$sql->', print_r($sql, 1) . '</pre>';
+}
+?&gt;
+</code></pre>
+<!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
+	</section>
+	<section>
+		<small> Bab 2d-3.5 : Latihan membina borang HTML5 untuk $_POST dan $_GET. </small><hr>
+<!-- contoh koding - mula ///////////////////////////////////////////////////// -->
+<pre># Nama fail => latihan_2d-3.2/borang_proses.php
+<code class="php">&lt;?php
+# contoh output $_POST, $posmen dan sql
+/*
+$_POST=Array
+(
+    [pegawai] => Array
+        (
+            [nama] => Fulan Bin Fulan
+            [jantina] => lelaki
+            [password] => 
+            [terima] => 2016-03-30
+            [hasil] => 123654 + 123,654
+        )
+    [jadual] => pegawai
+    [Simpan] => Simpan
+)
+
+$posmen=Array
+(
+    [pegawai] => Array
+        (
+            [nama] => Fulan Bin Fulan
+            [jantina] => lelaki
+            [terima] => 2016-03-30
+            [hasil] => 247308
+            [no] => 2
+        )
+
+)
+
+$sql-> UPDATE `pegawai` SET 
+ `nama`='Fulan Bin Fulan',
+ `jantina`='lelaki',
+ `terima`='2016-03-30', 
+ `hasil`='247308',
+ WHERE `no` = '2' 
+
+//*/
 ?&gt;
 </code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
