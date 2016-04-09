@@ -10,10 +10,87 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css"/>
 </head>
 <body>
-<hr>
+<hr><h1>1. Contoh mudah </h1>
 <input type="text" readonly class="form-control" data-provide="datepicker" data-date-format="dd/mm/yyyy" 
 value="">
-<hr>
+<hr><h1>2. Contoh tarikh yang berbeza </h1>
+<div class="row">
+<div class="col-md-12">
+<div class="tabbable tabbable-custom boxless">             
+<div class="tab-content">
+<div class="tab-pane active">
+<div class="portlet box blue">
+<div class="portlet-body form">
+	<form class="form-horizontal form-bordered form-row-stripped">         
+	<div class="form-body">
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Tarikh</label>	
+			<div class="col-md-4">
+				<div class="input-group">
+					<input type="text" readonly class="form-control" 
+					data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+					value = "">
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh Kelulusan / Tarikh Arahan</label>
+			<div class="col-md-4">
+				<div class="input-group">
+					<input type="text" readonly class="form-control" 
+					data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+					name="dateApprove" value="" placeholder="Tarikh mendapat kelulusan">
+					<span class="input-group-btn">
+					<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh Serahan</label>
+			<div class="col-md-4">
+				<div class="input-group">            
+					<input type="text" readonly class="form-control" 
+					data-provide="datepicker" data-date-format="dd/mm/yyyy"
+					name="dateDeliver" value="" placeholder="Tarikh serahan kepada penerbit">
+					<span class="input-group-btn">
+						<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->                        
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh</label>
+			<div class="col-md-4">
+				<div class="input-group">            
+					<input type="text" readonly class="form-control" 
+					data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+					name="dateNote"	value="" placeholder="">
+					<span class="input-group-btn">
+						<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	</div><!-- class="form-body" -->
+	</form>
+</div><!-- class="portlet-body form" -->
+</div><!-- class="portlet box blue" -->
+</div><!-- class="tab-pane active" -->
+</div><!-- class="tab-content" -->
+</div><!-- class="tabbable tabbable-custom boxless" -->
+</div><!-- class="col-md-12" -->
+</div><!-- class="row" -->
+
+<hr><h1>1. Borang yang lengkap </h1>
 <!-- BEGIN PAGE CONTENT-->
 <!-- BEGIN FORM-->
 <!-- ************************************************************************************************************************** -->
@@ -61,7 +138,7 @@ value="">
 					data-provide="datepicker" data-date-format="dd/mm/yyyy" 
 					name="dateApprove" value="" placeholder="Tarikh mendapat kelulusan">
 					<span class="input-group-btn">
-					<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
+					<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
 					</span>
 				</div><!-- /input-group -->
 			</div>
@@ -111,7 +188,7 @@ value="">
 					data-provide="datepicker" data-date-format="dd/mm/yyyy"
 					name="dateDeliver" value="" placeholder="Tarikh serahan kepada penerbit">
 					<span class="input-group-btn">
-						<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
+						<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
 					</span>
 				</div><!-- /input-group -->
 			</div>
@@ -131,9 +208,9 @@ value="">
 					<input type="text" readonly class="form-control" 
 					data-provide="datepicker" data-date-format="dd/mm/yyyy" 
 					name="dateNote"	value="" placeholder="">
-				<span class="input-group-btn">
-					<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
-				</span>
+					<span class="input-group-btn">
+						<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+					</span>
 				</div><!-- /input-group -->
 			</div>
 		</div>
@@ -172,15 +249,15 @@ value="">
 
 <hr>
 
-   <!-- BEGIN - JQUERY AND BOOTSTRAP -->   
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-   <!-- END - JQUERY AND BOOTSTRAP -->   
-   <!-- END CORE PLUGINS -->
-   <!-- BEGIN PAGE LEVEL PLUGINS -->
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
-   <!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN - JQUERY AND BOOTSTRAP -->   
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- END - JQUERY AND BOOTSTRAP -->   
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
 
- </body>
+</body>
 </html>
