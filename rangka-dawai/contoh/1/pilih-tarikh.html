@@ -56,147 +56,160 @@
 </div>
 </div>
 <!-- END PAGE HEADER-->
-<!-- ########################################################################################################################## -->
 <!-- BEGIN PAGE CONTENT-->
-       <!-- BEGIN FORM-->
-         <form name="form" method="post" action="PNMBukuadd1.php" class="form-horizontal form-bordered form-row-stripped">         
-         <div class="row">
-            <div class="col-md-12">
-               <div class="tabbable tabbable-custom boxless">                                        
-                  <div class="tab-content">
-                     <div class="tab-pane active">
-                        <div class="portlet box blue">
-                           <div class="portlet-title">
-                              <div class="caption"><i class="icon-reorder"></i>Fasa Penulisan</div>
-                              <div class="tools">
-                                 <a href="javascript:;" class="collapse"></a>
-                              </div>
-                           </div>
-                           <div class="portlet-body form">
-                                 <div class="form-body">
-                            <div class="form-group">
-                              <label class="control-label col-md-3">Jenis</label>
-                              <div class="col-md-4">
-                                  <select class="form-control" name="typeCategory">
-                                  <option value="0">--Sila Pilih--</option>                        
-                                  <option value="1">Karya Asli</option> 
-                                  <option value="2">Terjemahan</option> 
-                               </select>
-                              </div>
-                           </div>
-                                    <div class="form-group">
-                                       <label  class="col-md-3 control-label">Tajuk<span class="required">*</span></label>
-                                       <div class="col-md-4">
-                                          <input type="text" class="form-control" name="title" placeholder="Masukkan Tajuk"  value="" required>
-                                       </div>
-                                    </div>
-                            <div class="form-group">
-                              <label class="control-label col-md-3">Tarikh Kelulusan / Tarikh Arahan</label>
-                              <div class="col-md-4">
-                                <div class="input-group date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">                                          
-                                 <input type="text" size="16" readonly class="form-control" name="dateApprove"  id="datepicker"   value="" placeholder="Tarikh mendapat kelulusan">
-                                  <span class="input-group-btn">
-                                  <button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
-                                  </span>
-                                 </div>
-                                <!-- /input-group -->
-                              </div>
-                            </div>
-                           <div class="form-group">
-                                       <label  class="col-md-3 control-label">Penulis</label>
-                              <div class="col-md-4">
-                                          <input type="text" class="form-control" name="author" placeholder="Masukkan Penulis"   value="">
-                                       </div>
-                                    </div>
-                           <label  class="col-md-3 control-label"></label>
-                           <div class="btn-group">
-                              <a onclick="">
-                                 <ul class="btn green">Tambah Penulis<i class="icon-plus"></i></ul></a>
-                           </div>
-                           <div class="form-group">
-                                       <label  class="col-md-3 control-label">Penterjemah</label>
-                                       <div class="col-md-4">
-                                          <input type="text" class="form-control" name="translator" placeholder="Masukkan Penterjemah"   value="">
-                                       </div>
-                                    </div>
-                           <label  class="col-md-3 control-label"></label>
-                           <div class="btn-group">
-                              <a onclick="">
-                                 <ul class="btn green">Tambah Penterjemah<i class="icon-plus"></i></ul></a>
-                           </div>
-                           
-                           
-                           <div class="form-group">
-                              <label class="control-label col-md-3">Status</label>
-                              <div class="col-md-4">        
-                                  <select class="form-control" name="progress_status">
-                                  <option class="textselect" value="0">--Sila Pilih--</option>
-                                  <option class="textselect" value="1">Telah Diserahkan</option>
-                                  <option class="textselect" value="2">Sedang Berjalan</option>
-                                  <option class="textselect" value="3">Tiada Kemajuan</option>
-                              
-                                  </select>
-                              </div>
-                           </div>
-                           <div class="form-group">
-                              <label class="control-label col-md-3">Tarikh Serahan</label>
-                              <div class="col-md-4">
-                                <div class="input-group date form_datetime">                                       
-                                 <input type="text" size="16" readonly class="form-control" name="dateDeliver"  id="datetimepicker"  value="" placeholder="Tarikh serahan kepada penerbit">
-                                  <span class="input-group-btn">
-                                  <button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
-                                  </span>
-                                 </div>
-                                <!-- /input-group -->
-                              </div>
-                            </div>
-                        
-                           <div class="form-group">
-                                       <label  class="col-md-3 control-label">Catatan</label>
-                                       <div class="col-md-4">
-                                          <input type="text" class="form-control" placeholder="Catatan"  name="dateNote" value="">
-                                       </div>
-                                    </div>
-                           <div class="form-group">
-                              <label class="control-label col-md-3">Tarikh</label>
-                              <div class="col-md-4">
-                                <div class="input-group date form_datetime">                                       
-                                 <input type="text" size="16" readonly class="form-control" name="dateNote"  value="" id="datetimepicker" placeholder="">
-                                  <span class="input-group-btn">
-                                  <button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
-                                  </span>
-                                 </div>
-                                <!-- /input-group -->
-                              </div>
-                            </div>
-                           <div class="form-group">
-                                       <label  class="col-md-3 control-label">Catatan</label>
-                                       <div class="col-md-4">
-                                          <input type="text" class="form-control" placeholder="Catatan"  name="dateNote" value="">
-                                       </div>
-                                    </div>
-                        </div>
-                                 <div class="form-actions fluid">
-                                    <div class="col-md-offset-3 col-md-9">
-                           <input type="hidden" name="authorRow" value="">
-                           <input type="hidden" name="translatorRow" value="">
-                           <input type="hidden" name="createdBy" value="">
-                           <input type="hidden" name="department" value="">   
-                                       <button type="submit" class="btn blue">Submit</button>
-                                       <button type="button" class="btn default">Cancel</button>                              
-                                    </div>
-                                 </div>
-                           </div>
-                        </div>
-                      </div>
-               </div>          
-                  </div>
-               </div>
-         </div>
-         
-       </form>
-       <!-- END PAGE CONTENT-->    
-      </div>
+<!-- BEGIN FORM-->
+<!-- ************************************************************************************************************************** -->
+<form name="form" method="post" action="PNMBukuadd1.php" class="form-horizontal form-bordered form-row-stripped">         
+<div class="row">
+<div class="col-md-12">
+<div class="tabbable tabbable-custom boxless">             
+<div class="tab-content">
+<div class="tab-pane active">
+<div class="portlet box blue">
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="portlet-title">
+		<div class="caption"><i class="icon-reorder"></i>Fasa Penulisan</div>
+		<div class="tools">
+			<a href="javascript:;" class="collapse"></a>
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<div class="portlet-body form">
+	<div class="form-body">
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Jenis</label>
+			<div class="col-md-4">
+				<select class="form-control" name="typeCategory">
+				<option value="0">--Sila Pilih--</option>                        
+				<option value="1">Karya Asli</option> 
+				<option value="2">Terjemahan</option> 
+				</select>
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Tajuk<span class="required">*</span></label>
+			<div class="col-md-4">
+			<input type="text" class="form-control" name="title" placeholder="Masukkan Tajuk" value="" required>
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh Kelulusan / Tarikh Arahan</label>
+			<div class="col-md-4">
+				<div class="input-group date date-picker" data-date-format="yyyy-mm-dd" 
+				data-date-viewmode="years">               
+					<input type="text" size="16" readonly class="form-control" name="dateApprove" id="datepicker"
+					value="" placeholder="Tarikh mendapat kelulusan">
+					<span class="input-group-btn">
+					<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Penulis</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" name="author" placeholder="Masukkan Penulis" value="">
+			</div>
+		</div>
+		<label  class="col-md-3 control-label"></label>
+		<div class="btn-group">
+			<a onclick=""><ul class="btn green">Tambah Penulis<i class="icon-plus"></i></ul></a>
+		</div>
+
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Penterjemah</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" name="translator" placeholder="Masukkan Penterjemah" value="">
+			</div>
+		</div>
+		<label  class="col-md-3 control-label"></label>
+		<div class="btn-group">
+			<a onclick=""><ul class="btn green">Tambah Penterjemah<i class="icon-plus"></i></ul></a>
+		</div>
+
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Status</label>
+			<div class="col-md-4">        
+				<select class="form-control" name="progress_status">
+				<option class="textselect" value="0">--Sila Pilih--</option>
+				<option class="textselect" value="1">Telah Diserahkan</option>
+				<option class="textselect" value="2">Sedang Berjalan</option>
+				<option class="textselect" value="3">Tiada Kemajuan</option>
+				</select>
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh Serahan</label>
+			<div class="col-md-4">
+				<div class="input-group date form_datetime">            
+					<input type="text" size="16" readonly class="form-control" name="dateDeliver"  id="datetimepicker"  
+					value="" placeholder="Tarikh serahan kepada penerbit">
+					<span class="input-group-btn">
+						<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->                        
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Catatan</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" placeholder="Catatan"  name="dateNote" value="">
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label class="control-label col-md-3">Tarikh</label>
+			<div class="col-md-4">
+				<div class="input-group date form_datetime">            
+					<input type="text" size="16" readonly class="form-control" name="dateNote"
+					value="" id="datetimepicker" placeholder="">
+				<span class="input-group-btn">
+					<button class="btn default date-set" type="button"><i class="icon-calendar"></i></button>
+				</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div class="form-group">
+			<label  class="col-md-3 control-label">Catatan</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" placeholder="Catatan" name="dateNote" value="">
+			</div>
+		</div>
+		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	</div><!-- class="form-body" -->
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="form-actions fluid">
+		<div class="col-md-offset-3 col-md-9">
+			<input type="hidden" name="authorRow" value="">
+			<input type="hidden" name="translatorRow" value="">
+			<input type="hidden" name="createdBy" value="">
+			<input type="hidden" name="department" value="">   
+			<button type="submit" class="btn blue">Submit</button>
+			<button type="button" class="btn default">Cancel</button>   
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+</div><!-- class="portlet-body form" -->
+</div><!-- class="portlet box blue" -->
+</div><!-- class="tab-pane active" -->
+</div><!-- class="tab-content" -->
+</div><!-- class="tabbable tabbable-custom boxless" -->
+</div><!-- class="col-md-12" -->
+</div><!-- class="row" -->
+
+</form>
+<!-- ************************************************************************************************************************** -->
+<!-- END PAGE CONTENT-->
+</div>
       <!-- END PAGE -->  
    </div>
    <!-- END CONTAINER -->
