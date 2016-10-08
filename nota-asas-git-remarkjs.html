@@ -99,56 +99,102 @@ class: center, middle, theBlackBackground
 class: theBlackBackground
 # Bab Pengenalan : Objektif 
 
-Objektif modul ini adalah memberi panduan kepada para pembangun laman web yang ingin: 
-	
+--
+Objektif modul ini adalah memberi panduan kepada para pembangun laman web yang ingin:
+
+--
 - Menyimpan sejarah fail-fail koding yang dibuat seperti PHP, Java, C/C++ dan sebagainya
+
+--
 - Pengurusan projek secara berkumpulan dengan pasukan
+
+--
 - Bersosial/berkongsi dengan rakan-rakan
 
 ---
 class: theBlackBackground
 # Modul ini merangkumi: 
 
+--
 - Pemasangan <i class="fa fa-git"></i><i class="fa fa-code-fork"></i>
+
+--
 - Plugin Notepad++ dengan <i class="fa fa-git"></i><i class="fa fa-code-fork"></i>
+
+--
 - Tortoisegit Portable
+
+--
 - <i class="fa fa-github"></i>Github
+
+--
 - <i class="fa fa-bitbucket"></i>Bitbucket
+
+--
 - <i class="fa fa-gitlab"></i>Gitlab
 
 ---
 class: theBlackBackground
 # Bab Pengenalan : Keperluan  
 
-Untuk mengikuti panduan ini. Anda perlu mempunyai asas dan pengalaman 
-dalam pembangunan web seperti :
+--
+Untuk mengikuti panduan ini, 
+--
+ anda perlu mempunyai asas dan pengalaman
+--
+ dalam pembangunan web seperti :
 
+--
 - Tahu mengunakan google aka tahu keyword yang sesuai.
-- Mempunyai asas Mempunyai asas HTML<i class="fa fa-html5 fa-lg fa-5x"></i>,
-	CSS<i class="fa fa-css3 fa-lg fa-5x"></i>, dan Javascript.
-- Mempunyai asas pengaturcaraan PHP, Java, C/C++ dan sebagainya
+
+--
+- Mempunyai asas dalam
+--
+ HTML<i class="fa fa-html5 fa-lg fa-3x"></i>,
+--
+ CSS<i class="fa fa-css3 fa-lg fa-3x"></i>,
+--
+ dan Javascript.
+
+--
+- Mempunyai asas pengaturcaraan 
+--
+ PHP, 
+--
+ Java, 
+--
+ C/C++ 
+--
+ dan sebagainya
 
 ---
 class: center, middle, theBlackBackground
 # Apa / Mengapa / Bila 
 
--- 
-Apa itu Git 
--- 
+---
+class: theBlackBackground 
+# Apa itu Git 
+
+--
 - Git adalah sumber terbuka sistem kawalan versi diedarkan (Dvcs) yang ketara 
 boleh meningkatkan cara anda bekerja dan bekerjasama dalam projek. 
 
--- 
-Mengapa gunakan Git
---
-Git membolehkan anda menyimpan sejarah perubahan penting yang dibuat kepada fail tempatan anda.
--- 
-Ia juga boleh membuat sandaran sejarah ini melalui perkhidmatan hosting terpencil seperti GitHub.
+---
+class: theBlackBackground
+# Mengapa gunakan Git
 
--- 
-Bila masa gunakan Git 
--- 
-Membantu anda bekerja bersendirian atau dengan pasukan.
+--
+1. Git membolehkan anda menyimpan sejarah perubahan penting yang dibuat kepada fail tempatan anda.
+
+--
+1. Ia juga boleh membuat sandaran sejarah ini melalui perkhidmatan hosting terpencil seperti GitHub.
+
+---
+class: theBlackBackground
+# Bila masa gunakan Git 
+
+--
+- Membantu anda bekerja bersendirian atau dengan pasukan.
 
 ---
 class: theBlackBackground
@@ -176,49 +222,81 @@ class: theBlackBackground
 class: theBlackBackground
 #  git init 
 
+--
 3.1 Ada 15 minit dan mahu belajar Git?
 
-Git membolehkan kumpulan orang untuk bekerja pada dokumen yang sama (sering kod) pada masa yang sama, 
+--
+- Git membolehkan kumpulan orang untuk bekerja pada dokumen yang sama (sering kod) pada masa yang sama, 
 
+--
 dan tanpa memijak kaki masing-masing. Ia adalah satu sistem kawalan versi diedarkan.
 
-Segera terminal kami di bawah kini dalam direktori kami mengambil keputusan untuk menamakan "octobox". 
+--
+- Dalam direktori kami mengambil keputusan untuk menamakan "octobox". 
 
+--
 Untuk memulakan repositori Git sini, taip arahan berikut:
+
+--
 <pre><code> git init </code></pre>
 
 ---
 class: theBlackBackground
 # git status 
 
+--
 3.2 Semakan Status
-Syabas! Sebagai Git hanya memberitahu kami, "octobox" direktori kami kini mempunyai repositori kosong 
-di /.git/. repositori adalah direktori tersembunyi di mana Git beroperasi.
 
-Untuk menyimpan kemajuan anda sebagai anda pergi melalui tutorial ini - dan mendapat lencana 
-apabila anda berjaya menyiapkannya - menuju ke buat akaun Kod Sekolah percuma. 
+--
+- Syabas! Git hanya memberitahu kami, 
 
-Kami akan menunggu untuk anda di sini.
+--
+ "octobox" direktori kami kini mempunyai repositori kosong di /.git/. 
 
-Seterusnya, mari kita menaip perintah status git untuk melihat apa keadaan semasa projek kami adalah:
+--
+- Repositori adalah direktori tersembunyi di mana Git beroperasi.
 
+--
+- Untuk menyimpan kemajuan anda sebagai anda pergi melalui tutorial ini 
+
+--
+ dan mendapat lencana apabila anda berjaya menyiapkannya 
+
+--
+ menuju ke buat akaun Kod Sekolah percuma. 
+
+--
+- Kami akan menunggu untuk anda di sini.
+
+--
+- Seterusnya, mari kita menaip perintah status git untuk melihat apa keadaan semasa projek kami adalah:
+
+--
 <pre><code>git status</code></pre>
 
 ---
 class: theBlackBackground
 #  git add 
 
+--
 3.3 Menambah Perubahan
-Baik, ia kelihatan seperti repositori Git kami berfungsi dengan betul.
 
-Perhatikan bagaimana Git berkata octocat.txt adalah "tidak terlacak"?
+--
+- Baik, ia kelihatan seperti repositori Git kami berfungsi dengan betul.
 
-Ini bermakna Git melihat bahawa octocat.txt adalah fail baru.
+--
+- Perhatikan bagaimana Git berkata octocat.txt adalah "tidak terlacak"?
 
-Untuk memberitahu Git untuk mula menjejaki perubahan yang dibuat kepada octocat.txt,
+--
+- Ini bermakna Git melihat bahawa octocat.txt adalah fail baru.
 
+--
+- Untuk memberitahu Git untuk mula menjejaki perubahan yang dibuat kepada octocat.txt,
+
+--
 kita perlu untuk menambahnya ke kawasan pementasan dengan menggunakan git add.
 
+--
 <pre><code> git add octocat.txt </code></pre>		
 
 ---
