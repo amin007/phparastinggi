@@ -378,31 +378,298 @@ class: theBlackBackground
 
 ---
 class: theBlackBackground
-#  git log 
+#  git log
+
+Sejarah
+
+--
+- Oleh itu, kita telah membuat adalah melakukan beberapa. 
+--
+ Sekarang mari kita lihat mereka untuk melihat apa yang kita berubah.
+
+--
+- Nasib baik untuk kita, ada log git.
+--
+ Fikirkan log Git sebagai jurnal 
+--
+ yang mengingati semua perubahan 
+--
+ yang kami telah komited setakat ini, 
+--
+ dalam perintah itu kita komited mereka. 
+
+--
+- Cuba jalankan sekarang:
+
+<pre><code> git log </code></pre>
+
+---
+class: theBlackBackground
+# git remote add
+
+Repositori Remote
+
+--
+- Jadi sekarang kita daftar akaun <i class="fa fa-github"></i>Github dan buat repositori baru.
+
+--
+- Bagus! Kita telah mencipta repositori baru yang kosong dalam GitHub, 
+--
+ dengan contoh url di https://github.com/try-git/try_git.git. 
+
+--
+- Untuk menolak repo tempatan untuk pelayan GitHub kita perlu menambah repositori jauh.
+
+--
+- Arahan ini mengambil nama jauh dan URL repositori, 
+--
+ yang dalam kes kita adalah https://github.com/try-git/try_git.git.
+
+--
+- Pergi ke hadapan dan menjalankan git jauh menambah dengan pilihan di bawah:
+
+<pre><code> git remote add origin https://github.com/try-git/try_git.git </code></pre>
 
 ---
 class: theBlackBackground
 # git push 
 
+Pergi Lebih Jauh aka Menolak Jauh
+
+--
+## Sudah macam iklan Shell pulak huhuhu
+
+--
+- Arahan *push* memberitahu Git di mana untuk meletakkan komit 
+--
+ yang kita apabila kita sudah bersedia, 
+--
+ dan anak kita sudah bersedia. 
+--
+ Jadi mari kita menolak perubahan tempatan untuk 
+--
+ repo asal kami (pada <i class="fa fa-github"></i>Github).
+
+--
+- Nama *remote* adalah *origin* dan nama *local branch* lalai adalah *master*.
+
+--
+- *-u* memberitahu Git ingat parameter, 
+--
+ supaya masa depan kita hanya boleh menjalankan 
+--
+ *git push* dan
+--
+ Git akan tahu apa yang perlu dilakukan. 
+
+--
+- Teruskan dan tolak!
+<pre><code> git push -u origin master </code></pre>
+
 ---
 class: theBlackBackground
 # git pull 
 
+Muat turun projek dalam <i class="fa fa-github"></i>Github
+
+--
+- Mari kita berpura-pura sedikit masa telah berlalu. 
+
+--
+- Kita telah menjemput orang lain untuk menyumbang kepada projek GitHub kita. 
+--
+ Mereka telah memuat turun dengan guna *git init* sendiri, 
+--
+ melakukan *git commit* sendiri, 
+--
+ dan *git push* semula kepada projek Github kita tadi.
+
+--
+- Kita boleh menyemak perubahan pada repositori GitHub tadi
+--
+ dan tarik ke *local* untuk apa-apa perubahan baru.
+
+--
+Taip command seperti berikut :
+<pre><code> git pull origin master </code></pre>
+
 ---
 class: theBlackBackground
-# git diff 
+# git diff - 1
+
+Perbezaan
+
+--
+- Oh, kelihatan seperti terdapat beberapa 
+--
+ penambahan dan perubahan 
+--
+ kepada keluarga octocat itu. 
+
+--
+- Mari kita lihat apa yang berbeza dari terakhir 
+--
+ yang mereka melakukan dengan menggunakan arahan *git diff*.
+
+--
+- Dalam kes ini kita mahu cari perbezaan untuk
+--
+ kebanyakan baru-baru ini mereka melakukan, 
+--
+ yang kita boleh merujuk kepada menggunakan penunjuk *HEAD*.
+
+--
+- Taip command seperti berikut :
+<pre><code> git diff HEAD </code></pre>
+
+---
+class: theBlackBackground
+# git diff - 2
+Berperingkat Perbezaan
+
+--
+- Satu lagi penggunaan yang besar untuk "diff" 
+--
+ sedang melihat perubahan dalam fail yang telah pun diadakan. 
+
+--
+- Ingat, diadakan fail adalah fail kami telah memberitahu git yang bersedia untuk dilakukan.
+
+--
+- Mari kita gunakan git menambah untuk mengadakan "octofamily / octodog.txt", 
+--
+ yang saya hanya ditambah kepada keluarga untuk anda.
+
+--
+- Taip command seperti berikut :
+<pre><code> git add octofamily/octodog.txt </code></pre>
+
+---
+class: theBlackBackground
+# git diff - 3
+Berperingkat Perbezaan (samb)
+
+--
+- Baik, sekarang pergi ke hadapan dan menjalankan git beza dengan pilihan *--staged*
+--
+ untuk melihat perubahan anda hanya dipentaskan. 
+
+--
+- Anda akan dapat melihat bahawa octodog.txt telah dicipta.
+
+--
+- Taip command seperti berikut :
+<pre><code> git diff --staged </code></pre>
 
 ---
 class: theBlackBackground
 # git reset 
 
+Menetapkan semula Peringkat aka *Stage*
+
+--
+- Jadi sekarang *octodog* yang merupakan sebahagian daripada keluarga, 
+--
+ *octocat* adalah semua tertekan. 
+
+--
+- Oleh kerana kita suka *octocat* lebih daripada *octodog*, 
+--
+ kami akan menghidupkan berkerut beliau sekitar dengan mengeluarkan octodog.txt.
+
+--
+- Anda boleh menetapkan semua fail dengan menggunakan arahan "reset git". 
+
+--
+- Teruskan dan keluarkan *octofamily/octodog.txt*.
+
+--
+- Taip command seperti berikut :
+<pre><code> git reset octofamily/octodog.txt </code></pre>
+
 ---
 class: theBlackBackground
 # git checkout 
 
+Buat asal
+
+--
+- "Git semula" melakukan kerja yang hebat daripada *unstaging* "octodog.txt", 
+--
+ tetapi anda akan melihat bahawa dia masih ada. 
+--
+ Dia hanya tidak diadakan lagi. 
+
+--
+- Adalah lebih baik jika kita boleh kembali kepada 
+--
+ bagaimana perkara-perkara yang sebelum *octodog* datang sekitar dan merosakkan parti.
+
+--
+- Fail-fail boleh ditukar kembali kepada keadaannya yang 
+--
+ terdahulu *commit* dengan menggunakan arahan "git checkout - <sasaran>". 
+
+--
+- Teruskan dan menghilangkan semua perubahan sejak melakukan terakhir bagi *octocat.txt*.
+
+--
+- Taip command seperti berikut :
+<pre><code> git checkout -- octocat.txt </code></pre>
+
 ---
 class: theBlackBackground
 # git branch 
+
+Menambah Cawangan Baru
+
+--
+- Apabila pengaturcaraan bekerja pada ciri atau *bug* tertentu,
+--
+ mereka sering akan membuat salinan aka *branch* pada kod mereka, 
+--
+ lalu boleh membuat komit yang berasingan.
+
+--
+- Kemudian apabila mereka selesai mereka boleh menggabungkan cawangan ini 
+--
+ kembali ke dalam cawangan induk utama mereka.
+
+--
+- Kami mahu mengeluarkan semua octocats menjengkelkan, 
+--
+ jadi mari kita mewujudkan cawangan yang dipanggil "clean_up", 
+--
+ di mana kami akan melakukan semua kerja:
+
+--
+- Taip command seperti berikut :
+<pre><code> git branch clean_up </code></pre>
+
+---
+class: theBlackBackground
+# git branch / git checkout
+
+Bertukar Cawangan
+
+--
+- Terbaik!! Sekarang jika anda menaip cawangan git 
+--
+ anda akan melihat dua cawangan tempatan:
+--
+ cawangan bernama *master* dan 
+--
+ cawangan baru anda bernama *clean_up*.
+
+
+--
+- Anda boleh menukar cawangan menggunakan arahan "checkout git <cawangan>". 
+--
+ Cubalah sekarang untuk beralih kepada cawangan *clean_up*
+
+--
+- Taip command seperti berikut :
+<pre><code> git checkout clean_up </code></pre>
 
 ---
 class: theBlackBackground
