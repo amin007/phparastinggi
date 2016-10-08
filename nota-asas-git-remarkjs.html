@@ -673,7 +673,161 @@ Bertukar Cawangan
 
 ---
 class: theBlackBackground
+# git rm
+Mengeluarkan Semua Perkara
+
+--
+- Ok, jadi anda di cawangan clean_up itu. 
+
+--
+- Akhirnya anda boleh menghapuskan semua orang-orang octocats menjengkelkan 
+--
+ dengan menggunakan arahan "git rm" 
+--
+ yang bukan sahaja akan membuang fail sebenar dari cakera, 
+--
+ tetapi ia juga akan mengadakan penghapusan fail untuk kita.
+
+--
+- Anda akan mahu menggunakan kad bebas sekali lagi 
+-
+ untuk mendapatkan semua octocats sekali jalan
+
+--
+- Taip command seperti berikut :
+<pre><code> git rm '* .txt' </code></pre>
+
+---
+class: theBlackBackground
+# git rm / git commit
+Mengeluarkan Semua Perkara -2 
+
+Perubahan Commiting Branch
+
+--
+- Sekarang bahawa anda telah mengalih keluar semua kucing anda perlu melakukan perubahan anda.
+
+--
+- Jangan ragu untuk menjalankan status git untuk memeriksa perubahan yang anda kira-kira untuk melakukan.
+
+--
+- Taip command seperti berikut :
+<pre><code> git melakukan -m "Buang semua kucing" </code></pre>
+
+---
+class: theBlackBackground
+# git rm / git commit
+Mengeluarkan Semua Perkara -3
+
+Bertukar Kembali ke master
+
+--
+- Terbaik!, anda hampir selesai dengan kucing ... er fix bug, 
+--
+ anda hanya perlu untuk menukar kembali ke cawangan *master* 
+--
+ supaya anda boleh menyalin (atau bergabung) perubahan anda dari cawangan *clean_up*
+--
+ kembali ke dalam cawangan induk.
+
+--
+- Teruskan dan *checkout* ke cawangan *master*:
+
+--
+- Taip command seperti berikut :
+<pre><code> git checkout master </code></pre>
+
+---
+class: theBlackBackground
 # git merge 
+
+Bersedia untuk Bergabung
+
+--
+- Baiklah, masa ini telah tiba 
+--
+ apabila anda perlu menggabungkan perubahan anda 
+--
+ dari cawangan *clean_up* ke cawangan *master*. 
+
+--
+- Ambil nafas dalam-dalam, ia bukan yang menakutkan.
+
+--
+- Kami sudah berada pada cawangan *master*, 
+--
+ jadi kita hanya perlu memberitahu Git untuk 
+--
+ bergabung cawangan *clean_up* ke dalamnya:
+
+--
+- Taip command seperti berikut :
+<pre><code> git merge clean_up </code></pre>
+
+---
+class: theBlackBackground
+# git merge / git branch -d
+
+Bersedia untuk Bergabung - 2
+
+Menjaga Perkara Bersih
+
+--
+- Tahniah! Anda hanya dicapai bugfix pertama anda berjaya dan bergabung. 
+
+--
+- Yang tinggal lakukan adalah membersihkan selepas diri sendiri. 
+
+--
+- Oleh kerana anda sudah selesai dengan branch *clean_up* apa yang anda tidak memerlukannya lagi.
+
+--
+- Anda boleh menggunakan arahan "git branch -d <nama cawangan>" untuk memadam cawangan. 
+
+--
+- Teruskan dan memadam cawangan clean_up sekarang:
+
+--
+- Taip command seperti berikut :
+<pre><code> git branch -d clean_up </code></pre>
+
+---
+class: theBlackBackground
+# git push
+
+Push Yang Terakhir
+
+--
+- Di sini kita, pada langkah terakhir. Saya bangga yang anda telah membuat sejauh ini.
+
+--
+- Ia telah pembelajaran yang besar untuk Git dengan anda. 
+
+--
+- Yang tinggal untuk anda lakukan sekarang adalah untuk menolak semua yang 
+--
+ anda telah bekerja 
+--
+ kepada repositori jauh anda, 
+--
+ dan anda selesai!
+
+--
+- Taip command seperti berikut :
+<pre><code> git push </code></pre>
+
+--
+- Terbaik!! Anda kini mempunyai rasa sedikit kebesaran Git. 
+
+---
+class: theBlackBackground
+# Rujukan
+
+--
+- https://git-scm.com
+
+--
+- https://try.github.io
 
 ---
 class: theBlackBackground
