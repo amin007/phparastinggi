@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nota Ringkas Asas Git / Github / Bitbucket / Gitlab</title>
+
+<meta name="description" content="Slaid mengenai pembangunan web menggunakan Git / Github / Bitbucket / Gitlab" />
+<meta name="author" content="Amin007 Ledang" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+<link rel="stylesheet" href="css/reveal.min.css">
+<!-- link rel="stylesheet" href="css/theme/sky.css" id="theme" -->
+<link rel="stylesheet" href="css/theme/night.css" id="theme">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<style>
+.reveal i{
+    font-family: 'FontAwesome';
+    font-style: normal;
+}
+table.excel {
+	border-style:ridge;
+	border-width:1;
+	border-collapse:collapse;
+	/*font-family:sans-serif; */
+	font-size:30px;
+	margin: auto;
+	border-spacing: 0; 
+}
+table.excel thead th, table.excel tbody th {
+	background:#CCCCCC;
+	border-style:ridge;
+	border-width:1;
+	text-align: center;
+	vertical-align: top;
+}
+table.excel tbody th { text-align:center; vertical-align: top; }
+table.excel tbody td 
+{
+	vertical-align:middle; //bottom;
+	/*padding: 0 3px; */
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	border: 1px solid #aaaaaa;
+	background:#ffffff;
+	text-align: left;
+}
+</style>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+	
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+document.write( '<link rel="stylesheet" href="css/print/' 
++ ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) 
++ '.css" type="text/css" media="print">' );
+</script>
+	
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="reveal"><div class="slides">
+<!--  mula slide di sini ###################################################################### -->
+<!-- bab pengenalan - mula -->
+<section>
+	<section>
+		<h2> Asas <i class="fa fa-git"></i>
+		<i class="fa fa-code-fork"></i> / 
+		<i class="fa fa-github"></i>Github /<br> 
+		<i class="fa fa-bitbucket"></i>Bitbucket / 
+		<i class="fa fa-gitlab"></i>Gitlab </h2>
+		<h3> Kursus Mudah Selama ... Jam Sahaja </h3>
+	</section>
+	<section>
+		<h2> Bab Pengenalan : Objektif </h2><hr>
+		<p align="left"> Objektif modul ini adalah memberi panduan kepada para pembangun 
+		laman web yang ingin: </p>
+		<ul align="left">
+		<li> Menyimpan sejarah fail-fail koding yang dibuat seperti PHP, Java, C/C++ dan sebagainya </li>
+		<li> Pengurusan projek secara berkumpulan dengan pasukan</li>
+		<li> Bersosial/berkongsi dengan rakan-rakan </li>
+		</ul> 
+	</section>
+	<section>
+		<h2> Modul ini merangkumi: </h2><hr>
+		<ol>
+		<li> Pemasangan <i class="fa fa-git"></i><i class="fa fa-code-fork"></i> </li>
+		<li> Plugin Notepad++ dengan <i class="fa fa-git"></i><i class="fa fa-code-fork"></i> </li>
+		<li> Tortoisegit Portable </li>
+		<li> <i class="fa fa-github"></i>Github </li>
+		<li> <i class="fa fa-bitbucket"></i>Bitbucket </li>
+		<li> <i class="fa fa-gitlab"></i>Gitlab </li>
+		</ol>
+	</section>
+	<section>
+		<h2> Bab Pengenalan : Keperluan </h2><hr>
+		<p align="left"> Untuk mengikuti panduan ini. Anda perlu mempunyai asas dan pengalaman 
+		dalam pembangunan web seperti :</p>
+		<ul>
+		<li> Tahu mengunakan google aka tahu keyword yang sesuai. </li>
+		<li> Mempunyai asas HTML<i class="fa fa-html5 fa-lg fa-5x"></i>,
+		CSS<i class="fa fa-css3 fa-lg fa-5x"></i>, dan Javascript. </li>
+		<li> Mempunyai asas pengaturcaraan PHP, Java, C/C++ dan sebagainya </li>
+		</ul> 
+	</section>
+</section>
+<!-- bab pengenalan - tamat -->
+<!-- bab 1 - mula -->
+<section>
+	<section>
+		<h2> Apa / Mengapa / Bila </h2><hr>
+		<ul>
+		<li> Apa itu Git </li>
+		<li> Mengapa gunakan Git </li>
+		<li> Bila masa gunakan Git </li>
+		</ul>
+	</section>
+	<section>
+		<h2> Apa itu Git </h2><hr>
+		<ul>
+		<li> Ia adalah satu sistem kawalan versi diedarkan aka DVCS - dalam versi sumber terbuka. </li>
+		<li> Ia membolehkan kumpulan orang untuk bekerja pada dokumen yang sama, pada masa yang sama, tanpa memijak kaki masing-masing </li>
+		<li> </li>
+		</ul>
+	</section>
+	<section>
+		<h2> Mengapa gunakan Git </h2><hr>
+		<ul>
+		<li> Git membolehkan anda menyimpan sejarah perubahan penting yang dibuat kepada fail tempatan anda. </li>
+		<li> Ia juga boleh membuat sandaran sejarah ini melalui perkhidmatan hosting terpencil seperti 
+				<i class="fa fa-github"></i>Github /
+				<i class="fa fa-bitbucket"></i>Bitbucket /
+				<i class="fa fa-gitlab"></i>Gitlab 
+				dan sebagainya. </li>
+		<li> Boleh meningkatkan cara kita bekerja dan bekerjasama dalam projek. </li>
+		<li> Sewaktu pc/laptop/server mengila atau tiba-tiba hang atau kena virus atau yang seumpama dengannnya. </li>
+		</ul>
+	</section>
+	<section>
+		<h2> Bila masa gunakan Git </h2><hr>
+		<ul>
+		<li> Semasa kita bekerja bersendirian secara offline atau tiada talian internet. </li>
+		<li> Semasa kita bekerja secara pasukan walaupun semua orang ubah suai fail yang sama di waktu yang sama. </li>
+		<li> Membantu orang lain memahami koding tanpa perlu hantar semua fail yang ada dengan bantuan 
+				<i class="fa fa-github"></i>Github /
+				<i class="fa fa-bitbucket"></i>Bitbucket /
+				<i class="fa fa-gitlab"></i>Gitlab 
+				dan sebagainya. </li>
+		<li> Menolong kawan lain dalam kesusahan seperti kata bidalan berat sama dipikut, ringan sama dijinjing. </li>
+		<li> Memberi persepsi yang baik kepada pensyarah, supervisor, bakal majikan yang menunjukkan kepakaran kita. </li>
+		</ul> 
+	</section>
+</section>
+<!-- bab 1 - tamat -->
+<!-- bab 2 - mula -->
+<section>
+	<section>
+		<h2> Muat turun </h2><hr>
+		<dir align="center"><img src="imgs/projek-git.png"></dir>
+	</section>
+</section>
+<!-- bab 2 - tamat -->
+<!-- bab 3 - mula -->
+<section>
+	<section>
+		<h2> Asas dalam git </h2><hr>
+		<ul align="left">
+		<li> git init </li>
+		<li> git status </li>
+		<li> git add </li>
+		<li> git commit </li>
+		<li> git log </li>
+		<li> git push </li>
+		<li> git pull </li>
+		<li> git diff </li>
+		<li> git reset </li>
+		<li> git checkout </li>
+		<li> git branch </li>
+		<li> git merge </li>
+		</ul> 
+	</section>
+	<section>
+		<h2> git init </h2><hr>
+		<p> 3.1 Dalam direktori kami mengambil keputusan untuk menamakan "octobox". </p>
+		<p> Untuk memulakan repositori Git sini, taip arahan berikut: </p>
+		<pre><code> git init </code></pre>
+	</section>
+	<section>
+		<h2> git status</h2><hr>
+		<p> 3.2 Semakan Status </p>
+		<ul>
+		<li> Syabas! Sebagai Git hanya memberitahu kami, "octobox" direktori kami kini mempunyai repositori kosong 
+			di /.git/. repositori adalah direktori tersembunyi di mana Git beroperasi. </li>
+		<li> Untuk menyimpan kemajuan anda sebagai anda pergi melalui tutorial ini - dan mendapat lencana 
+			apabila anda berjaya menyiapkannya - menuju ke buat akaun Kod Sekolah percuma. </li>
+		<li> Kami akan menunggu untuk anda di sini. </li>
+		<li> Seterusnya, mari kita menaip perintah status git untuk melihat apa keadaan semasa projek kami adalah: </li>
+		</ul>
+		<pre><code>git status</code></pre>
+	</section>
+	<section>
+		<h2> git add</h2><hr>
+		<p> 3.3 Menambah Perubahan </p>
+		<ul>
+		<li> Baik, ia kelihatan seperti repositori Git kami berfungsi dengan betul. </li>
+		<li> Perhatikan bagaimana Git berkata octocat.txt adalah "tidak terlacak"? </li>
+		<li> Ini bermakna Git melihat bahawa octocat.txt adalah fail baru. </li>
+		<li> Untuk memberitahu Git untuk mula menjejaki perubahan yang dibuat kepada octocat.txt, </li>
+		<li> kita perlu untuk menambahnya ke kawasan pementasan dengan menggunakan git add. </li>
+		</ul>
+		<pre><code> git add octocat.txt </code></pre>		
+	</section>
+	<section>
+		<h2> git commit </h2><hr>
+		<ul>
+		<li> Perhatikan bagaimana Git berkata perubahan akan dilakukan? </li>
+		<li> Fail-fail yang disenaraikan di sini adalah di Kawasan Staging, dan mereka tidak berada dalam repositori kami lagi. </li>
+		<li> Kita boleh menambah atau mengeluarkan fail dari peringkat sebelum kita simpan di dalam *Repositori*. </li>
+		<li> Untuk menyimpan perubahan kami dipentaskan kami menjalankan melakukan arahan 
+			dengan mesej yang menerangkan apa yang kita telah berubah. </li>
+		<li> Mari kita buat sekarang dengan menaip: </li>
+		</ul> 
+		<pre><code> git commit -m "Tambahkan cerita octocat yang comel" </code></pre>
+	</section>
+	<section>
+		<h2> git log </h2><hr>
+		<p> Sejarah </p>
+		<ul>
+		<li> Oleh itu, kita telah membuat adalah melakukan beberapa. </li>
+		<li> Sekarang mari kita lihat mereka untuk melihat apa yang kita berubah. </li>
+		<li> Nasib baik untuk kita, ada log git. Fikirkan log Git sebagai jurnal 
+				yang mengingati semua perubahan 
+				yang kami telah komited setakat ini, 
+				dalam perintah itu kita komited mereka. </li>
+		<li> Cuba jalankan sekarang: </li>
+		</ul> 
+		<pre><code> git log </code></pre>
+		
+	</section>
+	<section>
+		<h2> git push </h2><hr>
+	</section>
+	<section>
+		<h2> git pull </h2><hr>
+	</section>
+	<section>
+		<h2> git diff </h2><hr>
+	</section>
+	<section>
+		<h2> git reset </h2><hr>
+	</section>
+	<section>
+		<h2> git checkout </h2><hr>
+	</section>
+	<section>
+		<h2> git branch </h2><hr>
+	</section>
+	<section>
+		<h2> git merge </h2><hr>
+	</section>
+</section>
+<!-- bab 3 - tamat -->
+<!-- bab 4 - mula -->
+<section>
+	<section><h2> Tortoisegit Portable</h2>
+		<a target="_blank" href="https://blog.assembla.com/AssemblaBlog/tabid/12618/bid/77264/Setting-Up-Git-on-Windows-in-Four-Easy-Steps.aspx">Panduan Untuk Seting Kunci SSH</a>
+	</section>
+</section>
+<!-- bab 4 - tamat -->
+<!-- penghabisan - mula -->
+<section>
+	<section><h2> SUDAH HABIS DAA </h2><hr/>
+		<ul>
+		<li><i class="fa fa-bookmark"></i>: www.amin007.org</li>
+		<li><i class="fa fa-envelope-o"></i>: al.amin007@yahoo.com</li>
+		<li><i class="fa fa-facebook"></i>: amin007.ledang</li>
+		<li><i class="fa fa-twitter"></i>: amin007_ledang</li>
+		<li><i class="fa fa-google-plus"></i>: abdulmuhaiminabdulghaniamin007ledang</li>
+		<!-- li><i class="fa fa-linkedin"></i>: </li -->
+		<li><i class="fa fa-github"></i>: amin007</li>
+		<li><i class="fa fa-bitbucket"></i>: amin007</li>
+		<li><i class="fa fa-instagram"></i>: aminledang</li>
+		<li><i class="fa fa-skype"></i>: amin800507</li>
+		<li><i class="fa fa-youtube"></i>: user/abdmuhaimin</li>
+		<li><i class="fa fa-snapchat-ghost"></i>: amin007ledang</li>
+		</ul>
+	</section>
+</section>
+<!-- penghabisan - tamat -->
+
+<!-- tamat slide di sini ###################################################################### -->
+</div><!-- / class="slides" -->
+</div><!-- / class="reveal -->
+<!-- untuk javascrip 
+======================================================== -->
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	
+	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Optional reveal.js plugins
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true },
+		{ src: 'plugin/notes/notes.js', async: true }
+	]
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+});
+</script>	
+</body>
+</html>

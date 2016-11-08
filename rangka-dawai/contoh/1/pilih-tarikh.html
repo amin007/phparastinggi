@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pilih Tarikh Format DD-MM-YYYY</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css"/>
+</head>
+<body>
+<hr><h1>Rujukan</h1>
+<a class="btn btn-default" role="button" target="_blank" 
+href="http://vitalets.github.io/bootstrap-datepicker">vitalets</a>
+<a class="btn btn-default" role="button" target="_blank" 
+href="http://eternicode.github.io/bootstrap-datepicker">eternicode</a>
+
+<hr><h1>1. Contoh mudah </h1>
+<input type="text" readonly class="form-control" data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+value="">
+
+<hr><h1>2. Contoh tarikh yang berbeza </h1>
+
+<form class="form-horizontal form-bordered form-row-stripped">         
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="form-group">
+		<label  class="col-md-3 control-label">Kalander</label>	
+		<div class="col-md-4">
+			<div class="input-group">
+				<input type="text" readonly class="form-control" 
+				data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+				value = "">
+				<span class="input-group-addon">
+					<i class="fa fa-calendar"></i>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="form-group">
+		<label class="control-label col-md-3">Tarikh Kelulusan</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input type="text" readonly class="form-control" 
+				data-provide="datepicker" data-date-format="dd/mm/yyyy" 
+				name="dateApprove" value="" placeholder="Tarikh mendapat kelulusan">
+				<span class="input-group-btn">
+				<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+	<div class="form-group">
+		<label class="control-label col-md-3">Tarikh Serahan</label>
+		<div class="col-md-4">
+			<div class="input-group">            
+				<input type="text" readonly class="form-control" 
+				data-provide="datepicker" data-date-format="dd/mm/yyyy"
+				name="dateDeliver" value="" placeholder="Tarikh serahan kepada kaunter">
+				<span class="input-group-btn">
+				<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->                        
+	<div class="form-group">
+		<label class="control-label col-md-3">Tarikh</label>
+		<div class="col-md-4">
+			<div class="input-group">            
+				<input type="text" readonly class="form-control" 
+				data-provide="datepicker" data-date-format="dd-mm-yyyy" 
+				name="dateNote"	value="" placeholder="">
+				<span class="input-group-btn">
+				<button class="btn default date-set" type="button"><i class="fa fa-calendar"></i></button>
+				</span>
+			</div><!-- /input-group -->
+		</div>
+	</div>
+	<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+</form>
+<hr>
+
+<!-- Letak js di atas body
+==================================================================================================================== -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
+<!-- Letak body dan html di bawah sekali
+==================================================================================================================== -->
+</body>
+</html>
