@@ -1,0 +1,21 @@
+=IF(AND(C5>0.99,MOD(RIGHT((ROUND(C5,2))*100,2),10^2)>0)," dan ","")
+&IF(MOD(RIGHT((ROUND(C5,2))*100,2),10^2)>=20," "&CHOOSE(FLOOR(MOD(RIGHT((ROUND(C5,2))*100,2),10^2)/10,1)+1,
+"","","Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+&IF(MOD(MOD(RIGHT((ROUND(C5,2))*100,2),10^2),10)>=1," "&CHOOSE(FLOOR(MOD(MOD(RIGHT((ROUND(C5,2))*100,2),10^2),10),1)+1,
+"","Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+IF(MOD(RIGHT((ROUND(C5,2))*100,2),10^2)>=1," "&CHOOSE(FLOOR(MOD(RIGHT((ROUND(C5,2))*100,2),10^2),1)+1,
+"","Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+&IF(MOD(RIGHT((ROUND(C5,2))*100,2),10^2)=1," Sen","")&IF(MOD(RIGHT((ROUND(C5,2))*100,2),10^2)>1," Sen Sahaja",""))
+
+=IF(AND(AA10>0.99,MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)>0)," dan ","")
+&IF(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)>=20," "&CHOOSE(FLOOR(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)/10,1)+1,
+"","","Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+&IF(MOD(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2),10)>=1," "&CHOOSE(FLOOR(MOD(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2),10),1)+1,
+"","Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+IF(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)>=1," "&CHOOSE(FLOOR(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2),1)+1,
+"","Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+&IF(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)=1," Sen","")&IF(MOD(RIGHT((ROUND(AA10,2))*100,2),10^2)>1," Sen Sahaja",""))
+
+
