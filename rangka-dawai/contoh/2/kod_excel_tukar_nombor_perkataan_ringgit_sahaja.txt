@@ -1,0 +1,68 @@
+=TRIM(
+
+IF(C5>=10^14," "&CHOOSE(FLOOR(MOD(C5,10^15)/10^14,1)+1,"","Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),"")
+
+&IF(MOD(C5,10^15)>=10^14," Ratus"," ")&" "
+
+&IF(MOD(C5,10^14)>=2*10^13," "&CHOOSE(FLOOR(MOD(C5,10^14)/10^13,1)+1,"","",
+"Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+
+&IF(MOD(MOD(C5,10^14),10^13)>=10^12," "&CHOOSE(FLOOR(MOD(MOD(C5,10^14),10^13)/10^12,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+
+IF(MOD(C5,10^14)>=10^12," "&CHOOSE(FLOOR(MOD(C5,10^14)/10^12,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+
+&IF(MOD(C5,10^15)>=10^12," Trillion"," ")&" "
+
+&IF(C5>=10^11," "&CHOOSE(FLOOR(MOD(C5,10^12)/10^11,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),"")
+&IF(MOD(C5,10^12)>=10^11," Ratus"," ")&" "
+&IF(MOD(C5,10^11)>=2*10^10," "&CHOOSE(FLOOR(MOD(C5,10^11)/10^10,1)+1,"","",
+"Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+&IF(MOD(MOD(C5,10^11),10^10)>=10^9," "&CHOOSE(FLOOR(MOD(MOD(C5,10^11),10^10)/10^9,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+
+IF(MOD(C5,10^11)>=10^9," "&CHOOSE(FLOOR(MOD(C5,10^11)/10^9,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+
+&IF(MOD(C5,10^12)>=10^9," Billion"," ")&" "&IF(C5>=10^8," "&CHOOSE(FLOOR(MOD(C5,10^9)/10^8,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),"")
+
+&IF(MOD(C5,10^9)>=10^8," Ratus"," ")&" "
+
+&IF(MOD(C5,10^8)>=2*10^7," "&CHOOSE(FLOOR(MOD(C5,10^8)/10^7,1)+1,"","",
+"Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+&IF(MOD(MOD(C5,10^8),10^7)>=10^6," "&CHOOSE(FLOOR(MOD(MOD(C5,10^8),10^7)/10^6,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+IF(MOD(C5,10^8)>=10^6," "&CHOOSE(FLOOR(MOD(C5,10^8)/10^6,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+
+&IF(MOD(C5,10^9)>=10^6," Juta"," ")&" "&IF(C5>=10^5," "&CHOOSE(FLOOR(MOD(C5,10^6)/10^5,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),"")
+&IF(MOD(C5,10^6)>=10^5," Ratus"," ")&" "&IF(MOD(C5,10^5)>=20000," "&CHOOSE(FLOOR(MOD(C5,10^5)/10^4,1)+1,"","",
+"Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+
+&IF(MOD(MOD(C5,10^5),10^4)>=10^3," "&CHOOSE(FLOOR(MOD(MOD(C5,10^5),10^4)/10^3,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+IF(MOD(C5,10^5)>=10^3," "&CHOOSE(FLOOR(MOD(C5,10^5)/10^3,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+
+&IF(MOD(C5,10^6)>=10^3," Ribu"," ")
+&IF(C5>=10^2," "&CHOOSE(FLOOR(MOD(C5,10^3)/10^2,1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),"")
+&IF(MOD(C5,10^3)>=10^2," Ratus"," ")&IF(MOD(C5,10^2)>=20," "&CHOOSE(FLOOR(MOD(C5,10^2)/10,1)+1,"","",
+"Dua Puluh","Tiga Puluh","Empat Puluh","Lima Puluh","Enam Puluh","Tujuh Puluh","Lapan Puluh","Sembilan Puluh")
+&IF(MOD(MOD(C5,10^2),10)>=1," "&CHOOSE(FLOOR(MOD(MOD(C5,10^2),10),1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan"),""),
+
+IF(MOD(C5,10^2)>=1," "&CHOOSE(FLOOR(MOD(C5,10^2),1)+1,"",
+"Satu","Dua","Tiga","Empat","Lima","Enam","Tujuh","Lapan","Sembilan",
+"Sepuluh","Sebelas","Dua Belas","Tiga Belas","Empat Belas","Lima Belas","Enam Belas","Tujuh Belas","Lapan Belas","Sembilan Belas"),""))
+
+&IF(C5=1," ","")&IF(C5>1," ","")
+
