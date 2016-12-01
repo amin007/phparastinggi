@@ -1,0 +1,46 @@
+{
+"data": [
+	{
+		"no": "1","assets": "leasehold land & buildings","kod": "71",
+		"awal": "118,913","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "1,607","akhir": "117,306",
+		"sewa": ""
+	},
+	{
+		"no": "2","assets": "renovation","kod": "82",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	},
+	{
+		"no": "3","assets": "furniture & fittings","kod": "82",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	},
+	{
+		"no": "4","assets": "office equipment","kod": "81",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	},
+	{
+		"no": "5","assets": "plant & machinery","kod": "81",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	},
+	{
+		"no": "6","assets": "motor","kod": "77",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	},
+	{
+		"no": "7","assets": "total","kod": "99",
+		"awal": "","baru": "","lama": "","diy": "",
+		"jualtamat": "","+-jual": "","susut": "","akhir": "",
+		"sewa": ""
+	}
+ ]
+}

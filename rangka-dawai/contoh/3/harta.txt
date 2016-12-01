@@ -1,0 +1,46 @@
+{
+"data": [
+	{
+		"no": "1","assets": "leasehold land & buildings","kod": "71",
+		"cost2014": "131,769","add": "","dis": "","cost2015": "131,769",
+		"susut2014": "12,856","charge": "1,607","dis": "","susut2015": "14,463",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "2","assets": "renovation","kod": "82",
+		"cost2014": "31,859","add": "","dis": "31,589","cost2015": "",
+		"susut2014": "23,684","charge": "","dis": "23,684","susut2015": "",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "3","assets": "furniture & fittings","kod": "82",
+		"cost2014": "618","add": "","dis": "618","cost2015": "",
+		"susut2014": "584","charge": "","dis": "584","susut2015": "",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "4","assets": "office equipment","kod": "81",
+		"cost2014": "14,029","add": "","dis": "14,029","cost2015": "",
+		"susut2014": "9,913","charge": "","dis": "9,913","susut2015": "",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "5","assets": "plant & machinery","kod": "81",
+		"cost2014": "33,880","add": "","dis": "33,880","cost2015": "",
+		"susut2014": "31,371","charge": "","dis": "31,371","susut2015": "",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "6","assets": "motor","kod": "77",
+		"cost2014": "391,367","add": "","dis": "73,748","cost2015": "317,619",
+		"susut2014": "362,633","charge": "28,723","dis": "73,743","susut2015": "317,613",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	},
+	{
+		"no": "7","assets": "total","kod": "99",
+		"cost2014": "603,522","add": "","dis": "154.134","cost2015": "499,388",
+		"susut2014": "441,041","charge": "30,300","dis": "139,295","susut2015": "",
+		"netbook14": "","jualtamat": "","+-jual": "","susut": "","netbook15": ""
+	}
+ ]
+}

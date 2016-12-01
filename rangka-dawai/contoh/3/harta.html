@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>KMS</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css">
+<!-- link rel="stylesheet" href="media/css/jquery.datatables.min.css" -->
+<style type="text/css">
+table.excel {
+	border-style:ridge;
+	border-width:1;
+	border-collapse:collapse;
+	font-family:sans-serif;
+	font-size:11px;
+}
+table.excel thead th, table.excel tbody th {
+	background:#CCCCCC;
+	border-style:ridge;
+	border-width:1;
+	text-align: center;
+	vertical-align: top;
+}
+table.excel tbody th { text-align:center; vertical-align: top; }
+table.excel tbody td { vertical-align:bottom; }
+table.excel tbody td 
+{ 
+	padding: 0 3px; border: 1px solid #aaaaaa;
+	background:#ffffff;
+}
+.fa-input {font-family: FontAwesome}
+</style>
+</head>
+<body>
+
+<!-- mula - nav atas sekali ---------------------------------------------------------------------------------------------- -->
+<nav class="navbar navbar-inverse" role="navigation">
+<!-- div class="navbar navbar-custom" role="navigation" -->
+	<div class="container-fluid">
+		<!-- menu kiri mula -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#anjung">Anjung</a>
+			<a class="navbar-brand" href="#keluar">
+				<span class="glyphicon glyphicon-off"></span>Keluar</a>
+		</div>
+		<!-- menu kiri tamat -->
+		<!-- menu kanan mula -->
+		<div class="navbar-collapse collapse">
+<!-- mula - menubar kanan --------------------------------------------------------------------- -->
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	<span class="glyphicon glyphicon-user"></span>Profile
+	<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="#rangkabaru/masukdata/1">
+		<span class="glyphicon glyphicon-barcode"></span>Tambah Tajuk</a></li>
+	<li class="divider"></li>
+	<li><a href="#keluar">
+		<span class="glyphicon glyphicon-off"></span>Keluar
+	</a></li>
+	</ul>
+</li>
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	<span class="glyphicon glyphicon-filter"></span>Cari
+	<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="#cari/tentang/msic/1">MSIC</a></li>
+	<li><a href="#cari/tentang/produk/1">PRODUK</a></li>
+	<li><a href="#cari/tentang/johor/2">LOKALITI JOHOR</a></li>
+	<li><a href="#cari/tentang/malaysia/2">LOKALITI MALAYSIA</a></li>
+	</ul>
+</li>
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	<span class="glyphicon glyphicon-stats"></span>Laporan
+	<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="#laporan/bulanan">Laporan Bulanan</a></li>
+	<li class="divider"></li>
+	</ul>
+</li>
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		<span class="glyphicon glyphicon-question-sign"></span>Bantuan
+	<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+	<li><a href="#forum/perdana">Forum</a></li>
+	<li><a href="#mesej/utama">Email</a></li>
+	</ul>
+</li>
+</ul>
+<!-- tamat - menubar kanan -------------------------------------------------------------------- -->
+			<!-- borang cari tajuk -->
+			<form class="navbar-form navbar-right" action="#cari/tajuk" method="POST">
+				<input type="submit" class="btn btn-info fa-input" value="&#xf002;">
+				<input type="text" name="cari" placeholder="Cari Tajuk" class="form-control">
+			</form>
+		</div>
+		<!-- menu kanan tamat -->
+	</div>
+</nav>
+<!-- tamat - nav atas sekali ---------------------------------------------------------------------------------------------- -->
+
+<!-- mula - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<table id="harta" class="excel" width="100%" cellspacing="0">
+<thead><tr>
+	<th>#</th><th>Assets</th><th>Kod</th>
+	<th>COST14</th><th>Add</th><th>Dis</th><th>COST15</th>	
+	<th>SUSUT14</th><th>CHARGE</th><th>Dis</th><th>SUSUT15</th>	
+	<th>NetBook14</th><th>Jual|Tamat</th><th>+-Jual</th><th>Susut</th><th>NetBook15</th>
+</tr></thead>
+</table>
+<!-- tamat - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<hr><br>
+<!-- mula - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<table class="excel">
+<tr><th>#</th><th>Assets</th><th>Jumlah</th></tr>
+<tr><td>1</td><td>Gain On Disposal Of Plant And Equipment</td><td>22,443.00 </td></tr>
+<tr><td>2</td><td>Plant And Equipment Written Off</td><td>(8,175.00)</td></tr>
+<tr><td>3</td><td>Depreciation</td><td>30,330.00 </td></tr>
+</table>
+<!-- tamat - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<hr><br>
+<!-- mula - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<table id="harta2" class="excel">
+<thead><tr>
+	<th>#</th><th>Assets</th><th>Kod</th>
+	<th>1-Awal</th>
+	<th>2-Baru</th>
+	<th>3-Lama</th>
+	<th>4-DIY</th>
+	<th>5-Jual|tamat</th>
+	<th>6-+/- jual</th>
+	<th>7-Susut nilai</th>
+	<th>8-Akhir</th>
+	<th>9-Sewa</th>
+</tr></thead>
+</table>
+<!-- tamat - kandungan utama ---------------------------------------------------------------------------------------------- -->
+<hr><br>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
+<!--script type="text/javascript" src="media/js/jquery.datatables.min.js"></script -->
+<!-- godek jquery function -->
+<script>
+$( document ).ready(function() {
+
+	$('#harta').dataTable({
+		"ajax": "harta.txt",
+		"columns": [
+			{"data" : "no"},
+			{"data" : "assets"},
+			{"data" : "kod"},
+			{"data" : "cost2014"},
+			{"data" : "add"},
+			{"data" : "dis"},
+			{"data" : "cost2015"},
+			{"data" : "susut2014"},
+			{"data" : "charge"},
+			{"data" : "dis"},
+			{"data" : "susut2015"},
+			{"data" : "netbook14"},
+			{"data" : "jualtamat"},
+			{"data" : "susut"},
+			{"data" : "+-jual"},
+			{"data" : "netbook15"}
+		]
+	});
+
+	$('#harta2').dataTable({
+		"ajax": "harta2.txt",
+		"columns": [
+			{"data" : "no"},
+			{"data" : "assets"},
+			{"data" : "kod"},
+			{"data" : "awal"},
+			{"data" : "baru"},
+			{"data" : "lama"},
+			{"data" : "diy"},
+			{"data" : "jualtamat"},
+			{"data" : "+-jual"},
+			{"data" : "susut"},
+			{"data" : "akhir"},			
+			{"data" : "sewa"}			
+		]
+	});
+	
+});
+</script>
+
+</body>
+</html>
