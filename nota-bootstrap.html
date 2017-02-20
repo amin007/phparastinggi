@@ -45,35 +45,30 @@ table.excel tbody td
 	/*background:#ffffff;*/
 	text-align: left;
 }
-/* Bootstrap code examples 
--------------------------------------------------- */
-/* Base class */
-.bs-docs-example {
-  position: relative;
-  margin: 15px 0;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
-  opacity: 0.5;filter:alpha(opacity=50); 
-  color: #ffffff;
-  /*border: 1px solid #ddd;*/
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
 }
 
-/* Echo out a label for the example */
-.bs-docs-example:after {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  /*font-size: 12px;
-  font-weight: bold;*/
-  /*border: 1px solid #ddd;*/
-    color: #ffffff; /*#9da0a4*/
-  -webkit-border-radius: 4px 0 4px 0;
-     -moz-border-radius: 4px 0 4px 0;
-          border-radius: 4px 0 4px 0;
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
+}
+
+#rcorners3 {
+    border-radius: 25px;
+    background: url(paper.gif);
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;    
 }
 </style>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
@@ -98,7 +93,7 @@ document.write( '<link rel="stylesheet" href="css/print/'
 <!-- bab pengenalan - mula -->
 <section>
 	<section>
-		<h2>Bootstrap <span class="label label-default">BS</span></h2>
+		<h2>Bootstrap <span id="rcorners2">BS</span></h2>
 		<p class="lead">Bootstrap adalah HTML, CSS, dan rangka kerja JS yang paling popular untuk 
 		membangunkan responsif, projek pertama mudah alih di web.</p> 
 		<p class="lead"> Bootstrap v3.3.7 </p>
