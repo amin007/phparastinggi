@@ -65,6 +65,18 @@ table.excel tbody td
 	line-height: 140px;
 	width: 144px;
 	height: 144px;
+	/* untuk teks berjalan */
+	animation-name: memandu;
+	animation-duration: 5s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	/*animation-direction: alternate-reverse;*/
+}
+
+/*// KEYFRAMES //*/
+@keyframes memandu{
+	from{ transform: translateX(-400px) }
+	to{ transform: translateX(400px) }
 }
 </style>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
