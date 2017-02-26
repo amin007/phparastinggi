@@ -27,12 +27,9 @@
 	border: 1px solid #aaaaaa;
 	font-size: 35px;
 }
-.reveal pre
+.reveal pre,code
 {
-	margin: 0 0 ;
-	height: 100%;
-	max-height: 100%;
-	box-sizing: border-box; 
+	margin: 0 -200px;
 }
 table.excel {
 	border-style:ridge;
@@ -371,7 +368,6 @@ document.write( '<link rel="stylesheet" href="css/print/'
 		<img src="https://bootswatch.com/readable/thumbnail.png" height="25%" width="30%">
 		<img src="https://bootswatch.com/sandstone/thumbnail.png" height="25%" width="30%">
 		<img src="https://bootswatch.com/simplex/thumbnail.png" height="25%" width="30%">
-
 	</section>
 	<section>
 		<h3> Bab 2.1.2 : Contoh2 lain <h3>
@@ -396,18 +392,18 @@ document.write( '<link rel="stylesheet" href="css/print/'
 	<section>
 		<h2> Bab 3.1 : Containers </h2>
 		<ul>
-		<li class="fragment">Bootstrap memerlukan elemen untuk membalut kandungan laman dan menempatkan sistem grid.</li>
-		<li class="fragment">Ambil perhatian bahawa, kerana padding dan lagi, demikian bekas adalah nestable.</li>
-		<li class="fragment">Gunakan .container untuk bekas lebar tetap responsif.
+		<li>Bootstrap memerlukan elemen untuk membalut kandungan laman dan menempatkan sistem grid.</li>
+		<li>Ambil perhatian bahawa, kerana padding dan lagi, demikian bekas adalah nestable.</li>
+		<li>Gunakan .container untuk bekas lebar tetap responsif.
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre class="fragment"><code class="html">&#60;div class="container"&#62;
+<pre><code class="html">&#60;div class="container"&#62;
   ...
 &#60;/div&#62;</code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
 		</li>
-		<li class="fragment">Gunakan .container-cecair untuk bekas lebar penuh, merangkumi seluruh lebar viewport anda.
+		<li>Gunakan .container-cecair untuk bekas lebar penuh, merangkumi seluruh lebar viewport anda.
 <!-- contoh koding - mula ///////////////////////////////////////////////////// -->
-<pre class="fragment"><code class="html">&#60;div class="container-fluid"&#62;
+<pre><code class="html">&#60;div class="container-fluid"&#62;
   ...
 &#60;/div&#62;</code></pre>
 <!-- contoh koding - tamat ///////////////////////////////////////////////////// -->
