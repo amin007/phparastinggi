@@ -41,9 +41,9 @@ ul.downloads li h3 {
 
 ul.downloads li p.excerpt {
 	width: 200px;
-	padding-top: 95px;
+	padding-top: 90px;
 	vertical-align: bottom;
 	color: #666;
-	font-size: 20px;
-	line-height: 10px;
+	font-size: 18px;
+	line-height: 8px;
 }
