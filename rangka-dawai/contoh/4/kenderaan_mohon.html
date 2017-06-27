@@ -5,8 +5,10 @@
 <meta charset="utf-8">
 <title>Sample Sistem</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- masukkan skrip pilih antara 2 tarikh -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
 <style type="text/css">
 table.excel {
@@ -34,7 +36,6 @@ table.excel tbody td
 </style>
 </head>  
 <body><!-- menu_atas.php A0 -->
-
 
 <!-- menu tengah atas -->
 <br>
@@ -76,7 +77,8 @@ table.excel tbody td
 		<div class="col-sm-offset-2 col-sm-7">
 			<div class="input-group">
 				<span class="input-group-addon"><p class="text-left">TARIKH DIPERLUKAN:</p></span>
-				<input type="date" class="form-control" placeholder="x1">
+				<input type="text" class="form-control" name="datefilter" id="datefilter"
+				placeholder="x1" >
 				<span class="input-group-addon"><p class="text-left">MASA DIPERLUKAN:</p></span>
 				<input type="time" class="form-control" placeholder="x2">
 			</div>
@@ -177,8 +179,7 @@ table.excel tbody td
 	</table>
 
 	<form class="form-horizontal">	
-		<div class="form-group">
-			<div class="col-sm-offset-1 col-sm-6">
+		<div class="form-group"><div class="col-sm-offset-1 col-sm-6">
 			<div class="input-group">
 				<span class="input-group-addon"><p class="text-left">1&nbsp;PREVE&nbsp;WAWASAN2020&nbsp;</p></span>
 				<span class="input-group-addon"><p class="text-center">&nbsp;</p></span>
@@ -200,12 +201,15 @@ table.excel tbody td
 				<span class="input-group-addon"><p class="text-left"><table width="50%">
 					<tr><td>Pemandu:</td><td>&nbsp;Roman Pearce&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
 					</table></span>
-			</div><div class="input-group"><span class="input-group-addon"><p class="text-left">* DIINGATKAN PENUMPANG AGAR MENGINGATKAN PEMANDU SUPAYA
-	<br>&nbsp;&nbsp;MEMANDU KENDERAAN SECARA BERHEMAH BAGI MENGGELAKKAN
-	<br>&nbsp;&nbsp;DARIPADA DISAMAN</span></div>			</div>
-		</div>
+			</div>
+			<div class="input-group"><span class="input-group-addon">
+				<p class="text-left">* DIINGATKAN PENUMPANG AGAR MENGINGATKAN PEMANDU SUPAYA
+				<br>&nbsp;&nbsp;MEMANDU KENDERAAN SECARA BERHEMAH BAGI MENGGELAKKAN
+				<br>&nbsp;&nbsp;DARIPADA DISAMAN</span>
+			</div>
+		</div></div>
 	</form>
-	
+
 	<!-- bahagian 2 - tamat -->	
 
 </td></tr>
@@ -233,7 +237,25 @@ table.excel tbody td
 
 <!-- khas untuk jquery dan js2 lain 
 ================================================== -->
-<script type="text/javascript" src="http://eks-johor/private_html/js/jquery/jquery-2.2.3.min.js"></script>
-<script type="text/javascript" src="http://eks-johor/private_html/js/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script -->
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('input[name="datefilter"]').daterangepicker({
+		autoUpdateInput: false,
+		locale: { cancelLabel: 'Clear'}
+	});
+	$('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+		$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+	});
+	$('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+		$(this).val('');
+	});
+});
+</script>
+
 </body>
 </html>
