@@ -77,10 +77,10 @@ table.excel tbody td
 		<div class="col-sm-offset-2 col-sm-7">
 			<div class="input-group">
 				<span class="input-group-addon"><p class="text-left">TARIKH DIPERLUKAN:</p></span>
-				<input type="text" class="form-control" name="datefilter" id="datefilter"
-				placeholder="x1" >
+				<input type="text" class="form-control fa-calendar" name="tempohhari" 
+				placeholder="&#xf073;" value="">
 				<span class="input-group-addon"><p class="text-left">MASA DIPERLUKAN:</p></span>
-				<input type="time" class="form-control" placeholder="x2">
+				<input type="text" class="form-control" name="tempohmasa" placeholder="x2">
 			</div>
 		</div>
 	</div>
@@ -192,7 +192,8 @@ table.excel tbody td
 					</table></span>
 			</div>
 			<div class="input-group">
-				<span class="input-group-addon"><p class="text-left">2&nbsp;PAJERO&nbsp;TN50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></span>
+				<span class="input-group-addon"><p class="text-left">2&nbsp;PAJERO&nbsp;TN50&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></span>
 				<span class="input-group-addon"><p class="text-center">&nbsp;</p></span>
 				<span class="input-group-addon"><p class="text-center">&nbsp;</p></span>
 				<span class="input-group-addon"><p class="text-center">
@@ -244,14 +245,25 @@ table.excel tbody td
 <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 <script type="text/javascript">
 $(function() {
-	$('input[name="datefilter"]').daterangepicker({
+	$('input[name="tempohhari"]').daterangepicker({
 		autoUpdateInput: false,
-		locale: { cancelLabel: 'Clear'}
+		locale: { cancelLabel: 'Buang', applyLabel: 'Pilih'}
 	});
-	$('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+	$('input[name="tempohhari"]').on('apply.daterangepicker', function(ev, picker) {
 		$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
 	});
-	$('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+	$('input[name="tempohhari"]').on('cancel.daterangepicker', function(ev, picker) {
+		$(this).val('');
+	});
+	$('input[name="tempohmasa"]').daterangepicker({
+		timePicker: true,
+		timePickerIncrement: 30,
+		locale: { format: 'h:mm A',cancelLabel: 'Buang', applyLabel: 'Pilih' }
+	});	
+	$('input[name="tempohmasa"]').on('apply.daterangepicker', function(ev, picker) {
+		$(this).val(picker.startDate.format('h:mm A') + ' - ' + picker.endDate.format('h:mm A'));
+	});
+	$('input[name="tempohmasa"]').on('cancel.daterangepicker', function(ev, picker) {
 		$(this).val('');
 	});
 });
