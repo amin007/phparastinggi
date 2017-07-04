@@ -20,6 +20,7 @@
 	<a class="btn btn-warning btn-large" target="_blank" href="teks5.html">Teks5 <i class="fa fa-building fa-5x"></i></a>
 	<a class="btn btn-primary btn-large" target="_blank" href="teks6.html">Teks6 <i class="fa fa-binoculars fa-5x"></i></a -->
 	<h1>PAPARAN WAKTU SOLAT DI TV BESAR GEDABAK DI MASJID</h1>
+	<h2 align="center"><span id="kod"></span> : <span id="kawasan"></span></h2><hr>
 <hr>
 	
 	<div class="carousel slide" id=carousel-example-generic data-ride=carousel> 
@@ -35,25 +36,25 @@
 
 		<div class=carousel-inner role=listbox> 
 			<div class="item active">
-				<img alt="First slide" data-src="holder.js/1200x300?theme=social&text=4 Julai 2017"> 
+				<table align="center" id="minggu1"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item> 
-				<img alt="Second slide" data-src="holder.js/1200x300?theme=social&text=5 Julai 2017">
+				<table align="center" id="minggu2"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item>
-				<img alt="Third slide" data-src="holder.js/1200x300?theme=social&text=6 Julai 2017">
+				<table align="center" id="minggu3"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item> 
-				<img alt="Second slide" data-src="holder.js/1200x300?theme=social&text=7 Julai 2017">
+				<table align="center" id="minggu4"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item>
-				<img alt="Third slide" data-src="holder.js/1200x300?theme=social&text=8 Julai 2017">
+				<table align="center" id="minggu5"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item> 
-				<img alt="Second slide" data-src="holder.js/1200x300?theme=social&text=9 Julai 2017">
+				<table align="center" id="minggu6"><caption>Waktu Solat</caption></table>
 			</div>
 			<div class=item>
-				<img alt="Third slide" data-src="holder.js/1200x300?theme=social&text=10 Julai 2017">
+				<table align="center" id="minggu7"><caption>Waktu Solat</caption></table>
 			</div>
 		</div> 
 
@@ -80,5 +81,73 @@
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() 
+{
+	if (this.readyState == 4 && this.status == 200) 
+	{
+		dataSolat = JSON.parse(this.responseText);
+		document.getElementById("kod").innerHTML = dataSolat.zone_code;
+		document.getElementById("kawasan").innerHTML = dataSolat.zone_description;
+		
+		/* waktu solat : dataSolat.prayer_times */
+		/* loop ikut minggu x1 */
+		for (x1 in dataSolat.prayer_times[0]) 
+		{
+			document.getElementById("minggu1").innerHTML += 
+				"<tr><td>" + x1 + "</td><td>" 
+				+ dataSolat.prayer_times[0][x1] + "</td></tr>";
+		} 
+		/* loop ikut minggu x2 */
+		for (x2 in dataSolat.prayer_times[1]) 
+		{
+			document.getElementById("minggu2").innerHTML += 
+				"<tr><td>" + x2 + "</td><td>" 
+				+ dataSolat.prayer_times[1][x2] + "</td></tr>";
+
+		} 
+		/* loop ikut minggu x3 */
+		for (x3 in dataSolat.prayer_times[2]) 
+		{
+			document.getElementById("minggu3").innerHTML += 
+				"<tr><td>" + x3 + "</td><td>" 
+				+ dataSolat.prayer_times[2][x3] + "</td></tr>";
+		} 
+		/* loop ikut minggu x4 */
+		for (x4 in dataSolat.prayer_times[3]) 
+		{
+			document.getElementById("minggu4").innerHTML += 
+				"<tr><td>" + x4 + "</td><td>" 
+				+ dataSolat.prayer_times[3][x4] + "</td></tr>";
+		} 
+		/* loop ikut minggu x5 */
+		for (x5 in dataSolat.prayer_times[4]) 
+		{
+			document.getElementById("minggu5").innerHTML += 
+				"<tr><td>" + x5 + "</td><td>" 
+				+ dataSolat.prayer_times[4][x5] + "</td></tr>";
+		} 
+		/* loop ikut minggu x6 */
+		for (x6 in dataSolat.prayer_times[5]) 
+		{
+			document.getElementById("minggu6").innerHTML += 
+				"<tr><td>" + x6 + "</td><td>" 
+				+ dataSolat.prayer_times[5][x6] + "</td></tr>";
+		} 
+		/* loop ikut minggu x7 */
+		for (x7 in dataSolat.prayer_times[6]) 
+		{
+			document.getElementById("minggu7").innerHTML += 
+				"<tr><td>" + x7 + "</td><td>" 
+				+ dataSolat.prayer_times[6][x7] + "</td></tr>";
+		} 
+1	}
+};
+xmlhttp.open("GET", "waktu_solat_muar.txt", true);
+xmlhttp.send();
+
+</script>
+
 </body>
 </html>
