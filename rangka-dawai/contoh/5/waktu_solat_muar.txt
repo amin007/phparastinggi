@@ -1,0 +1,83 @@
+{
+    "zone_code": "JHR04",
+    "zone_description": "BATU PAHAT, MUAR, SEGAMAT, GEMAS",
+    "prayer_times": [
+        {
+            "date": "04 July 2017",
+            "day": "Tuesday",
+            "imsak": "5:33",
+            "subuh": "5:43",
+            "syuruk": "7:06",
+            "zuhur": "13:16",
+            "asar": "16:41",
+            "maghrib": "19:22",
+            "isyak": "20:37"
+        },
+        {
+            "date": "05 July 2017",
+            "day": "Wednesday",
+            "imsak": "5:34",
+            "subuh": "5:44",
+            "syuruk": "7:07",
+            "zuhur": "13:16",
+            "asar": "16:41",
+            "maghrib": "19:22",
+            "isyak": "20:37"
+        },
+        {
+            "date": "06 July 2017",
+            "day": "Thursday",
+            "imsak": "5:34",
+            "subuh": "5:44",
+            "syuruk": "7:07",
+            "zuhur": "13:16",
+            "asar": "16:41",
+            "maghrib": "19:23",
+            "isyak": "20:37"
+        },
+        {
+            "date": "07 July 2017",
+            "day": "Friday",
+            "imsak": "5:34",
+            "subuh": "5:44",
+            "syuruk": "7:07",
+            "zuhur": "13:16",
+            "asar": "16:41",
+            "maghrib": "19:23",
+            "isyak": "20:38"
+        },
+        {
+            "date": "08 July 2017",
+            "day": "Saturday",
+            "imsak": "5:34",
+            "subuh": "5:44",
+            "syuruk": "7:07",
+            "zuhur": "13:17",
+            "asar": "16:41",
+            "maghrib": "19:23",
+            "isyak": "20:38"
+        },
+        {
+            "date": "09 July 2017",
+            "day": "Sunday",
+            "imsak": "5:35",
+            "subuh": "5:45",
+            "syuruk": "7:07",
+            "zuhur": "13:17",
+            "asar": "16:41",
+            "maghrib": "19:23",
+            "isyak": "20:38"
+        },
+        {
+            "date": "10 July 2017",
+            "day": "Monday",
+            "imsak": "5:35",
+            "subuh": "5:45",
+            "syuruk": "7:07",
+            "zuhur": "13:17",
+            "asar": "16:42",
+            "maghrib": "19:23",
+            "isyak": "20:38"
+        }
+    ]
+}
