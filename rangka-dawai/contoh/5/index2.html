@@ -74,9 +74,10 @@
 <div>
 </div>
 <!--
-//www2.e-solat.gov.my/solatC.php?kod=JHR04&lang=BM&url=http:/www.islam.gov.my
+//http://www2.e-solat.gov.my/xml/today/index.php?zon=JHR04
 //http://api.azanpro.com/times/today.json?zone=jhr04&format=12-hour
 //http://esolatapi-namialus.rhcloud.com/api/v1/waktu/JHR04
+//solat.io/api/my/jhr04
 ######################################################################################### -->
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -92,7 +93,6 @@ xmlhttp.onreadystatechange = function()
 		document.getElementById("kawasan").innerHTML = dataSolat.zone_description;
 		
 		/* waktu solat : dataSolat.prayer_times */
-		/* loop ikut minggu x1 */
 /* ############################################################################################# */
 		for(i in dataSolat.prayer_times)
 		{
