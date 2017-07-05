@@ -1,0 +1,48 @@
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+<channel>
+	<title>eSolat JAKIM : Waktu Solat Hari Ini</title>
+	<link>Batu Pahat, Muar, Segamat, Gemas</link>
+	<description>Batu Pahat, Muar, Segamat, Gemas</description>
+	<dc:language>ms</dc:language>
+	<dc:creator>www.e-solat.gov.my</dc:creator>
+	<dc:rights>Copyright JAKIM</dc:rights>
+	<dc:date>05-07-2017 11:12:14</dc:date>
+	<admin:generatorAgent rdf:resource="expressionengine" />
+	
+	<item>
+		<title>Imsak</title>
+		<description>5:34</description>
+	</item>
+	<item>  
+		<title>Subuh</title>
+		<description>5:44</description>
+	</item>
+	<item>  
+		<title>Syuruk</title>
+		<description>7:07</description>
+	</item>
+	<item>  
+		<title>Zohor</title>
+		<description>13:16</description>
+	</item>
+	<item>  
+		<title>Asar</title>
+		<description>16:41</description>
+	</item>
+	<item>  
+		<title>Maghrib</title>
+		<description>19:22</description>
+	</item>
+	<item>
+		<title>Isyak</title>
+		<description>20:37</description>
+	</item>
+
+</channel>
+</rss>

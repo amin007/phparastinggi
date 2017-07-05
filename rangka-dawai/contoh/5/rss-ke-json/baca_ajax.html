@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hackers news - rss2json.com</title>
+</head>
+<body>
+<div id="content"></div>
+
+<script type="text/javascript">
+    var content = document.getElementById('channel');
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState==4 && xhr.status==200)
+        {
+            var data = JSON.parse(xhr.responseText);
+            if(data.status == 'ok'){
+
+                var output = '<h1>'+data.feed.title+'</h1>';
+
+                for(var i=0;i<data.items.length;++i){
+
+                    output += '<p><h2><a href="' +
+                    data.items[i].link + '" >' +
+                    data.items[i].title + '</h2></a></p>';
+
+                }
+
+
+                content.innerHTML = output;
+
+            }
+        }
+    };
+    xhr.open('GET','http://www2.e-solat.gov.my/xml/today/index.php?zon=JHR04',true);
+	//https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.ycombinator.com%2Frss
+    xhr.send();
+
+</script>
+</body>
+</html>

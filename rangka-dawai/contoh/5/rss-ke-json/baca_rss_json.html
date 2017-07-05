@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>PAPARAN WAKTU SOLAT DI TV BESAR GEDABAK DI MASJID</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head><body>
+
+<!-- ########################################################################################################### -->
+<!-- ########################################################################################################### -->
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+/* ############################################################################################# */
+$.get('http://www2.e-solat.gov.my/xml/today/index.php?zon=JHR04', 
+	function(data) {
+	var $xml = $(data);
+	$xml.find("item").each(function() {
+	var $this = $(this), item = {
+		title: $this.find("title").text(),
+		link: $this.find("link").text(),
+		description: $this.find("description").text(),
+		pubDate: $this.find("pubDate").text(),
+		author: $this.find("author").text()
+	}
+	//Do something with item here...
+/* ############################################################################################# */
+			document.getElementById("minggu0").innerHTML += 
+				'<a class="btn btn-primary btn-large">' + item.title + ':' 
+				+ item.link + '</a>';
+
+/* ############################################################################################# */
+	});
+});
+/* ############################################################################################# */
+
+</script>
+
+</body>
+</html>
