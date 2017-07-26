@@ -9,12 +9,25 @@
 <!-- BOOTSTRAP CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- link rel="stylesheet" href="public/css/gambar_bertukar.css" -->
+<link rel="stylesheet" href="public/css/gambar_bertukar.css">
 </head><body>
 <!-- ############################################################################## -->
-<!-- Fixed navbar -->
-<nav class="navbar navbar-fixed-top" id="result">
+<!-- Fixed navbar / navbar-inverse -->
+<nav class="navbar navbar-inverse navbar-fixed-top tembus" id="result">
 </nav>
+
+<div class="container">
+	<!-- Inspired by https://codepen.io/transportedman/pen/NPWRGq -->
+	<div class="carousel slide carousel-fade" data-ride="carousel">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+		</div>
+	</div>
+</div>
 
 <footer class="navbar-fixed-bottom"><div class="container" align="center">
 	<h1 class="title">
@@ -31,29 +44,31 @@ $(document).ready(function() {
 //feed to parse
 //var feed = "http://feeds.feedburner.com/raymondcamdensblog?format=xml";
 var feed = 'api_jakim.xml';
+//var feed = 'baca_rss.php';
 $.ajax(feed, {
 	accepts:{ xml:'application/rss+xml' },
 	dataType:'xml',
 	success:function(data) 
 	{
-		//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
-		//https://dzone.com/articles/parsing-rss-feeds-in-javascript-options
+//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+//https://dzone.com/articles/parsing-rss-feeds-in-javascript-options
+//https://stackoverflow.com/questions/15935452/get-first-element-from-tag-name-in-jquery
+		var html = '';
 ///////////////////////////////////////////////////////////////////////////////////////////
-		/*jQuery('#result').append(''
-		//+ '<a class="navbar-brand">'	+ feed.title + '</a>'
-		+ '<a class="navbar-brand">' + data.description + '</a>'
-		);*/
+		html += ''
+			+ '<a class="navbar-brand">' + $(data).find("link").text() + '</a>'
+			+ '<a class="navbar-brand">' + $(data).find('dc\\:date').text()	+ '</a>' + '';
 ///////////////////////////////////////////////////////////////////////////////////////////
-		var html = '<div id="navbar" class="collapse navbar-collapse">'
+		html += ''//'<a class="navbar-brand">' + keterangan  + '</a>'		
+		+ '<div id="navbar" class="collapse navbar-collapse">'
 		+ '<ul class="nav navbar-nav">';
 		$(data).find("item").each(function () 
-		{ // or "item" or whatever suits your feed
-		
+		{// or "item" or whatever suits your feed
 			var el = $(this);
 			html += '<li><a>' 
 			+ el.find("title").text() + ' : '
 			+ el.find("description").text() 
-			+ '</a></li>'
+			+ '</a></li>';
 		});
 		html += '</ul></div>';
 		jQuery('#result').append(html);
