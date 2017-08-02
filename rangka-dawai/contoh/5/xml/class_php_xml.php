@@ -1,20 +1,23 @@
 <?php
 
-function array_to_xml($array, &$xml_user_info) 
+function array_to_xml($title, $array, &$xml_user_info) 
 {
-	foreach($array as $key => $value) 
+	# buat tajuk
+	$xml_user_info->addChild('tajuk', $title);
+	# buat pecahan tatausuanan
+	foreach($array as $key => $value)
 	{
 		if(is_array($value)) 
 		{
 			if(!is_numeric($key))
 			{
 				$subnode = $xml_user_info->addChild("$key");
-				array_to_xml($value, $subnode);
+				array_to_xml('', $value, $subnode);
 			}
 			else
 			{
 				$subnode = $xml_user_info->addChild("item$key");
-				array_to_xml($value, $subnode);
+				array_to_xml('', $value, $subnode);
 			}
 		}
 		else
