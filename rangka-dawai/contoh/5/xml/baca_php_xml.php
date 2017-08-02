@@ -7,7 +7,6 @@ $bln = '08';
 $setahun = 'http://www.e-solat.gov.my/web/muatturun.php?zone=JHR04&state=JOHOR&jenis=year&lang=my&year=2017&bulan=' . $bln . '';
 $htmlContent = file_get_contents($setahun);
 
-
 $DOM = new DOMDocument();
 @$DOM->loadHTML($htmlContent);
 
@@ -43,24 +42,24 @@ foreach($Detail as $kunci => $sNodeDetail)
 //echo '<hr>data->';print_r($dataJadual);
 //*/
 
-include 'class_php_xml.php';
-$tajukXml = '<channel><tajuk>' . $tajuk[0] . '</tajuk></channel>';
 # creating object of SimpleXMLElement
-$xml_user_info = new SimpleXMLElement("<?xml version=\"1.0\"?>" 
-. $tajukXml . "<waktu_solat></waktu_solat>");
+$xml_user_info = new SimpleXMLElement("<?xml version=\"1.0\"?><waktu_solat></waktu_solat>");
 
 # function call to convert array to xml
-array_to_xml($dataJadual,$xml_user_info);
+include 'class_php_xml.php';
+array_to_xml($tajuk[0],$dataJadual,$xml_user_info);
 
 # saving generated xml file
 $namafail = 'waktu_solat_bulan_' . $bln . '.xml';
 $xml_file = $xml_user_info->asXML($namafail);
+//$xml_file = $xml_user_info->asXML();
 
 # success and error message based on xml creation
 if($xml_file)
 {
 	echo 'XML file have been generated successfully.'
 	. '<a target="_blank" href="' . $namafail . '">Click here</a>';
+	//echo $xml_file;
 }
 else
 {
