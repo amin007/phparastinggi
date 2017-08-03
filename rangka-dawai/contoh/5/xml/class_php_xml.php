@@ -1,10 +1,8 @@
 <?php
 
-function array_to_xml($title, $array, &$xml_user_info) 
+function array_to_xml($array, &$xml_user_info) 
 {
-	# buat tajuk
-	$xml_user_info->addChild('tajuk', $title);
-	# buat pecahan tatausuanan
+	# buat pecahan tatasusunan
 	foreach($array as $key => $value)
 	{
 		if(is_array($value)) 
@@ -12,12 +10,12 @@ function array_to_xml($title, $array, &$xml_user_info)
 			if(!is_numeric($key))
 			{
 				$subnode = $xml_user_info->addChild("$key");
-				array_to_xml('', $value, $subnode);
+				array_to_xml($value, $subnode);
 			}
 			else
 			{
 				$subnode = $xml_user_info->addChild("item$key");
-				array_to_xml('', $value, $subnode);
+				array_to_xml($value, $subnode);
 			}
 		}
 		else
