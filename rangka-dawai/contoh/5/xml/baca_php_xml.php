@@ -21,12 +21,12 @@ $buangData = array('Januari','Februari','Mac',
 'Julai','Ogos','September',
 'Oktober', 'November', 'Disember',
 'Disember 2016','Januari 2018');
-$i = $j = 0;
+$i = $j = $isi = 0;
 
 foreach($Detail as $kunci => $sNodeDetail) 
 {
 	if ( in_array($kunci,$senaraiKey) ):
-		$tajuk[] = trim(
+		$tajuk['tajuk' . $isi++] = trim(
 			preg_replace('/\s\s+/', ' ', 
 			$sNodeDetail->textContent));
 	else:
@@ -38,8 +38,10 @@ foreach($Detail as $kunci => $sNodeDetail)
 		$j = $i % count($senaraiTajuk) == 0 ? $j + 1 : $j;
 	endif;
 }
+$dataCantum = array_merge($tajuk, $dataJadual);
 //echo '<pre>tajuk->';print_r($tajuk);
 //echo '<hr>data->';print_r($dataJadual);
+//echo '<pre>dataCantum->';print_r($dataCantum);
 //*/
 
 # creating object of SimpleXMLElement
@@ -47,7 +49,7 @@ $xml_user_info = new SimpleXMLElement("<?xml version=\"1.0\"?><waktu_solat></wak
 
 # function call to convert array to xml
 include 'class_php_xml.php';
-array_to_xml($tajuk[0],$dataJadual,$xml_user_info);
+array_to_xml($dataCantum,$xml_user_info);
 
 # saving generated xml file
 $namafail = 'waktu_solat_bulan_' . $bln . '.xml';
