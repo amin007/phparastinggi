@@ -42,7 +42,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
 //feed to parse
-//var feed = "http://feeds.feedburner.com/raymondcamdensblog?format=xml";
 var feed = 'waktu_solat_bulan_08.xml';
 //var feed = 'baca_rss.php';
 $.ajax(feed, {
@@ -53,22 +52,52 @@ $.ajax(feed, {
 //Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
 //https://dzone.com/articles/parsing-rss-feeds-in-javascript-options
 //https://stackoverflow.com/questions/15935452/get-first-element-from-tag-name-in-jquery
+//https://stackoverflow.com/questions/3063963/jquery-find-an-xml-element-based-on-the-value-of-one-of-its-children
 		// tarikh
 		var today = GetTodayDate();
 		//var hariini = pecahTarikh($(data).find('dc\\:date').text());
 		// link aka kawasan
-		var daerah = $(data).find('isi0').text().split(",");
+		var daerah = $(data).find('tajuk0').text().split(",");
+		//txt = data.getElementsByTagName(today)[0].childNodes[0].nodeValue;
+	///////////////////////////////////////////////////////////////////////////////////////////
+		myXML = $(data).find('item').filter(function() {
+			// cari dalam item->Tarikh sama dengan today
+			return $(this).find('Tarikh').text() == today;
+		});
+
 		var html = '';
-///////////////////////////////////////////////////////////////////////////////////////////
-		html += '<a class="navbar-brand">' 
-			+ today + ' | ' + daerah[1] 
-			+ '</a>' + '';
-///////////////////////////////////////////////////////////////////////////////////////////
+		html += displayDaerah(html, today, daerah)
+			+ displayData(html, today, myXML);
+	///////////////////////////////////////////////////////////////////////////////////////////
 		jQuery('#result').append(html);
 ///////////////////////////////////////////////////////////////////////////////////////////
 	}});
 });
 
+///////////////////////////////////////////////////////////////////////////////////////////
+function displayDaerah(html, today, daerah){
+	html += '<a class="navbar-brand">' 
+		+ ' Waktu Solat ' + daerah[1] 
+		+ '</a>' + '';
+
+	return html;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+function displayData(html, today, myXML){
+
+	html += '<div id="navbar" class="collapse navbar-collapse">'
+		+ '<ul class="nav navbar-nav">';
+	var display = myXML.children().map(function() {
+		//return this.tagName + '=' + $(this).text();
+		html += '<li><a>' 
+		+ this.tagName + ' : '
+		+ $(this).text()
+		+ '</a></li>';
+	}).get().join(' ');
+	html += '</ul></div>';
+
+	return html;
+}
 ///////////////////////////////////////////////////////////////////////////////////////////
 function pecahTarikh(tarikhwaktu) {
 	const [today, masa] = tarikhwaktu.split(" ");
@@ -79,14 +108,15 @@ function pecahTarikh(tarikhwaktu) {
 	return hariini = day + ' ' + bulan[month - 1] + ' ' + year;
 	//return new Date(year, bulan[month - 1], day)
 }
+///////////////////////////////////////////////////////////////////////////////////////////
 function GetTodayDate() {
-var tdate = new Date();
+	var tdate = new Date();
 	var dd = tdate.getDate(); //yields day
 	var mm = tdate.getMonth(); //yields month
 	var yyyy = tdate.getFullYear(); //yields year
 	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
 		'Jul', 'Ogos', 'Sep', 'Okt', 'Nov', 'Dis');
-	var xxx = dd + ' ' + bulan[mm] + ' ' + yyyy;
+	var xxx = dd + ' ' + bulan[mm];
 
 	return xxx;
 }
