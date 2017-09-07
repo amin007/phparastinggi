@@ -112,11 +112,12 @@ function pecahTarikh(tarikhwaktu) {
 function GetTodayDate() {
 	var tdate = new Date();
 	var dd = tdate.getDate(); //yields day
+	dd = dd > 9 ? dd : '0' + dd; // tambah 0 jika 1 - 9
 	var mm = tdate.getMonth(); //yields month
 	var yyyy = tdate.getFullYear(); //yields year
 	var bulan = Array('Januari', 'Febuari', 'Mac', 'April', 'Mei', 'Jun',
 		'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember');
-	var xxx = '' + dd + ' ' + bulan[mm];
+	var xxx = dd + ' ' + bulan[mm];
 
 	return xxx;
 }
