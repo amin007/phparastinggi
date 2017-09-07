@@ -42,7 +42,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 //feed to parse
-var feed = 'waktu_solat_bulan_08.xml';
+var feed = 'waktu_solat_bulan_09.xml';
 //var feed = 'baca_rss.php';
 $.ajax(feed, {
 	accepts:{ xml:'application/rss+xml' },
@@ -114,9 +114,9 @@ function GetTodayDate() {
 	var dd = tdate.getDate(); //yields day
 	var mm = tdate.getMonth(); //yields month
 	var yyyy = tdate.getFullYear(); //yields year
-	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
-		'Jul', 'Ogos', 'Sep', 'Okt', 'Nov', 'Dis');
-	var xxx = dd + ' ' + bulan[mm];
+	var bulan = Array('Januari', 'Febuari', 'Mac', 'April', 'Mei', 'Jun',
+		'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember');
+	var xxx = '0' + dd + ' ' + bulan[mm];
 
 	return xxx;
 }
