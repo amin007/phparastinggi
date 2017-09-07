@@ -90,7 +90,7 @@ function displayData(html, today, myXML){
 	var display = myXML.children().map(function() {
 		//return this.tagName + '=' + $(this).text();
 		html += '<li><a>' 
-		+ this.tagName + ' : '
+		+ this.tagName + ' <br> '
 		+ $(this).text()
 		+ '</a></li>';
 	}).get().join(' ');
