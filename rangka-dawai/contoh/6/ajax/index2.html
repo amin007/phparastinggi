@@ -1,0 +1,46 @@
+<html>
+<head>
+<script>
+function tampilkanUser(str)
+{
+	if (str=="") {
+		document.getElementById("txtPetunjuk").innerHTML="";
+		return;
+	}
+	if (window.XMLHttpRequest) {
+		// kod untuk IE7/Firefox/Chrome/Opera/Safari
+		xmlhttp = new XMLHttpRequest();
+	}
+	else { // kod untuk IE6, IE5
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+		{
+			document.getElementById("txtPetunjuk").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","ambil_user.php?q="+str,true);
+	xmlhttp.send();
+
+}
+</script>
+</head>
+<body>
+
+<form>
+<select name="users" onchange="tampilkanUser(this.value)">
+<option value="">Pilih Karyawan</option>
+<option value="1">Joni Aryawan</option>
+<option value="2">Muslim Wahid</option>
+<option value="3">Prabowo Sugianto</option>
+<option value="4">Makmur Sugianto</option>
+</select>
+</form>
+
+<br>
+<div id="txtPetunjuk"><b>Infomasi Detail di sini: </b></div>
+
+</body>
+</html>
