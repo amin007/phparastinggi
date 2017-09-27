@@ -30,16 +30,21 @@
 	<!-- untuk carian -->
 	<br><br><br><br><br><br>
 	<form>
-		<div class="form-group">
-			<h1 class="alert alert-success">
-			Masukkan Tarikh:</h1>
-			<input type="text" class="form-control" 
-			id="txtCari" name="txtCari" 
-			onkeyup="browseNama(this.value)"
-			placeholder="Taipkan Tarikh Semasa">
-		</div>	
+	<div class="form-group">
+			<!-- label for="inputstok" class="col-sm-2 control-label">stok</label -->
+			<div class="col-sm-6">
+			<div class="input-group input-group-sm">
+					<span class="input-group-addon">Masukkan Tarikh</span>
+						<input type="text" class="form-control" 
+						id="txtCari" name="txtCari" 
+						onkeyup="browseNama(this.value)"
+						placeholder="Taipkan Tarikh Semasa">
+					<span class="input-group-addon">Saran : 
+					<span id="txtHasil"></span></span>
+				</div>
+			</div>
+		</div>
 	</form>
-	<p class="alert alert-info">Saran : <span id="txtHasil"></span></p>
 
 </div>
 
