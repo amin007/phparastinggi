@@ -135,46 +135,31 @@ function GetTodayDate() {
 }
 </script>
 <script>
-function browseNama(str)
+function browseNama(pilihari)
 {
-	if (str.length==0)
+	if (pilihari.length==0)
 	{
-		document.getElementById("txtPetunjuk").innerHTML="";
+		document.getElementById("txtCari").innerHTML="";
 		return;
 	}
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function()
-	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+	//feed to parse
+	var dataBulan = 'waktu_solat_bulan_09.xml';
+	$.ajax(dataBulan, {
+		accepts:{ xml:'application/rss+xml' },
+		dataType:'xml',
+		success:function(dataApa) 
 		{
-			document.getElementById("txtPetunjuk").innerHTML=xmlhttp.responseText;
-			harini = document.getElementById("txtPetunjuk").innerHTML;
-///////////////////////////////////////////////////////////////////////////////////////////////
-//feed to parse
-var failFeed = 'waktu_solat_bulan_09.xml';
-$.ajax(failFeed, {
-	accepts:{ xml:'application/rss+xml' },
-	dataType:'xml',
-	success:function(dataApa) 
-	{
 	///////////////////////////////////////////////////////////////////////////////////////////
-		
-		dataXML = $(dataApa).find('item').filter(function() {
-			// cari dalam item->Tarikh sama dengan today
-			return $(this).find('Tarikh').text() == harini;
-		});
+			myData = $(dataApa).find('item').filter(function() {
+				// cari dalam item->Tarikh sama dengan pilihari
+				return $(this).find('Tarikh').text() == pilihari;
+			});
 
-		var papar = '';
-		papar += displayData(papar, harini, dataXML);
+			var papar = displayData(papar, pilihari, myData);
 	///////////////////////////////////////////////////////////////////////////////////////////
-		jQuery('#txtHasil').append(papar);
-///////////////////////////////////////////////////////////////////////////////////////////
-	}});
-});
-///////////////////////////////////////////////////////////////////////////////////////////////
-			
-		}
-	}
+			document.getElementById("txtHasil").innerHTML=pilihari;
+	///////////////////////////////////////////////////////////////////////////////////////////
+		}});
 }
 </script>
 
