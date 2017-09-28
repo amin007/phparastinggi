@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function browseNama(str)
+{
+	if (str.length==0)
+	{
+		document.getElementById("txtPetunjuk").innerHTML="";
+		return;
+	}
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200) 
+		{
+			document.getElementById("txtPetunjuk").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","petunjuk.php?q="+str,true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<p><b>Masukkan Nama:</a></p>
+<form>
+	nama awal : <input type="text" onkeyup="browseNama(this.value)">
+</form>
+<p>Saran : <span id="txtPetunjuk"></span></p>
+
+</body>
+</html>
