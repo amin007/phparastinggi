@@ -15,8 +15,19 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
   $( function() {
-    $( "#txtCari" ).datepicker();
-    $( "#txtCari" ).datepicker( "option", "dateFormat", "dd/mm/yy");
+    $( "#txtCari" ).datepicker({
+    	dateFormat: 'dd/mm/yy',
+    	onSelect: function (){
+    		var date = new Date($(this).datepicker("getDate"));
+    		day  = String('00' + date.getDate()).slice(-2);
+    		month = date.getMonth();
+
+            var bulan = Array('Januari', 'Febuari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember');
+
+            //tukar format 
+            browseNama(day + ' ' + bulan[month]);
+    	}
+    });
   } );
   </script>
 </head><body>
