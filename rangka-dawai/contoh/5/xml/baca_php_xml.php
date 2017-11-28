@@ -57,9 +57,9 @@ endforeach;
 	//echo '<pre>';
 	//echo 'tajuk->'; print_r($tajuk);
 	//echo '<hr>data->'; print_r($dataJadual);
-	echo '<pre>dataCantum->'; print_r($dataCantum);
+	//echo '<pre>dataCantum->'; print_r($dataCantum);
 
-	//buatfailxml($dataCantum, $year, $bln);
+	buatfailxml($dataCantum, $year, $bln);
 
 function buatfailxml($dataCantum, $year, $bln)
 {
@@ -90,7 +90,15 @@ function buatfailxml($dataCantum, $year, $bln)
 	//*/
 }
 
-function tukarnamabulan($data, $year)
+function tukarnamabulan($tarikh, $year)
 {
-	return trim($data) . ' ' . $year;
+	$buangData = array('Januari','Februari','Mac',
+	'April','Mei','Jun','Julai','Ogos','September',
+	'Oktober', 'November', 'Disember');
+	$gantiData = array('Jan','Feb','Mac','Apr','Mei','Jun',
+	'Jul','Ogo','Sep','Okt','Nov','Dis');
+
+	$bln = str_replace($buangData, $gantiData, trim($tarikh) );
+	//echo $bln . ' ' . $year . '<hr>';
+	return $bln . ' ' . $year;
 }
