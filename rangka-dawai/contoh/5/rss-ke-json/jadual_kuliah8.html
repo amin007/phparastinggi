@@ -14,8 +14,8 @@
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-  $( function() {
-    $( "#txtCari" ).datepicker({
+$( function() {
+	$( "#txtCari" ).datepicker({
     	dateFormat: 'dd/mm/yy',
     	onSelect: function (){
     		var date = new Date($(this).datepicker("getDate"));
@@ -31,8 +31,8 @@
 			browseNama(day + ' ' + bulan[month]);
     	}
     });
-  } );
-  </script>
+  });
+</script>
 </head><body>
 <!-- ############################################################################## -->
 <!-- Fixed navbar / navbar-inverse -->
@@ -122,14 +122,15 @@ $.ajax(feed, {
 ///////////////////////////////////////////////////////////////////////////////////////////
 function displayDaerah(html, today, daerah){
 	html += '<a class="navbar-brand">' 
-		+ ' Waktu Solat ' + daerah[1] 
+		+ ' Waktu Solat ' + daerah[1] + '<br>'
 		+ '</a>' + '';
 
 	return html;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 function displayData(html, today, myXML){
-
+	var dt = new Date();
+	//+ ' Tahun ' + dt.getFullYear()
 	html += '<div id="navbar" class="collapse navbar-collapse">'
 		+ '<ul class="nav navbar-nav">';
 	var display = myXML.children().map(function() {
@@ -139,6 +140,8 @@ function displayData(html, today, myXML){
 		+ $(this).text()
 		+ '</a></li>';
 	}).get().join(' ');
+	
+	html += '<li><a><div class="clock"></div></a></li>';
 	html += '</ul></div>';
 
 	return html;
@@ -167,8 +170,8 @@ function GetTodayDate() {
 
 	return xxx;
 }
-</script>
-<script>
+</script><script>
+///////////////////////////////////////////////////////////////////////////////////////////
 function browseNama(pilihari)
 {
 	if (pilihari.length==0)
@@ -211,9 +214,26 @@ function paparData(today, myXML){
 
 	return html;
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////
+function clock() 
+{// We create a new Date object and assign it to a variable called "time".
+	var time = new Date(),
+	// Access the "getHours" method on the Date object with the dot accessor.
+	hours = time.getHours(),
+	// Access the "getMinutes" method with the dot accessor.
+	minutes = time.getMinutes(),
+	seconds = time.getSeconds();
+	document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
 
+	function harold(standIn) 
+	{
+		if (standIn < 10) { standIn = '0' + standIn  }
+		return standIn;
+	}
+}
+setInterval(clock, 1000);
+/////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
-
 <!--
 new Date().getDate()          // Get the day as a number (1-31)
 new Date().getDay()           // Get the weekday as a number (0-6)
