@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>contoh rss ke json</title>
+<style type="text/css">
+h3 { margin-bottom: 5px; }
+div.updated { color: #999; margin-bottom: 5px; font-size: 0.8em; }
+</style>
+</head><body>
+<!-- ############################################################################## -->
+
+<h1><a target="_blank" href="https://github.com/jfhovinne/jFeed">
+jFeed - jQuery feed parser plugin - example</a></h1>
+<div id="result" /></div>
+
+<!-- ############################################################################## -->
+<script src="public/js/jquery-1.6.4.js"></script>
+<script src="public/js/jquery.jfeed.pack.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+	jQuery.getFeed({
+		//url: 'rss-20.xml',
+		url: 'api_jakim.xml',
+		//url: 'http://www2.e-solat.gov.my/xml/today/index.php?zon=JHR04',
+		//url: 'baca_rss.php',
+		success: function(feed) {
+
+			jQuery('#result').append('<h2>'
+			+ '<a>'	+ feed.title + '</a><br>'
+			+ '<small>' + feed.description + '</small>'
+			+ '</h2>'
+			//+ '<h3>' + feed.\dc:date\ + '</h3>'
+			);
+
+			var html = '';
+			for(var i = 0; i < feed.items.length && i < 5; i++) 
+			{
+				var item = feed.items[i];
+					
+				//html += '<h3>'
+				//+ '<a href="' + item.link + '">'
+				//+ item.title + '</a>'
+				//+ '</h3>';               
+				//html += '<div class="updated">' + item.updated + '</div>';
+				html += '<div>' + item.title + ':' + item.description + '</div>';
+			}
+		jQuery('#result').append(html);
+        }    
+    });
+});
+</script>
+
+</body>
+</html>
