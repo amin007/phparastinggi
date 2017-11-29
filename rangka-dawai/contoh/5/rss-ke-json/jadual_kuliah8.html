@@ -123,6 +123,7 @@ $.ajax(feed, {
 function displayDaerah(html, today, daerah){
 	html += '<a class="navbar-brand">' 
 		+ ' Waktu Solat ' + daerah[1] + '<br>'
+		+ '<div class="clock"></div>'	
 		+ '</a>' + '';
 
 	return html;
@@ -141,7 +142,6 @@ function displayData(html, today, myXML){
 		+ '</a></li>';
 	}).get().join(' ');
 	
-	html += '<li><a><div class="clock"></div></a></li>';
 	html += '</ul></div>';
 
 	return html;
