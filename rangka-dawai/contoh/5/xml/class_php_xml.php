@@ -14,7 +14,8 @@ function array_to_xml($array, &$xml_user_info)
 			}
 			else
 			{
-				$subnode = $xml_user_info->addChild("item$key");
+				//$subnode = $xml_user_info->addChild("item$key");
+				$subnode = $xml_user_info->addChild("item");
 				array_to_xml($value, $subnode);
 			}
 		}
