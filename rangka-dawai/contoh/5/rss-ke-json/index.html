@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>contoh rss ke json</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+/* Rujuk http://www.456bereastreet.com/lab/styling-ordered-list-numbers */
+ol {
+	counter-reset:li; /* Initiate a counter */
+	margin-left:0; /* Remove the default left margin */
+	padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+	position:relative; /* Create a positioning context */
+	margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+	padding:4px 8px; /* Add some spacing around the content */
+	list-style:none; /* Disable the normal item numbering */
+	border-top:2px solid #666;
+	background:#f6f6f6;
+}
+ol > li:before {
+	content:counter(li); /* Use the counter as content */
+	counter-increment:li; /* Increment the counter by 1 */
+	/* Position and style the number */
+	position:absolute;
+	top:-2px;
+	left:-2em;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	width:2em;
+	/* Some space between the number and the content in browsers that support
+	   generated content but not positioning it (Camino 2 is one example) */
+	margin-right:8px;
+	padding:4px;
+	border-top:2px solid #666;
+	color:#fff;
+	background:#666;
+	font-weight:bold;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+	text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
+</style>
+</head><body>
+<!-- ############################################################################## -->
+<br><br>
+
+<div class="jumbotron">
+<ol>
+<li><a target="_blank" href="asas_rss.html">asas_rss</a></li>
+<li><a target="_blank" href="baca2_rss_json.html">baca2_rss_json</a></li>
+<li><a target="_blank" href="baca_ajax.html">baca_ajax</a></li>
+<li><a target="_blank" href="baca_json_contoh.html">baca_json_contoh</a></li>
+<li><a target="_blank" href="baca_rss_json.html">baca_rss_json</a></li>
+</ol>
+</div>
+
+<footer class="navbar-fixed-bottom"><div class="container" align="center">
+	<h1 class="title">
+		Kejayaan Hanya Dalam Agama<br>
+		Taat perintah Allah, ikut sunnah nabi muhammad s.a.w
+	</h1>
+</div></footer>
+<!-- ######################################################################################### -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+</body>
+</html>
