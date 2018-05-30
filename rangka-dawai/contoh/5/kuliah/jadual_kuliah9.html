@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html><head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>Jadual Kuliah 9</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<style>
+.navbar-brand
+{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+}
+.kv {
+	max-width:100%;
+	max-height:60%;
+	width:auto;
+	height:auto;
+}
+.title {
+	text-align: center;
+	margin-top: 20px;
+	padding: 10px;
+	text-shadow: 3px 3px #000;
+	color: #ffffff;
+}
+.tembus{
+	/*background-color: transparent !important;*/
+	/*background: rgba(255, 255, 255, 0.6);*/
+	color: #000000;
+	opacity: 0.9;
+	filter: alpha(opacity=90); 
+}
+</style>
+</head><body>
+<!-- ############################################################################## -->
+
+<!-- Header Container - start -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+</nav>
+<!-- End Header Container -->
+
+<br><br><br>
+<div class="container">
+<!-- Page Container -->
+<div class="row"><div class="col-sm-8">
+	<h1>Rabu - 14 RAMADHAN 1439</h1>
+	<div class="row" align="center" id="result">
+<!-- ----------------------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	</div>
+</div></div>
+<!-- End Page Container -->
+
+<!-- Carosel Container -->
+<div id="gambarBergerak" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+	<li data-target="#gambarBergerak" data-slide-to="0" class="active"></li>
+	<li data-target="#gambarBergerak" data-slide-to="1"></li>
+	<li data-target="#gambarBergerak" data-slide-to="2"></li>
+	<li data-target="#gambarBergerak" data-slide-to="3"></li>
+	<li data-target="#gambarBergerak" data-slide-to="4"></li>
+</ol>
+<div class="carousel-inner">
+	<div class="carousel-item active" align="center">
+		<img class="d-block w-90" src="public/fauzan3/slide1.png" alt="1 slide">
+		<div class="carousel-caption d-none d-md-block">
+			<h5><span style="background-color:black"></span></h5>
+			<p><span style="background-color:black"></span></p>
+		</div><!--  class="carousel-caption d-none d-md-block" -->
+	</div>
+	<div class="carousel-item" align="center">
+		<img class="d-block w-90" src="public/fauzan3/slide2.png" alt="2 slide">
+		<div class="carousel-caption d-none d-md-block">
+			<h5><span style="background-color:black"></span></h5>
+			<p><span style="background-color:black"></span></p>
+		</div><!--  class="carousel-caption d-none d-md-block" -->
+	</div>
+	<div class="carousel-item" align="center">
+		<img class="d-block w-90" src="public/fauzan3/slide3.png" alt="3 slide">
+		<div class="carousel-caption d-none d-md-block">
+			<h5><span style="background-color:black"></span></h5>
+			<p><span style="background-color:black"></span></p>
+		</div><!--  class="carousel-caption d-none d-md-block" -->
+	</div>
+	<div class="carousel-item" align="center">
+		<img class="d-block w-90" src="public/fauzan3/slide4.png" alt="4 slide">
+		<div class="carousel-caption d-none d-md-block">
+			<h5><span style="background-color:black"></span></h5>
+			<p><span style="background-color:black"></span></p>
+		</div><!--  class="carousel-caption d-none d-md-block" -->
+	</div>
+	<div class="carousel-item" align="center">
+		<img class="d-block w-90" src="public/fauzan3/slide5.png" alt="5 slide">
+		<div class="carousel-caption d-none d-md-block">
+			<h5><span style="background-color:black"></span></h5>
+			<p><span style="background-color:black"></span></p>
+		</div><!--  class="carousel-caption d-none d-md-block" -->
+	</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+	<span class="sr-only">Next</span>
+</a>
+</div>
+<!-- End Carosel Container -->
+
+</div><!-- / class="container" -->
+
+<!-- Footer -->
+<footer class="navbar fixed-bottom navbar-light bg-light">
+	<a class="navbar-brand">
+		Kejayaan Hanya Dalam Agama. Taat perintah Allah, ikut sunnah nabi muhammad s.a.w
+	</a>
+</footer>
+<!--
+######################################################################################### -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+//https://dzone.com/articles/parsing-rss-feeds-in-javascript-options
+//https://stackoverflow.com/questions/15935452/get-first-element-from-tag-name-in-jquery
+//https://stackoverflow.com/questions/3063963/jquery-find-an-xml-element-based-on-the-value-of-one-of-its-children
+$(document).ready(function() {
+//feed to parse
+var feed = 'waktu_solat_2018.xml';
+$.ajax(feed, {
+	accepts:{ xml:'application/rss+xml' },
+	dataType:'xml',
+	success:function(data) 
+	{
+		// tarikh
+		var harikini = GetTodayDate();
+		//var hariini = pecahTarikh($(data).find('dc\\:date').text());
+		// link aka kawasan
+		var daerah = $(data).find('tajuk0').text().split(",");
+		//txt = data.getElementsByTagName(harikini)[0].childNodes[0].nodeValue;
+	///////////////////////////////////////////////////////////////////////////////////////////
+		var dataKita = $(data).find('item').filter(function() {
+			// cari dalam item->Tarikh sama dengan harikini
+			return $(this).find('Tarikh').text() == harikini;
+		});
+
+		var html5 = '';
+		html5 += displayDaerah(html5, harikini, daerah)
+			+ displayData(html5, harikini, dataKita);
+	///////////////////////////////////////////////////////////////////////////////////////////
+		jQuery('#result').append(html5);
+///////////////////////////////////////////////////////////////////////////////////////////
+	}});
+});
+///////////////////////////////////////////////////////////////////////////////////////////
+function displayDaerah(html5, today, daerah){
+	html5 += '<div class="col-sm">' 
+		+ ' Waktu Solat ' + daerah[1] + '<br>'
+		//+ '<div class="clock"></div>'
+		+ '</div>' + '';
+	html5 = '';
+
+	return html5;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+function displayData(html5, today, myXML){
+	html5 += '';
+	var display = myXML.children().map(function() {
+		//return this.tagName + '=' + $(this).text();
+		html5 += '<div class="col-sm">' 
+		+ this.tagName + '<br>'
+		+ $(this).text()
+		+ '</div><!-- class="col-sm" -->';
+	}).get().join(' ');
+
+	html5 += '';
+
+	return html5;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+function pecahTarikh(tarikhwaktu) {
+	const [today, masa] = tarikhwaktu.split(" ");
+	const [day, month, year] = today.split("-");
+	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
+		'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis');
+
+	return hariini = day + ' ' + bulan[month - 1] + ' ' + year;
+	//return new Date(year, bulan[month - 1], day)
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+function GetTodayDate() {
+	var tdate = new Date();
+	var dd = tdate.getDate(); //yields day
+	var mm = tdate.getMonth(); //yields month
+	var yyyy = tdate.getFullYear(); //yields year
+	//var bulan = Array('Januari', 'Febuari', 'Mac', 'April', 'Mei', 'Jun',
+	//	'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember');
+	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
+		'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis');
+	var xxx = dd + ' ' + bulan[mm] + ' ' + yyyy;
+
+	return xxx;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+</script>
+<!--
+new Date().getDate()          // Get the day as a number (1-31)
+new Date().getDay()           // Get the weekday as a number (0-6)
+new Date().getFullYear()      // Get the four digit year (yyyy)
+new Date().getHours()         // Get the hour (0-23)
+new Date().getMilliseconds()  // Get the milliseconds (0-999)
+new Date().getMinutes()       // Get the minutes (0-59)
+new Date().getMonth()         // Get the month (0-11)
+new Date().getSeconds()       // Get the seconds (0-59)
+new Date().getTime()          // Get the time (milliseconds since January 1, 1970)
+-->
+</body>
+</html>
