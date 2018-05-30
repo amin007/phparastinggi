@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>PAPARAN WAKTU SOLAT DI TV BESAR GEDABAK DI MASJID</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head><body>
+
+<div class="container">
+	<!--a class="btn btn-info btn-large" target="_blank" href="teks1.html">Teks1 <i class="fa fa-phone-square fa-5x"></i></a>
+	<a class="btn btn-warning btn-large" target="_blank" href="teks2.html">Teks2 <i class="fa fa-building fa-5x"></i></a>
+	<a class="btn btn-primary btn-large" target="_blank" href="teks3.html">Teks3 <i class="fa fa-binoculars fa-5x"></i></a>
+	<a class="btn btn-info btn-large" target="_blank" href="teks4.html">Teks4 <i class="fa fa-phone-square fa-5x"></i></a>
+	<a class="btn btn-warning btn-large" target="_blank" href="teks5.html">Teks5 <i class="fa fa-building fa-5x"></i></a>
+	<a class="btn btn-primary btn-large" target="_blank" href="teks6.html">Teks6 <i class="fa fa-binoculars fa-5x"></i></a -->
+	<h1>PAPARAN WAKTU SOLAT DI TV BESAR GEDABAK DI MASJID</h1>
+	<h2 align="center"><span id="kod"></span> : <span id="kawasan"></span></h2><hr>
+<hr>
+	<div class="carousel slide" id=carousel-example-generic data-ride=carousel> 
+		<ol class=carousel-indicators> 
+			<li data-target=#carousel-example-generic data-slide-to=0 class=active></li>
+			<li data-target=#carousel-example-generic data-slide-to=1></li>
+			<li data-target=#carousel-example-generic data-slide-to=2></li>
+			<li data-target=#carousel-example-generic data-slide-to=3></li>
+			<li data-target=#carousel-example-generic data-slide-to=4></li>
+			<li data-target=#carousel-example-generic data-slide-to=5></li>
+			<li data-target=#carousel-example-generic data-slide-to=6></li>
+		</ol> 
+
+		<div class=carousel-inner role=listbox> 
+			<div class="item active">
+				<table align="center" id="minggu0"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item> 
+				<table align="center" id="minggu1"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item>
+				<table align="center" id="minggu2"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item> 
+				<table align="center" id="minggu3"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item>
+				<table align="center" id="minggu4"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item> 
+				<table align="center" id="minggu5"><caption>Waktu Solat</caption></table>
+			</div>
+			<div class=item>
+				<table align="center" id="minggu6"><caption>Waktu Solat</caption></table>
+			</div>
+		</div> 
+
+		<a href=#carousel-example-generic class="left carousel-control" role=button data-slide=prev>
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden=true></span>
+			<span class=sr-only>Previous</span>
+		</a> 
+		<a href=#carousel-example-generic class="right carousel-control" role=button data-slide=next> 
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden=true></span> 
+			<span class=sr-only>Next</span> 
+		</a>
+	</div>
+</div><!-- / class="container" -->
+<hr><br>
+
+<footer class="footer"><div class="container">
+	<span class="label label-warning">
+		<a target="_blank" href="rss-ke-json/jadual_kuliah2.html">
+			<i class="fa fa-building fa-5x"></i></a>
+		<a target="_blank" href="rss-ke-json/jadual_kuliah2.html">
+			<i class="fa fa-phone-square fa-5x"></i></a>
+	</span>
+</div></footer>
+
+<!--
+//www2.e-solat.gov.my/solatC.php?kod=JHR04&lang=BM&url=http:/www.islam.gov.my
+//http://api.azanpro.com/times/today.json?zone=jhr04&format=12-hour
+//http://esolatapi-namialus.rhcloud.com/api/v1/waktu/JHR04
+######################################################################################### -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() 
+{
+	if (this.readyState == 4 && this.status == 200) 
+	{
+		dataSolat = JSON.parse(this.responseText);
+		document.getElementById("kod").innerHTML = dataSolat.zone_code;
+		document.getElementById("kawasan").innerHTML = dataSolat.zone_description;
+
+		/* waktu solat : dataSolat.prayer_times */
+		/* loop ikut minggu x1 */
+/* ############################################################################################# */
+		for(i in dataSolat.prayer_times)
+		{
+			for (x in dataSolat.prayer_times[i]) 
+			{
+				document.getElementById("minggu"+i).innerHTML += 
+					"<tr><td>" + x + "</td><td>" 
+					+ dataSolat.prayer_times[i][x] + "</td></tr>";
+			}
+		}
+/* ############################################################################################# */
+	}
+};
+xmlhttp.open("GET", "waktu_solat_muar.json", true);
+xmlhttp.send();
+
+</script>
+
+</body>
+</html>
