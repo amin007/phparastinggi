@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>Jadual Kuliah</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="public/css/gambar_bertukar.css">
+</head><body>
+<!-- ############################################################################## -->
+<!-- Fixed navbar -->
+<nav class="navbar navbar-fixed-top" id="result">
+</nav>
+
+<div class="container">
+	<!-- Inspired by https://codepen.io/transportedman/pen/NPWRGq -->
+	<div class="carousel slide carousel-fade" data-ride="carousel">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+		</div>
+	</div>
+</div>
+
+<footer class="navbar-fixed-bottom"><div class="container" align="center">
+	<h1 class="title">
+		Kejayaan Hanya Dalam Agama<br>
+		Taat perintah Allah, ikut sunnah nabi muhammad s.a.w
+	</h1>
+</div></footer>
+<!--
+######################################################################################### -->
+<!-- script src="https://code.jquery.com/jquery-2.2.3.min.js"></script -->
+<script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="public/js/jquery.jfeed.pack.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+	jQuery.getFeed({
+	url: 'api_jakim.xml',
+	//url: 'http://www2.e-solat.gov.my/xml/today/index.php?zon=JHR04',
+	//url: 'baca_rss.php',
+	success: function(feed) {
+		jQuery('#result').append(''
+		//+ '<a class="navbar-brand">'	+ feed.title + '</a>'
+		+ '<a class="navbar-brand">' + feed.description + '</a>'
+		);
+		var html = '<div id="navbar" class="collapse navbar-collapse">'
+		+ '<ul class="nav navbar-nav">';
+		for(var i = 0; i < feed.items.length && i < 7; i++) 
+		{
+			var item = feed.items[i];
+			html += '<li><a>' + item.title + ':' + item.description + '</a></li>';		
+		}
+		html += '</ul></div>';
+		// papar
+		jQuery('#result').append(html);
+	}});
+	
+});
+</script>
+
+</body>
+</html>

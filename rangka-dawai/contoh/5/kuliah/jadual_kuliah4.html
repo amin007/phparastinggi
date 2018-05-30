@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html><head>
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PAGE TITLE -->
+<title>Jadual Kuliah 4</title>
+<!-- BOOTSTRAP CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="public/css/gambar_bertukar.css">
+</head><body>
+<!-- ############################################################################## -->
+<!-- Fixed navbar / navbar-inverse -->
+<nav class="navbar navbar-inverse navbar-fixed-top tembus" id="result">
+</nav>
+
+<div class="container">
+	<!-- Inspired by https://codepen.io/transportedman/pen/NPWRGq -->
+	<div class="carousel slide carousel-fade" data-ride="carousel">
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+			<div class="item"></div><div class="item"></div>
+		</div>
+	</div>
+</div>
+
+<footer class="navbar-fixed-bottom"><div class="container" align="center">
+	<h1 class="title">
+		Kejayaan Hanya Dalam Agama<br>
+		Taat perintah Allah, ikut sunnah nabi muhammad s.a.w
+	</h1>
+</div></footer>
+<!--
+######################################################################################### -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+//feed to parse
+//var feed = "http://feeds.feedburner.com/raymondcamdensblog?format=xml";
+var feed = 'api_jakim.xml';
+//var feed = 'baca_rss.php';
+$.ajax(feed, {
+	accepts:{ xml:'application/rss+xml' },
+	dataType:'xml',
+	success:function(data) 
+	{
+//Credit: http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
+//https://dzone.com/articles/parsing-rss-feeds-in-javascript-options
+//https://stackoverflow.com/questions/15935452/get-first-element-from-tag-name-in-jquery
+// var str = "How are you doing today?";
+// var res = str.split(" ");
+		// tarikh
+		var hariini = pecahTarikh($(data).find('dc\\:date').text());
+		// link aka kawasan
+		//var pautan = $(data).find('link').text();
+		var daerah = $(data).find('link').text().split(",");
+		var html = '';
+///////////////////////////////////////////////////////////////////////////////////////////
+		html += '<a class="navbar-brand">' 
+			+ daerah[1] + ' ' + hariini 
+			+ '</a>'
+			+ '';
+///////////////////////////////////////////////////////////////////////////////////////////
+		html += ''//'<a class="navbar-brand">' + keterangan  + '</a>'
+		+ '<div id="navbar" class="collapse navbar-collapse">'
+		+ '<ul class="nav navbar-nav">';
+		$(data).find("item").each(function () 
+		{// or "item" or whatever suits your feed
+			var el = $(this);
+			html += '<li><a>' 
+			+ el.find("title").text() + ' : '
+			+ el.find("description").text() 
+			+ '</a></li>';
+		});
+		html += '</ul></div>';
+		jQuery('#result').append(html);
+///////////////////////////////////////////////////////////////////////////////////////////
+	}});
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////
+function pecahTarikh(tarikhwaktu) {
+	const [today, masa] = tarikhwaktu.split(" ");
+	const [day, month, year] = today.split("-");
+	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
+		'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis');
+	return hariini = day + ' ' + bulan[month - 1] + ' ' + year;
+
+	//return new Date(year, bulan[month - 1], day)
+}
+</script>
+
+</body>
+</html>
+<!--
+
+		/*$(data).find("item").each(function () 
+		{ // or "item" or whatever suits your feed
+			var el = $(this);
+			console.log("------------------------");
+			console.log("title      : " + el.find("title").text());
+			console.log("link       : " + el.find("link").text());
+			console.log("description: " + el.find("description").text());
+		});*/
+
+-->
