@@ -182,10 +182,10 @@ function displayData(html5, today, myXML){
 	html5 += '';
 	var display = myXML.children().map(function() {
 		//return this.tagName + '=' + $(this).text();
-		html5 += '<div class="col-sm">' 
+		html5 += '<div class="col-sm"><strong>'
 		+ this.tagName + '<br>'
 		+ tConvert ($(this).text())
-		+ '</div><!-- class="col-sm" -->';
+		+ '</strong></div><!-- class="col-sm" -->';
 	}).get().join(' ');
 
 	html5 += '';
