@@ -22,11 +22,9 @@ foreach ($pusing as $bln):
 	# Get row data/detail table without header name as key
 	$senaraiKey = array(0,1,2,3,4,5,6,7,8,9);
 	$senaraiTajuk = array('Tarikh','Hari','Imsak','Subuh','Syuruk','Zohor','Asar','Maghrib','Isyak');
-	$buangData = array('Januari','Februari','Mac',
-	'April','Mei','Jun',
-	'Julai','Ogos','September',
-	'Oktober', 'November', 'Disember',
-	'Disember 2016','Januari 2018');
+	$buangData = array('Januari','Februari','Mac','April','Mei','Jun',
+	'Julai','Ogos','September','Oktober', 'November', 'Disember',
+	'Disember 2017','Januari 2019');
 	$i = $j = $isi = 0;
 
 	foreach($Detail as $kunci => $sNodeDetail) 
