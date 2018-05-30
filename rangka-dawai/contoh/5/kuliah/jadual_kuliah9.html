@@ -65,14 +65,14 @@
 </ol>
 <div class="carousel-inner">
 	<div class="carousel-item active" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide1.png" alt="1 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide1.png" alt="1 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span class="title">Surau Al-Fauzan</span></h5>
 			<p><span style="background-color:black"></span></p>
 		</div><!--  class="carousel-caption d-none d-md-block" -->
 	</div>
 	<div class="carousel-item" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide2.png" alt="2 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide2.png" alt="2 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span style="background-color:black"></span></h5>
 			<p><span class="title">
@@ -81,7 +81,7 @@
 		</div><!--  class="carousel-caption d-none d-md-block" -->
 	</div>
 	<div class="carousel-item" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide3.png" alt="3 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide3.png" alt="3 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span style="background-color:black"></span></h5>
 			<p><span class="title">
@@ -90,7 +90,7 @@
 		</div><!--  class="carousel-caption d-none d-md-block" -->
 	</div>
 	<div class="carousel-item" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide4.png" alt="4 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide4.png" alt="4 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span style="background-color:black"></span></h5>
 			<p><span class="title">
@@ -99,7 +99,7 @@
 		</div><!--  class="carousel-caption d-none d-md-block" -->
 	</div>
 	<div class="carousel-item" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide5.png" alt="5 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide5.png" alt="5 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span style="background-color:black"></span></h5>
 			<p><span class="title">
@@ -108,7 +108,7 @@
 		</div><!--  class="carousel-caption d-none d-md-block" -->
 	</div>
 	<div class="carousel-item" align="center">
-		<img class="d-block w-auto" src="public/fauzan3/slide6.png" alt="6 slide">
+		<img class="d-block w-100" src="public/fauzan3/slide6.png" alt="6 slide">
 		<div class="carousel-caption d-none d-md-block">
 			<h5><span style="background-color:black"></span></h5>
 			<p><span class="title">
@@ -184,7 +184,7 @@ function displayData(html5, today, myXML){
 		//return this.tagName + '=' + $(this).text();
 		html5 += '<div class="col-sm">' 
 		+ this.tagName + '<br>'
-		+ $(this).text()
+		+ tConvert ($(this).text())
 		+ '</div><!-- class="col-sm" -->';
 	}).get().join(' ');
 
@@ -215,6 +215,19 @@ function GetTodayDate() {
 	var xxx = dd + ' ' + bulan[mm] + ' ' + yyyy;
 
 	return xxx;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+function tConvert (time) {
+	// Check correct time format and split into components
+	time = time.toString ().match (/^([01]\d|2[0-3])(.)([0-5]\d)?$/) || [time];
+
+	if (time.length > 1) { // If time format correct
+		time = time.slice (1);  // Remove full string match value
+		//time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+		time[0] = +time[0] % 12 || 12; // Adjust hours
+	}
+
+	return time.join(''); // return adjusted time or original string
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
