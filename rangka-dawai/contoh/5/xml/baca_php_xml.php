@@ -4,8 +4,7 @@
 # http://snipplr.com/view/3491/convert-php-array-to-xml-or-simple-xml-object-if-you-wish/
 $pusing = array('01','02','03','04','05','06',
 '07','08','09','10','11','12');
-$year = 2017;
-//$bln = '11';
+$year = 2018;
 
 foreach ($pusing as $bln):
 	//$setahun = 'http://www.e-solat.gov.my/web/waktusolat.php?zone=JHR04&state=JOHOR&year=2017&jenis=year&bulan=' . $bln . '&LG=BM';
@@ -77,7 +76,7 @@ function buatfailxml($dataCantum, $year, $bln)
 	# success and error message based on xml creation
 	if($xml_file)
 	{
-		echo 'XML file have been generated successfully. '
+		echo 'XML file ' . $namafail . ' have been generated successfully. '
 		. '<a target="_blank" href="' . $namafail . '">Click here</a>';
 		//echo $xml_file;
 	}
