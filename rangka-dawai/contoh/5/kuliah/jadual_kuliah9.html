@@ -37,8 +37,17 @@
 	opacity: 0.9;
 	filter: alpha(opacity=90); 
 }
+.clock {
+	position: absolute;
+	top: 50%;left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	color: #17D4FE;
+	font-size: 60px;
+	font-family: Orbitron;
+	letter-spacing: 7px;
+}
 </style>
-</head><body>
+</head><body onload="showTime()">
 <!-- ############################################################################## -->
 
 <!-- Header Container - start --
@@ -46,9 +55,11 @@
 </nav>
 <!-- End Header Container -->
 
+<div class="container-fluid">
+
 <!-- Page Container -->
-<div class="row"style="background-color: #e3f2fd;"><div class="col-sm-8">
-	<h1>Waktu Solat</h1>
+<div class="row"style="background-color: #e3f2fd;"><div class="col-sm-10">
+	<h1 id="tarikh"></h1>
 	<div class="row" align="center" id="result"></div>
 </div></div>
 <!-- End Page Container -->
@@ -128,7 +139,7 @@
 </div>
 <!-- End Carosel Container -->
 
-<!-- / class="container" -->
+</div><!-- / class="container-fluid" -->
 
 <!--
 ######################################################################################### -->
@@ -140,8 +151,7 @@
 //https://stackoverflow.com/questions/15935452/get-first-element-from-tag-name-in-jquery
 //https://stackoverflow.com/questions/3063963/jquery-find-an-xml-element-based-on-the-value-of-one-of-its-children
 $(document).ready(function() {
-//feed to parse
-var feed = 'waktu_solat_2018.xml';
+var feed = 'waktu_solat_2018.xml'; //feed to parse
 $.ajax(feed, {
 	accepts:{ xml:'application/rss+xml' },
 	dataType:'xml',
@@ -159,21 +169,21 @@ $.ajax(feed, {
 			return $(this).find('Tarikh').text() == harikini;
 		});
 
-		var html5 = '';
-		html5 += displayDaerah(html5, harikini, daerah)
-			+ displayData(html5, harikini, dataKita);
+		var tarikh = ''; var html5 = '';
+		tarikh = displayDaerah(tarikh, harikini, daerah);
+		html5 = displayData(html5, harikini, dataKita);
 	///////////////////////////////////////////////////////////////////////////////////////////
+		jQuery('#tarikh').append(tarikh);
 		jQuery('#result').append(html5);
 ///////////////////////////////////////////////////////////////////////////////////////////
 	}});
 });
 ///////////////////////////////////////////////////////////////////////////////////////////
 function displayDaerah(html5, today, daerah){
-	html5 += '<div class="col-sm">' 
-		+ ' Waktu Solat ' + daerah[1] + '<br>'
-		//+ '<div class="clock"></div>'
-		+ '</div>' + '';
-	html5 = '';
+	html5 += ''
+		+ ' Waktu Solat ' + daerah[1] + ' | ' + today
+		+ ' | <span id="MyClockDisplay"></span>'
+		+ '';
 
 	return html5;
 }
@@ -182,10 +192,12 @@ function displayData(html5, today, myXML){
 	html5 += '';
 	var display = myXML.children().map(function() {
 		//return this.tagName + '=' + $(this).text();
-		html5 += '<div class="col-sm"><strong>'
-		+ this.tagName + '<br>'
-		+ tConvert ($(this).text())
-		+ '</strong></div><!-- class="col-sm" -->';
+		if(this.tagName == 'Tarikh' || this.tagName == 'Hari') html5 += '';
+		else
+			html5 += '<div class="col-sm"><strong>'
+			+ this.tagName + '&nbsp;'
+			+ $(this).text()
+			+ '</strong></div><!-- class="col-sm" -->';
 	}).get().join(' ');
 
 	html5 += '';
@@ -219,16 +231,42 @@ function GetTodayDate() {
 ///////////////////////////////////////////////////////////////////////////////////////////
 function tConvert(time) {
 	// Check correct time format and split into components
-	time = time.toString ().match (/^([01]\d|2[0-3])(.)([0-5]\d)?$/) || [time];
+	time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)?$/) || [time];
 
 	if (time.length > 1) { // If time format correct
 		time = time.slice (1);  // Remove full string match value
-		time[5] = +(time[0] < 12) ? ' AM' : ' PM'; // Set AM/PM
+		//time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
 		time[0] = +time[0] % 12 || 12; // Adjust hours
 	}
 
 	return time.join(''); // return adjusted time or original string
 }
+///////////////////////////////////////////////////////////////////////////////////////////
+function showTime()
+{
+	var date = new Date();
+	var h = date.getHours(); // 0 - 23
+	var m = date.getMinutes(); // 0 - 59
+	var s = date.getSeconds(); // 0 - 59
+	var session = "AM";
+
+	if(h == 0){h = 12;}
+	if(h > 12)
+	{
+		h = h - 12;
+		session = "PM";
+	}
+
+	h = (h < 10) ? "0" + h : h;
+	m = (m < 10) ? "0" + m : m;
+	s = (s < 10) ? "0" + s : s;
+
+	var time = h + ":" + m + ":" + s + " " + session;
+	document.getElementById("MyClockDisplay").innerText = time;
+	document.getElementById("MyClockDisplay").textContent = time;
+
+	setTimeout(showTime, 1000);
+}	//showTime01();
 ///////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
