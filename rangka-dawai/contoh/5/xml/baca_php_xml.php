@@ -102,9 +102,9 @@ function tukarnamabulan($tarikh, $year)
 
 function tukarJam($data)
 {
-	$var = myGetType($data);
+	//$var = myGetType($data);
 	$data = trim($data);
-	$data = ($var == 'numeric') ? ubahJam($data) : $data;
+	//$data = ($var == 'numeric') ? ubahJam($data) : $data;
 	//echo "$data = $var <hr>";
 	return $data;
 }
