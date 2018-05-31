@@ -40,7 +40,7 @@ foreach ($pusing as $bln):
 				$dataJadual[trim($j.$bln)][$senaraiTajuk[$i]] = 
 					($senaraiTajuk[$i] == 'Tarikh') ? # tambah tahun pada tarikh
 					tukarnamabulan($sNodeDetail->textContent, $year) : 
-					trim($sNodeDetail->textContent);
+					tukarJam($sNodeDetail->textContent);
 				$i++;
 			}
 		endif;
@@ -98,4 +98,36 @@ function tukarnamabulan($tarikh, $year)
 	$bln = str_replace($buangData, $gantiData, trim($tarikh) );
 	//echo $bln . ' ' . $year . '<hr>';
 	return $bln . ' ' . $year;
+}
+
+function tukarJam($data)
+{
+	$var = myGetType($data);
+	$data = trim($data);
+	$data = ($var == 'numeric') ? ubahJam($data) : $data;
+	//echo "$data = $var <hr>";
+	return $data;
+}
+
+function myGetType($var)
+{
+	if (is_array($var)) return "array";
+	if (is_bool($var)) return "boolean";
+	if (is_float($var)) return "float";
+	if (is_int($var)) return "integer";
+	if (is_null($var)) return "NULL";
+	if (is_numeric($var)) return "numeric";
+	if (is_object($var)) return "object";
+	if (is_resource($var)) return "resource";
+	if (is_string($var)) return "string";
+	return "unknown type";
+}
+
+function ubahJam($data)
+{
+	$d = strlen($data);
+	$data = ($d == 4 ) ? '0' . $data : $data;
+	//echo "$data = $d" . '<hr>';
+	$data = str_replace('.', ':', $data );
+	return $data;
 }
