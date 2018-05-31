@@ -67,8 +67,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 //feed to parse
-var feed = 'waktu-solat-2017.xml';
-//var feed = 'baca_rss.php';
+var feed = 'waktu_solat_2018.xml';
 $.ajax(feed, {
 	accepts:{ xml:'application/rss+xml' },
 	dataType:'xml',
@@ -102,7 +101,7 @@ $.ajax(feed, {
 function displayDaerah(html5, today, daerah){
 	html5 += '<a class="navbar-brand">' 
 		+ ' Waktu Solat ' + daerah[1] + '<br>'
-		//+ '<div class="clock"></div>'
+		+ '<div class="clock"></div>'
 		+ '</a>' + '';
 
 	return html5;
@@ -143,7 +142,7 @@ function GetTodayDate() {
 	//	'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember');
 	var bulan = Array('Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun',
 		'Jul', 'Ogo', 'Sep', 'Okt', 'Nov', 'Dis');
-	var xxx = dd + ' ' + bulan[mm];
+	var xxx = dd + ' ' + bulan[mm] + ' ' + yyyy;
 
 	return xxx;
 }
