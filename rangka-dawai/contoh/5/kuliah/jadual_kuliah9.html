@@ -182,7 +182,7 @@ $.ajax(feed, {
 function displayDaerah(html5, today, daerah){
 	html5 += ''
 		+ ' Waktu Solat ' + daerah[1] + ' | ' + today
-		+ ' | <span id="MyClockDisplay"></span>'
+		+ ' | <span class="clock" id="Jam"></span>'
 		+ '';
 
 	return html5;
@@ -262,11 +262,11 @@ function showTime()
 	s = (s < 10) ? "0" + s : s;
 
 	var time = h + ":" + m + ":" + s + " " + session;
-	document.getElementById("MyClockDisplay").innerText = time;
-	document.getElementById("MyClockDisplay").textContent = time;
+	document.getElementById("Jam").innerText = time;
+	document.getElementById("Jam").textContent = time;
 
-	setTimeout(showTime, 1000);
-}	//showTime01();
+	setTimeout(showTime, 500);
+}	//showTime();
 ///////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 </script>
